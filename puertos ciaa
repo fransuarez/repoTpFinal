@@ -1,0 +1,64 @@
+La EDU-CIAA cuenta con los siguientes módulos:
+
+2 puertos micro-USB (uno para aplicaciones y debugging, otro para alimentación).
+4 salidas digitales implementadas con leds RGB.
+4 entradas digitales con pulsadores.
+1 puerto de comunicaciones RS 485 con bornera.
+2 conectores de expansión:
+P1:
+3 entradas analógicas (ADC0_1,2y3),
+1 salida analógica (DAC0),
+1 puerto I2C,
+1 puerto asincrónico full duplex (para RS-232).
+1 puerto CAN,
+1 conexión para un teclado de 3×4,
+P2:
+1 puerto Ethernet,
+1 puerto SPI,
+1 puerto para Display LCD con 4 bits de datos, Enable y RS.
+9 pines genéricos de I/O.
+-------------------------------------------------------------------------
+CIAA
+Interfaces de comunicación:
+Ethernet con soporte PoE (requiere módulo de alimentación PoE)
+USB On-The-Go
+USB Device Auxiliar
+RS232
+RS485
+CAN 
+
+Entradas/Salidas:
+8 entradas digitales optoacopladas (8 DI)
+4 entradas analógicas configurables por jumper 0-10V o 0-20mA (4 AI)
+4 salidas open-drain de 24V, 1A (4 DO)
+4 salidas a relé 24V, 2A (4 DO)
+1 salida analógica configurable por jumper 0-10V o 0-20mA (1 AO)
+Conectores de expansión LV-GPIO, SPI, I2C
+--------------------------------------------------------------------------
+Entradas analogicas: (AI)  = 19 (22*)
+- 7 sensores de temperatura
+- 4 sensores de corriente (2 por cuba de galvanizacion)
+- 2 sensores de tension (1 por cuba de galvanizacion)
+- 6 sensores de conductividad (cubas donde se hace enjuague por casacada)
+- 3 sensores de nivel (para cubas donde hay resistencias electricas)*
+* Estos ultimos 3 tambien podrian ser digitales si solo es critico el nivel inferior
+
+Entradas digitales: (DI)  = 5
+- 3 sensores de nivel (para cubas donde hay resistencias electricas)*
+*En caso de no optar por las analogicas
+- 2 pulsadores stop/star de timer (podrian ser mas dependiendo del modo de uso)
+
+Salidas digitales:  (DO)  = 13
+- 3 actuadores con teleruptor para resistencias termicas
+- 6 electrovalvuas para reposicion de agua deionizada
+- 2 señales luminica y sonora de alarma
+- 2 señales luminicas para indicar en proceso y detenido
+
+Puerto USB: (USB)  = 2
+- 1 para ingreso de parametros 
+- 1 para la pantalla (conversor usb/hdmi)
+
+Puerto serie: (RS485)  = 1
+-1 Conexion en bus de otros perifericos (modbus)
+
+Puerto RED: (ETH)  = 1
