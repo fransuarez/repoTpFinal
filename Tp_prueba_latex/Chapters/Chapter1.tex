@@ -22,7 +22,22 @@
 %----------------------------------------------------------------------------------------
 \section{Descripción del sistema y su entorno \LaTeX{}}
 
-En el proceso de galvanización de pistas y vías de un PCBs el control de los parametros fisicos en cada una de las etapas es fundamental para garantizar la uniformidad del cobre. Este proceso consiste en la inmersion de los placas en distintos baños quimicos que se observan en Figura 1 (se muestra una proceso de galvanización correcto en un PCB), y en la figura 2 el resultado de un correcto proceso (muestra un perfil de una vía correctamente galvanizada donde el espesor del cobre conductor es uniforme y la cavidad mantiene un diámetro constante).
+En el proceso de galvanización de pistas y vías de un PCBs el control de los parámetros físicos en cada una de las etapas es fundamental para garantizar la uniformidad del cobre. Este proceso consiste en la inmersión de los placas en distintos baños químicos que se observan en la Figura \ref{fig:thr_correcto}, y en la Figura \ref{fig:thr_correcto_perfil} el resultado de un correcto proceso donde el espesor del cobre conductor es uniforme en toda la cavidad.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{../Figures/through_hole_correcto.jpg}
+	\caption{Via con galvanización correcto en un PCB}
+	\label{fig:thr_correcto}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=.5\textwidth]{Figures/through_hole_perfil.png}
+\caption{Perfil de una via correctamente galvanizada}
+	\label{fig:thr_correcto_perfil}
+\end{figure}
+
 
 \LaTeX{} no es \textsc{WYSIWYG} (What You See is What You Get), a diferencia de los procesadores de texto como Microsoft Word o Pages de Apple o incluso LibreOffice en el mundo open-source. En lugar de ello, un documento escrito para \LaTeX{} es en realidad un archivo de texto simple, llano que \emph{no contiene formato} . Nosotros le decimos a \LaTeX{} cómo deseamos que se aplique el formato en el documento final escribiendo comandos simples entre el texto, por ejemplo, si quiero usar \emph{texto en cursiva para dar énfasis}, escribo \verb|\emph{texto}| y pongo el texto en cursiva que quiero entre medio de las llaves. Esto significa que \LaTeX{} es un lenguaje del tipo \enquote{mark-up}, muy parecido a HTML.
 
@@ -62,7 +77,7 @@ El archivo de Gunn, \file{ecsthesis.cls} fue posteriormente modificado por Sunil
 
 El template de Patel se publicó a través de  \url{http://www.LaTeXTemplates.com} desde donde fue modificado muchas veces en base a solicitudes de usuarios. La versión 2.0 y subsiguientes representan cambios significativos respecto a la versión de la plantilla modificada por Patel, que es de hecho, dificilmente reconocible. El trabajo en la version 2.0 fue realizado por Vel Gayevskiy y Johannes Böttcher.
 
-Uno de los primeros graduados de la Carerra de Especialización en Sistemas Embebios de la UBA, el Ing. \href{mailto:pbos@fi.uba.ar}{Patricio Bos} modificó los contenidos de la versión 2.3 para crear una plantilla altamente adaptada a la Carrera de Especialización de la UBA.
+Uno de los primeros graduados de la Carrera de Especialización en Sistemas Embebios de la UBA, el Ing. \href{mailto:pbos@fi.uba.ar}{Patricio Bos} modificó los contenidos de la versión 2.3 para crear una plantilla altamente adaptada a la Carrera de Especialización de la UBA.
 
 %----------------------------------------------------------------------------------------
 
