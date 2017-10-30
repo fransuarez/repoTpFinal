@@ -1,37 +1,72 @@
 \chapter{Introducción Específica} % Main chapter title
-
-\label{Chapter2}
-
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-La idea de esta sección es presentar el tema de modo que cualquier persona que no conoce el tema pueda entender de qué se trata y por qué es importante realizar este trabajo y cuál es su impacto.
-\section{Estilo y convenciones}
-\label{sec:ejemplo}
+A fin de comprender las decisiones que se adoptaron al momento de definir la arquitectura del software, es necesario comprender el entorno del problema, los casos de uso y requerimientos del sistema. 
 
-\subsection{Uso de mayúscula inicial para los título de secciones}
+\section{Problemática}
+\subsection{Entorno del sistema}
+
+En la linea de galvanizado original los técnicos operaban en un ambiente altamente corrosivo por los vapores emanados de las soluciones, y con en el soporte de instrumental de medición muy básico para utilizar en algunos de las etapas en la linea.
+En las diferentes bateas de la linea de galvanizado se necesitaban controlar distintos combinación de los siguientes parámetros:
+\begin{itemize}
+	\item Temperatura.
+	\item Nivel de líquidos.
+	\item Conductividad o concentración de iones.
+	\item Corriente entregada (electrolisis).
+	\item Inyección de aire.
+\end{itemize}
+
+Debido a que la linea cuenta con varias bateas distintas colocadas en forma consecutiva se planteo la necesidad de en primer lugar de que el sistema debía ser capaz de manejar, en función de parámetros específicos a cada etapa, el conjunto de estos parámetros como un solo núcleo de procesamiento con los sensores y actuadores colocados en una sola cuba de prueba. A su vez era necesario contar con la capacidad de manejar diversas señales de interruptores y actuadores de interacción con el operario.
+En función del éxito de este banco la expansión a futuro con módulos de entrada y salida a lo largo de la planta, se implementaría en otra etapa.
+
+% Agregar imagen diagrama con un el sistema prototipo.
+\subsection{Arquitectura}
+
+
+
+\subsection{Casos de Uso}
+
+Como primera instancia fue necesario conocer los casos de uso a los cuales vincularan al usuario y al sistema en funcion de la operacion a ejecutar. Para ello se definieron tres casos globales:
+
+\begin{itemize}
+	\item Puesta en alta del dispositivo.
+	\item Operación en modo de funcionamiento 1.
+	\item Operación en modo de funcionamiento 2.
+\end{itemize}
+
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|m{10em}|m{25em}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Título}} & \multicolumn{1}{c|}{\textbf{Descripción}} \\ \hline
+	1. Nombre & Puesta en alta del dispositivo. \\ \hline
+	1.1 Breve descripción  & Secuencia de instalación de dispositivo en las cubas de control. \\ \hline
+	1.2 Actor principal  & Técnico instalador. \\ \hline
+	1.3 Disparadores  & Alimentación de la unidad. \\ \hline
+	2. Flujo de eventos &  \\ \hline
+	2.1 Flujo básico & 2.1.1  El sistema inicia el ciclo de encendido y se prepara para evaluar los rangos de las entradas de una por vez. 
+	2.1.2  Para cada uno emite una señal a definir en caso de ser correcto y otra en caso de ser incorrecto. 
+	2.1.3  Censa que los valores de corriente sobre los lazos de control de conductividad sean los correctos, según el máximo y el mínimo admisible.(a definir) 
+	2.1.4  Censa que los valores de los termostatos sean los correctos. (a definir)
+	2.1.5  Censa los valores de las entrada de nivel, que deben estar dentro de los establecidos según RINB242? \\ \hline
+	2.2 Flujo alternativo  & 2.1.6 Si alguno de los sensores no esta dentro de los valores se bloquea el proceso hasta que se seleccione ignorar o se normalice el parámetro.  \\ \hline
+	2.3 Flujo alternativo  &  \\ \hline
+	3. Requerimientos especiales & Botón de encendido liberado. Selector de modo de funcionamiento en posición. \\ \hline
+	4. Pre-Condiciones  & Interfaces de sensores conectados.  \\ \hline
+	5. Pos-Condiciones & El dispositivo queda en modo espera a la señal de inicio de ciclo, midiendo según los requerimientos RFTEM112,121,131,153? y mostrándolos por uart los valores de cada uno. \\ \hline
+\end{tabular}
+\caption{Caso de Uso - Puesta en alta del dispositivo}
+\label{casos_uso_alta}
+\end{table}
+
 
 Si en el texto se hace alusión a diferentes partes del trabajo referirse a ellas como capítulo, sección o subsección según corresponda. Por ejemplo: ``En el capítulo \ref{Chapter1} se explica tal cosa'', o ``En la sección \ref{sec:ejemplo} se presenta lo que sea'', o ``En la subsección \ref{subsec:ejemplo} se discute otra cosa''.
 
-Entre párrafos sucesivos dejar un espacio, como el que se observa entre este párrafo y el anterior. Pero las oraciones de un mismo párrafo van en forma consecutiva, como se observa acá. Luego, cuando se quiere poner una lista tabulada se hace así:
 
-\begin{itemize}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{itemize}
-
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-Si se desea poner una lista numerada el formato es este:
-
-\begin{enumerate}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{enumerate}
-
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-\subsection{Este es el título de una subsección}
+\subsection{Requerimientos}
 \label{subsec:ejemplo}
 
 Se recomienda no utilizar \textbf{texto en negritas} en ningún párrafo, ni tampoco texto \underline{subrayado}. En cambio sí se sugiere utilizar \textit{texto en cursiva} donde se considere apropiado.
@@ -42,14 +77,7 @@ Se recomienda no utilizar una sección de glosario sino colocar la descripción 
 
 Si se desea indicar alguna página web utilizar el siguiente formato de referencias bibliográficas, dónde las referencias se detallan en la sección de bibliografía de la memoria,utilizado el formato establecido por IEEE en \citep{IEEE:citation}. Por ejemplo, ``el presente trabajo se basa en la plataforma EDU-CIAA-NXP, la cual se describe en detalle en \citep{CIAA}''.
 
-\subsection{Figuras} 
-
-Al insertar figuras en la memoria se deben considerar determinadas pautas. Para empezar, usar siempre tipografía claramente legible. Luego, tener claro que es incorrecto escribir por ejemplo esto: ``El diseño elegido es un cuadrado, como se ve en la siguiente figura:''
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=.35]{./Figures/cuadradoAzul.png}
-\end{figure}
+\subsection{Planificación} 
 
 La forma correcta de utilizar una figura es la siguiente: ``Se eligió utilizar un cuadrado azul para el logo, el cual se ilustra en la figura \ref{fig:cuadradoAzul}''.
 
@@ -74,14 +102,6 @@ El texto de las figuras debe estar siempre en español, excepto que se decida re
 
 La figura y el epígrafe deben conformar una unidad cuyo significado principal pueda ser comprendido por el lector sin necesidad de leer el cuerpo central de la memoria. Para eso es necesario que el epígrafe sea todo lo detallado que corresponda y si en la figura se utilizan abreviaturas entonces aclarar su significado en el epígrafe o en la misma figura.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=.4]{./Figures/questionMark.png}
-	\caption{El lector no sabe por qué de pronto aparece esta figura.}
-	\label{fig:questionMark}
-\end{figure}
-
-Nunca colocar una figura en el documento antes de hacer la primera referencia a ella, como se ilustra con la figura \ref{fig:questionMark}, porque sino el lector no comprenderá por qué de pronto aparece la figura en el documento, lo que distraerá su atención.
 
 \subsection{Tablas}
 
