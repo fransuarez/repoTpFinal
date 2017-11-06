@@ -1,7 +1,100 @@
 % Appendix A
 
-\chapter{Appendix Title Here} % Main appendix title
+\chapter{Casos de Uso} % Main appendix title
 
 \label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
-Write your Appendix content here.
+Referencias:
+
+Ref 1-  Disparadores:  Evento comienza el caso de uso.
+Ref 2 - Flujo básico:  Pasos del escenario, desde que es disparado hasta que alcanza su objetivo.
+Ref 3 - Flujo alternativo:  Pasos alternativos al flujo básico. 
+Ref 4-  Pre-Condiciones:  Condiciones que deben estar presentes para que se pueda iniciar el caso de uso.
+Ref 5-  Pos-Condiciones: Condiciones que deben estar presentes para que se pueda finalizar el caso de uso.
+Ref 6-  Modo 1: Medición de conductividad, nivel y control de temperatura.
+Ref 7-  Modo 2: Medición de corriente, tensión, nivel y control de temperatura.
+
+% Tablas con los casos de Uso --------------------------------------------------------------------%
+% Puesta en alta del dispositivo:
+\begin{table}[ht]
+\begin{flushleft}
+\begin{tabular}{|m{3.2cm}|m{11cm}|}\hline
+\multicolumn{1}{|c|}{\textbf{Título}} & \multicolumn{1}{c|}{\textbf{Descripción}} \\ \hline
+1. Nombre & Puesta en alta del dispositivo. \\ \hline
+1.1. Descripción  & Secuencia de instalación de dispositivo en las cubas de control. \\ \hline
+1.2. Actor principal  & Técnico instalador. \\ \hline
+1.3. Disparadores  & Alimentación de la unidad. \\ \hline
+2. Flujo de eventos &  \\ \hline
+\multicolumn{ 1}{|l|}{2.1. Flujo básico} & 2.1.1. El sistema inicia el ciclo de encendido y se prepara para evaluar los rangos de las entradas de una por vez. 2.1.4  Censa que los  de los termostatos sean los correctos. (a definir) \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.2. Para cada uno emite una señal a definir en caso de ser correcto y otra en caso de ser incorrecto.  \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.3. Censa que los valores de corriente sobre los lazos de control de conductividad sean los correctos, según el máximo y el mínimo admisible.(a definir)  \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.4. Censa que los valores de los termostatos sean los correctos. (a definir) \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.5. Censa los valores de las entrada de nivel, que deben estar dentro de los establecidos según RINB242? \\ \hline
+2.2. Flujo alternativo  & 2.1.6. Si alguno de los sensores no esta dentro de los valores se bloquea el proceso hasta que se seleccione ignorar o se normalice el parámetro.  \\ \hline
+3. Requerimientos especiales & Botón de encendido liberado. Selector de modo de funcionamiento en posición. \\ \hline
+4. Pre Condiciones  & Interfaces de sensores conectados.  \\ \hline
+5. Pos Condiciones & El dispositivo queda en modo espera a la señal de inicio de ciclo, midiendo según los requerimientos RFTEM112,121,131,153? y mostrándolos por uart los valores de cada uno. \\ \hline
+\end{tabular}
+\end{flushleft}
+\caption{Descripción caso de uso puesta en alta}
+\label{caso_uso_alta}
+\end{table}
+
+% Secuencia de pasos para configurar dispositivo en el modo 1 de uso:
+\begin{table}[h!]
+\begin{flushleft}
+\begin{tabular}{|m{3cm}|m{11cm}|}\hline
+\multicolumn{1}{|c|}{\textbf{Título}} & \multicolumn{1}{c|}{\textbf{Descripción}} \\ \hline
+1. Nombre & Puesta en funcionamiento en Modo 1 \\ \hline
+1.1 Breve descripción  & Secuencia de control de un ciclo completo dentro de las cuba controlada  \\ \hline
+1.2 Actor principal  & Operario (Op) \\ \hline
+1.3 Disparadores  & Pulsación de botón inicio \\ \hline
+2. Flujo de eventos &  \\ \hline
+\multicolumn{ 1}{|l|}{2.1. Flujo básico} & 2.1.1. El sistema detecta la presencia de las placas con el detector colocado en la cuba. \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.2. El sistema inicia el conteo del tiempo preestablecido para esa etapa utilizando un indicar luminoso para indicar al Op. \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.3. El sistema continua controlando los parámetros de temperatura y nivel durante todo el ciclo y transmitiendo los valores por uart. \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.4. Completado el ciclo el sistema emite una señal al Op para que se disponga a retirar las placas de la cuba. \\ \hline
+\multicolumn{ 1}{|l|}{2.2. Flujo alternativo } & 2.2.1. El sistema no detecta la placa con los sensores de presencia y no inicia el conteo de tiempo. \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.2.2. Si se colocan las placas o se anula la entrada del sensor el proceso vuelve a 2.1.2 del flujo básico. \\ \hline
+\multicolumn{ 1}{|l|}{2.3. Flujo alternativo } & 2.3.1. El Op retira las placas de la cuba antes de completado el tiempo reglamentario. El sistema emite una seña de alarma para que se restablezca la placa durante 15 segundos. \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.3.2. Si se restablece la placa antes de cumplirse los 15 segundos se retorna al paso normal en el que se encontraba. Sino vuelve el contador de tiempo a cero y deja un indicador de alarma encendido hasta que se lo anule manualmente y vuelve al punto 2.1.5 del flujo básico. \\ \hline
+\multicolumn{ 1}{|l|}{2.4. Flujo alternativo } & 2.4.1. El sistema detecta que la temperatura o el nivel fuera de valor nominal por mas de 5 minutos emite una alarma y continua el proceso normal hasta 2.1.5.\\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.4.2.  Finalizado el tiempo no permite iniciar un nuevo ciclo hasta que las parámetros de control vuelvan a sus valores nominales.  \\ \hline
+3. Requerimientos especiales & El sistema debe estar configurado en el Modo 1. \\ \hline
+4. Pre condiciones  &  Sistema energizado e inicializado.   \\ \hline
+5. Pos condiciones &  Queda en modo espera controlando los parámetros según los requerimientos RFTEM112,121,131,153? \\ \hline
+\end{tabular}
+\end{flushleft}
+\caption{Descripción caso de uso en Modo 1}
+\label{caso_uso_func_1}
+\end{table}
+
+% Secuencia de pasos para configurar dispositivo en el modo 2 de uso:
+
+\begin{table}[h!]
+\begin{flushleft}
+\begin{tabular}{|m{3cm}|m{11cm}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Título}} & \multicolumn{1}{c|}{\textbf{Descripción}} \\ \hline
+1. Nombre & Puesta en funcionamiento en Modo 2. \\ \hline
+1.1 Breve descripción  & Secuencia de control de un ciclo completo dentro de las cuba controlada. \\ \hline
+1.2 Actor principal  & Operario (Op) \\ \hline
+1.3 Disparadores  & Pulsación de botón inicio. \\ \hline
+2. Flujo de eventos &  \\ \hline
+\multicolumn{ 1}{|l|}{2.1 Flujo básico} & 2.1.1. El sistema detecta la presencia de las placas con el detector colocado en la cuba.2.1.2  El sistema detecta la  umbral y comienza a integrar el valor hasta llegar al total necesario.2.1.4  Completado el ciclo el sistema emite una señal al Op para que se disponga a retirar las placas de la cuba. \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.2. El sistema detecta la corriente umbral y comienza a integrar el valor hasta llegar al total necesario. \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 2.1.3. El sistema inicia un indicar luminoso para indicar al Op que la etapa esta en proceso. \\ \hline
+\multicolumn{ 1}{|l|}{2.2. Flujo alternativo} & 2.2.1. El valor de temperatura se va de rango por mas de 10 minutos, el sistema emite una alarma sin interrumpir el proceso. \\ \hline
+\multicolumn{ 1}{|l|}{2.3. Flujo alternativo} & 2.3.1. Si se retiran las placas de la cuba antes de que el procesos finalice, o el valor de corriente cae debajo de un valor mínimo aceptable por mas de 1 minuto se considera una situación anormal y se emite una alarma.  \\ \cline{ 2- 2}
+\multicolumn{ 1}{|l|}{} & 
+2.3.2. Si no se restablece el parámetro por mas de 30 segundos los contadores se vuelven a cero y se deja una alarma encendida, sino retorna al proceso al momento en que fue interrumpido. \\ \hline
+3. Requerimiento especial & El sistema debe estar configurado en el Modo 2.\\ \hline
+4. Pre condiciones  & Sistema energizado e inicializado.  \\ \hline
+5. Pos condiciones & Queda en modo espera controlando los parámetros según los requerimientos RFTEM112,121,131,153? \\ \hline
+\end{tabular}
+\end{flushleft}
+\caption{Descripcion caso de uso en Modo 2}
+\label{caso_uso_func_2}
+\end{table}
+
+
