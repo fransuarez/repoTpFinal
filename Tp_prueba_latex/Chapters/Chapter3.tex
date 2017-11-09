@@ -40,13 +40,24 @@
 %----------------------------------------------------------------------------------------
 \section{Análisis del Hardware}
 
-El prototipo se implemento sobre una eduCIAA en conjunto con un hardware de adaptación de las interfaces. Para ello se utilizaron los proyectos de código abierto kicad para los ponchos de la eduCIAA \url{https://github.com/brengi/Ponchos} para adaptar las entradas y salidas del conectores de expansión con los sensores y actuadores utilizados. 
+El prototipo se implemento sobre una eduCIAA en conjunto con un hardware de adaptación de las interfaces. Para ello se utilizaron los proyectos de código abierto kicad \footnote{\url{http://kicad-pcb.org/download/}} para los ponchos de la eduCIAA \footnote{\url{https://github.com/brengi/Ponchos}} para adaptar las entradas y salidas del conectores de expansión con los sensores y actuadores utilizados. 
 
 \subsection{Sensores y actuadores}
 
 \subsubsection{Esquemáticos del prototipo final}
+% Aca van todo lo referido a consideraciones importantes sobre los esquematicos.
+Para la adaptación de las interfaces con termocuplas y termistores se necesitaron para el primer caso de un circuito integrado compensador de juntura debido a la alinealidad en la respuesta de ese tipo de sensores. Para ello se eligió el (MAX31855KASA+) como una solución simplificadora. También existen soluciones de amplificadores multietapas con compensaciones que resultaban mas económicos, tal como el que se puede observar en la Figura \ref{fig:cirCompTermocupla} que se adapto para la termocupla usada en el prototipo.
 
-En el 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.7\textwidth]{Figures/circuito_ampl_termocupla}
+	\caption{Circuito simplificado de amplificación y compensación de termocuplas.\protect\footnotemark.}
+	\label{fig:cirCompTermocupla}
+\end{figure}
+\footnotetext{\url{http://ww1.microchip.com/downloads/en/AppNotes/00844a.pdf}}
+
+Para el caso del termistor el circuito de adaptación fue mas simple debido a que señal obtenida es prácticamente lineal y solamente fue necesario amplificar a los niveles de trabajo de la entrada analógica del procesador. En la Figura XXXX se observa en tipo de circuito que se implementó.
+
 
 \subsubsection{Renders del prototipo}
 
@@ -55,14 +66,14 @@ A continuación se muestran los renders de la placa de adaptación. En la Figura
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=.9\textwidth]{Figures/tempRelayPoncho_TOP}
-	\caption{Render vista de arriba placa de interfaz.\protect\footnotemark.}
+	\caption{Render vista de arriba placa de interfaz.}
 	\label{fig:renderPonchoTOP}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=.9\textwidth]{Figures/tempRelayPoncho_BOTTOM}
-	\caption{Render vista de abajo de placa de interfaz.\protect\footnotemark.}
+	\caption{Render vista de abajo de placa de interfaz.}
 	\label{fig:renderPonchoBOT}
 \end{figure}
 
@@ -118,8 +129,7 @@ void vControl() {
 }
 \end{lstlisting}
 
-\subsection{Firmware, Diseño}
-\subsection{Arquitectura del firmware}
+\subsection{Diseño del Firmware}
 \subsection{Capas de abstracción}
 % Agregar imagen diagrama con un el sistema prototipo.
 \subsection{Arquitectura del Software}

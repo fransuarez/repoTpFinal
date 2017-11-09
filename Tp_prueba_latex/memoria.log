@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.28)  5 NOV 2017 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.28)  6 NOV 2017 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1282,13 +1282,7 @@ LaTeX Info: Redefining \% on input line 29.
 (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Chapters/Chapter5.aux)
 (./Appendices/AppendixA.aux) (./Appendices/AppendixB.aux
 
-LaTeX Warning: Label `fig:casodeUso1y2' multiply defined.
-
-
-LaTeX Warning: Label `fig:casodeUso1y2' multiply defined.
-
-
-LaTeX Warning: Label `fig:casodeUso1y2' multiply defined.
+LaTeX Warning: Label `fig:schSalidas' multiply defined.
 
 ))
 \openout1 = `memoria.aux'.
@@ -1842,7 +1836,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 23.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 23.
-<Figures/through_hole_correcto.jpg, id=286, 602.25pt x 476.78125pt>
+<Figures/through_hole_correcto.jpg, id=293, 602.25pt x 476.78125pt>
 File: Figures/through_hole_correcto.jpg Graphic file (type jpg)
 
 <use Figures/through_hole_correcto.jpg>
@@ -1850,7 +1844,7 @@ Package pdftex.def Info: Figures/through_hole_correcto.jpg used on input line 2
 9.
 (pdftex.def)             Requested size: 194.90134pt x 154.2973pt.
 
-<Figures/through_hole_perfil.png, id=287, 385.44pt x 289.08pt>
+<Figures/through_hole_perfil.png, id=294, 385.44pt x 289.08pt>
 File: Figures/through_hole_perfil.png Graphic file (type png)
 
 <use Figures/through_hole_perfil.png>
@@ -1879,7 +1873,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 
  <./Figures/through_hole_correcto.jpg> <./Figures/through_hole_perfil.png>]
-<Figures/through_hole_perfil_fallado.png, id=292, 1284.8pt x 646.415pt>
+<Figures/through_hole_perfil_fallado.png, id=301, 1284.8pt x 646.415pt>
 File: Figures/through_hole_perfil_fallado.png Graphic file (type png)
 
 <use Figures/through_hole_perfil_fallado.png>
@@ -1887,7 +1881,7 @@ Package pdftex.def Info: Figures/through_hole_perfil_fallado.png used on input
 line 45.
 (pdftex.def)             Requested size: 311.84334pt x 156.8886pt.
 
-<Figures/diagrama_galvanizado_castellano.jpg, id=295, 2380.895pt x 819.06pt>
+<Figures/diagrama_galvanizado_castellano.jpg, id=304, 2380.895pt x 819.06pt>
 File: Figures/diagrama_galvanizado_castellano.jpg Graphic file (type jpg)
 
 <use Figures/diagrama_galvanizado_castellano.jpg>
@@ -1912,7 +1906,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 62.
 
-<Figures/planta_actual.jpg, id=297, 3276.24pt x 1842.885pt>
+<Figures/planta_actual.jpg, id=306, 3276.24pt x 1842.885pt>
 File: Figures/planta_actual.jpg Graphic file (type jpg)
 
 <use Figures/planta_actual.jpg>
@@ -2134,14 +2128,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 28.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 28.
-[7] <Figures/caso_uso_1y2_UML.png, id=347, 372.46846pt x 326.40627pt>
+[7] <Figures/caso_uso_1y2_UML.png, id=366, 372.46846pt x 326.40627pt>
 File: Figures/caso_uso_1y2_UML.png Graphic file (type png)
 
 <use Figures/caso_uso_1y2_UML.png>
 Package pdftex.def Info: Figures/caso_uso_1y2_UML.png used on input line 36.
 (pdftex.def)             Requested size: 311.84334pt x 273.29782pt.
 
-<Figures/caso_uso_Alta_UML.png, id=348, 372.46846pt x 326.40627pt>
+<Figures/caso_uso_Alta_UML.png, id=367, 372.46846pt x 326.40627pt>
 File: Figures/caso_uso_Alta_UML.png Graphic file (type png)
 
 <use Figures/caso_uso_Alta_UML.png>
@@ -2197,7 +2191,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 66.
 [8 <./Figures/caso_uso_1y2_UML.png>]
-<Figures/WBS_tareas.png, id=359, 340.70143pt x 735.40681pt>
+<Figures/WBS_tareas.png, id=378, 340.70143pt x 735.40681pt>
 File: Figures/WBS_tareas.png Graphic file (type png)
 
 <use Figures/WBS_tareas.png>
@@ -2211,7 +2205,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/Gantt_tareas.png, id=362, 870.25125pt x 767.86874pt>
+<Figures/Gantt_tareas.png, id=381, 870.25125pt x 767.86874pt>
 File: Figures/Gantt_tareas.png Graphic file (type png)
 
 <use Figures/Gantt_tareas.png>
@@ -2380,135 +2374,155 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 47.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 47.
+
+<Figures/circuito_ampl_termocupla.png, id=430, 1038.88126pt x 566.115pt>
+File: Figures/circuito_ampl_termocupla.png Graphic file (type png)
+
+<use Figures/circuito_ampl_termocupla.png>
+Package pdftex.def Info: Figures/circuito_ampl_termocupla.png used on input lin
+e 53.
+(pdftex.def)             Requested size: 272.86069pt x 148.68947pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 59.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 51.
+(babel)             in language  on input line 59.
 
-<Figures/tempRelayPoncho_TOP.png, id=401, 1323.94624pt x 669.50125pt>
-File: Figures/tempRelayPoncho_TOP.png Graphic file (type png)
-
-<use Figures/tempRelayPoncho_TOP.png>
-Package pdftex.def Info: Figures/tempRelayPoncho_TOP.png used on input line 57.
-
-(pdftex.def)             Requested size: 350.82004pt x 177.39655pt.
-
-<Figures/tempRelayPoncho_BOTTOM.png, id=404, 1323.94624pt x 669.50125pt>
-File: Figures/tempRelayPoncho_BOTTOM.png Graphic file (type png)
-
-<use Figures/tempRelayPoncho_BOTTOM.png>
-Package pdftex.def Info: Figures/tempRelayPoncho_BOTTOM.png used on input line 
-64.
-(pdftex.def)             Requested size: 350.82004pt x 177.39655pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 73.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 73.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 73.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 73.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 73.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 73.
 1: section
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 62.
 [13
 
 
 
- <./Figures/tempRelayPoncho_TOP.png>]
+ <./Figures/circuito_ampl_termocupla.png (PNG copy)>]
+<Figures/tempRelayPoncho_TOP.png, id=448, 1323.94624pt x 669.50125pt>
+File: Figures/tempRelayPoncho_TOP.png Graphic file (type png)
+
+<use Figures/tempRelayPoncho_TOP.png>
+Package pdftex.def Info: Figures/tempRelayPoncho_TOP.png used on input line 65.
+
+(pdftex.def)             Requested size: 350.82004pt x 177.39655pt.
+
+<Figures/tempRelayPoncho_BOTTOM.png, id=449, 1323.94624pt x 669.50125pt>
+File: Figures/tempRelayPoncho_BOTTOM.png Graphic file (type png)
+
+<use Figures/tempRelayPoncho_BOTTOM.png>
+Package pdftex.def Info: Figures/tempRelayPoncho_BOTTOM.png used on input line 
+72.
+(pdftex.def)             Requested size: 350.82004pt x 177.39655pt.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 81.
+LaTeX Info: Redefining \sptext on input line 98.
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 98.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 98.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 98.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 98.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 98.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 98.
+ [14 <./Figures/tempRelayPoncho_TOP.png> <./Figures/tempRelayPoncho_BOTTOM.png>
+]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 90.
-LaTeX Info: Redefining \sptext on input line 117.
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
+nput line 98.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 117.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 117.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 117.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 117.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 117.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 117.
- [14 <./Figures/tempRelayPoncho_BOTTOM.png>]
+(babel)             in language  on input line 129.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 133.
+LaTeX Info: Redefining \sptext on input line 148.
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 125.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 125.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 125.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 125.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 125.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 125.
-)
+(babel)             in language  on input line 148.
+ [15])
 LaTeX Info: Redefining \sptext on input line 237.
 LaTeX Info: Redefining \. on input line 237.
 LaTeX Info: Redefining \% on input line 237.
@@ -2524,27 +2538,10 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 237.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 237.
- [15]
+ [16]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (./Chapters/Chapter4.tex
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
- [16
-
-
-
-]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 3.
@@ -2584,7 +2581,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 238.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 238.
-[17]
+[17
+
+
+
+]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (./Chapters/Chapter5.tex
@@ -2820,14 +2821,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 3.
-<Figures/sch_mainPoncho.pdf, id=497, 845.1575pt x 598.235pt>
+<Figures/sch_mainPoncho.pdf, id=549, 845.1575pt x 598.235pt>
 File: Figures/sch_mainPoncho.pdf Graphic file (type pdf)
 
 <use Figures/sch_mainPoncho.pdf>
 Package pdftex.def Info: Figures/sch_mainPoncho.pdf used on input line 9.
 (pdftex.def)             Requested size: 389.80269pt x 275.9217pt.
 
-<Figures/sch_inpTempTerm.pdf, id=498, 845.1575pt x 598.235pt>
+<Figures/sch_inpTempTerm.pdf, id=550, 845.1575pt x 598.235pt>
 File: Figures/sch_inpTempTerm.pdf Graphic file (type pdf)
 
 <use Figures/sch_inpTempTerm.pdf>
@@ -2837,7 +2838,7 @@ Package pdftex.def Info: Figures/sch_inpTempTerm.pdf used on input line 17.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/sch_outAnalogDigital.pdf, id=499, 845.1575pt x 598.235pt>
+<Figures/sch_outAnalogDigital.pdf, id=551, 845.1575pt x 598.235pt>
 File: Figures/sch_outAnalogDigital.pdf Graphic file (type pdf)
 
 <use Figures/sch_outAnalogDigital.pdf>
@@ -2848,7 +2849,7 @@ Package pdftex.def Info: Figures/sch_outAnalogDigital.pdf used on input line 25
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/sch_conect_ciaa.pdf, id=500, 845.1575pt x 598.235pt>
+<Figures/sch_conect_ciaa.pdf, id=552, 845.1575pt x 598.235pt>
 File: Figures/sch_conect_ciaa.pdf Graphic file (type pdf)
 
 <use Figures/sch_conect_ciaa.pdf>
@@ -2923,9 +2924,15 @@ LaTeX Info: Redefining \% on input line 29.
 (./Appendices/AppendixA.aux) (./Appendices/AppendixB.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
-Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 20F2CA16972607744A092BB6D1815642;4983.
 
+
+Package rerunfilecheck Warning: File `memoria.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `memoria.out':
+(rerunfilecheck)             Before: DCCDA8C6749320E60AD57D0765A8C76D;4985
+(rerunfilecheck)             After:  DACC38466FC021CDC4062BD3E8AFEC2A;4983.
 
 LaTeX Warning: There were undefined references.
 
@@ -2943,34 +2950,163 @@ Package logreq Info: Writing requests to 'memoria.run.xml'.
  )
 (\end occurred when \iftrue on line 125 was incomplete) 
 Here is how much of TeX's memory you used:
- 32851 strings out of 494850
- 649202 string characters out of 6178023
- 771578 words of memory out of 5000000
- 35609 multiletter control sequences out of 15000+600000
- 58633 words of font info for 103 fonts, out of 8000000 for 9000
+ 32906 strings out of 494850
+ 650067 string characters out of 6178023
+ 774946 words of memory out of 5000000
+ 35615 multiletter control sequences out of 15000+600000
+ 58941 words of font info for 104 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 61i,20n,78p,10380b,3450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,20n,78p,10380b,1993s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): n
-ame{Hfootnote.62} has been referenced but does not exist, replaced by a fixed o
-ne
+ame{equation.50} has been referenced but does not exist, replaced by a fixed on
+e
 
-pdfTeX warning (dest): name{Hfootnote.59} has been referenced but does not exis
+pdfTeX warning (dest): name{Hfootnote.44} has been referenced but does not exis
 t, replaced by a fixed one
 
-pdfTeX warning (dest): name{Hfootnote.43} has been referenced but does not exis
-t, replaced by a fixed one
+pdfTeX warning (dest): name{table.caption.116} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.115} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.114} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.48} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.121} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.120} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.119} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.65} has been referenced but does not
+ exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
 , replaced by a fixed one
 
+pdfTeX warning (dest): name{figure.caption.62} has been referenced but does not
+ exist, replaced by a fixed one
+
 pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
 , replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.58} has been referenced but does not
+ exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
 , replaced by a fixed one
 
+pdfTeX warning (dest): name{figure.caption.44} has been referenced but does not
+ exist, replaced by a fixed one
+
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
 , replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.41} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.37} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.18} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.13} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.117} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.113} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.112} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.111} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.110} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.108} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.101} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.100} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.99} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.68} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.61} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.57} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.56} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.53} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.52} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.49} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.47} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.39} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.32} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.31} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.30} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.29} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.28} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.20} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.19} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.17} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.12} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.11} has been referenced but does not exist,
+ replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-
@@ -2985,10 +3121,10 @@ e/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
 o/uplri8a.pfb>
-Output written on memoria.pdf (41 pages, 8281978 bytes).
+Output written on memoria.pdf (41 pages, 8313793 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 526 compressed objects within 6 object streams
- 154 named destinations out of 1000 (max. 500000)
- 345 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 679 PDF objects out of 1000 (max. 8388607)
+ 590 compressed objects within 6 object streams
+ 201 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 
