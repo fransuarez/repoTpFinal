@@ -1,0 +1,15 @@
+Resuelva el siguiente ejercicio en la PC con la EDU-CIAA. Entregue la carpeta de su resolución 
+(la que contiene src e inc) comprimida enviándola a los docentes por email. 
+
+Implemente un sistema que mida la duración de 4 pulsos y envíe la medición a través de una UART 
+con formato JSON: {canal:tiempo_ms}\r\n
+Donde el campo canal puede ser 0, 1, 2 o 3 y el campo tiempo_ms el tiempo medido en milisegundos. 
+Por ejemplo: {0:2746}\r\n
+
+El sistema debe ser capaz de medir los 4 canales en forma independiente ya que pueden ocurrir 
+pulsos simultáneos de distinta duración.
+Utilice los 4 pulsadores de la EDU-CIAA para simular los pulsos (medir tiempo de pulsación y 
+aplicar medidas para evitar ruido por rebote).
+Utilice la UART-USB para enviar la información. 
+Recuerde evitar accesos concurrentes al periférico.
+Destelle el LED correspondiente sobre el pulsador para obtener una indicación visual del pulso.
