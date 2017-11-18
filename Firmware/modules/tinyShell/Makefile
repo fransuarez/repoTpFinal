@@ -29,25 +29,11 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-# application name
-PROJECT_NAME := $(notdir $(PROJECT))
+tinyShell_PATH := modules/tinyShell
 
-# Modules needed by the application
-PROJECT_MODULES := modules/$(TARGET)/freertos \
-                   modules/$(TARGET)/base \
-                   modules/$(TARGET)/board \
-                   modules/$(TARGET)/chip\
-                   modules/$(TARGET)/ciaa_suport\
-                   modules/$(TARGET)/sapi_bm_ciaa\
-                   modules/tinyShell \
-                   modules/colasCirculares
+tinyShell_SRC_FILES := $(wildcard $(tinyShell_PATH)/src/*.c)\
+						$(wildcard $(tinyShell_PATH)/src/*.S)
 
-# source files folder
-PROJECT_SRC_FOLDERS := $(PROJECT)/src
+tinyShell_SRC_FOLDERS := $(tinyShell_PATH)/src
 
-# header files folder
-PROJECT_INC_FOLDERS := $(PROJECT)/inc
-
-# source files
-PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c)
-PROJECT_ASM_FILES := $(wildcard $(PROJECT)/src/*.S)
+tinyShell_INC_FOLDERS := $(tinyShell_PATH)/inc

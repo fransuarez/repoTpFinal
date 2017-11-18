@@ -35,7 +35,7 @@
 
 # current project
 #PROJECT = examples/blinky
-PROJECT = projects/ej13_blinky_button
+PROJECT = projects/prueba_de_consola
 
 # current target
 TARGET = lpc4337_m4

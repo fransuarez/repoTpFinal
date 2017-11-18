@@ -29,25 +29,11 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-# application name
-PROJECT_NAME := $(notdir $(PROJECT))
+ciaa_suport_PATH := modules/lpc4337_m4/ciaa_suport
 
-# Modules needed by the application
-PROJECT_MODULES := modules/$(TARGET)/freertos \
-                   modules/$(TARGET)/base \
-                   modules/$(TARGET)/board \
-                   modules/$(TARGET)/chip\
-                   modules/$(TARGET)/ciaa_suport\
-                   modules/$(TARGET)/sapi_bm_ciaa\
-                   modules/tinyShell \
-                   modules/colasCirculares
+ciaa_suport_SRC_FILES := $(wildcard $(ciaa_suport_PATH)/src/*.c)\
+							$(wildcard $(ciaa_suport_PATH)/src/*.S)
 
-# source files folder
-PROJECT_SRC_FOLDERS := $(PROJECT)/src
+ciaa_suport_SRC_FOLDERS := $(ciaa_suport_PATH)/src
 
-# header files folder
-PROJECT_INC_FOLDERS := $(PROJECT)/inc
-
-# source files
-PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c)
-PROJECT_ASM_FILES := $(wildcard $(PROJECT)/src/*.S)
+ciaa_suport_INC_FOLDERS := $(ciaa_suport_PATH)/inc

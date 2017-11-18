@@ -1,7 +1,9 @@
-# Copyright 2016, Pablo Ridolfi
+###############################################################################
+#
+# Copyright 2015, Eric Pernia <ericpernia@gmail.com>
 # All rights reserved.
 #
-# This file is part of Workspace.
+# This file is part of CIAA Firmware.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -28,26 +30,18 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
+#
+###############################################################################
 
-# application name
-PROJECT_NAME := $(notdir $(PROJECT))
+sapi_bm_ciaa_PATH := modules/lpc4337_m4/sapi_bm_ciaa
 
-# Modules needed by the application
-PROJECT_MODULES := modules/$(TARGET)/freertos \
-                   modules/$(TARGET)/base \
-                   modules/$(TARGET)/board \
-                   modules/$(TARGET)/chip\
-                   modules/$(TARGET)/ciaa_suport\
-                   modules/$(TARGET)/sapi_bm_ciaa\
-                   modules/tinyShell \
-                   modules/colasCirculares
+sapi_bm_ciaa_SRC_FILES := $(wildcard $(sapi_bm_ciaa_PATH)/src/*.c)\
+						$(wildcard $(sapi_bm_ciaa_PATH)/src/*.S)
 
-# source files folder
-PROJECT_SRC_FOLDERS := $(PROJECT)/src
+sapi_bm_ciaa_INC_FOLDERS := $(sapi_bm_ciaa_PATH)/inc
 
-# header files folder
-PROJECT_INC_FOLDERS := $(PROJECT)/inc
+sapi_bm_ciaa_SRC_FOLDERS := $(sapi_bm_ciaa_PATH)/src
 
-# source files
-PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c)
-PROJECT_ASM_FILES := $(wildcard $(PROJECT)/src/*.S)
+
+# low level drivers
+#include externals$(DS)drivers$(DS)mak$(DS)Makefile

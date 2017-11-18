@@ -31,8 +31,9 @@
 
 fatfs_ssp_PATH := modules/lpc4337_m4/fatfs_ssp
 
-fatfs_ssp_SRC_FILES += $(wildcard $(fatfs_ssp_PATH)/src/*.c)
+fatfs_ssp_SRC_FILES := $(wildcard $(fatfs_ssp_PATH)/src/*.c) \
+                 		$(wildcard $(fatfs_ssp_PATH)/src/*.S)
 
-fatfs_ssp_SRC_FOLDERS += modules/lpc4337_m4/fatfs_ssp/src
+fatfs_ssp_SRC_FOLDERS := $(fatfs_ssp_PATH)/src
 
-fatfs_ssp_INC_FOLDERS += modules/lpc4337_m4/fatfs_ssp/inc
+fatfs_ssp_INC_FOLDERS := $(fatfs_ssp_PATH)/inc

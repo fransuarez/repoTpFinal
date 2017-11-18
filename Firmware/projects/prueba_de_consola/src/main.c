@@ -47,15 +47,25 @@
 
 /*==================[inclusions]=============================================*/
 #include <main.h>
+
 /*==================[macros and definitions]=================================*/
 #define MAX_UINT32  (2^32)-1
 
 #define TWAIT	   	20
 #define PERIODO	  	1000
+#define NUM_TASK	3
 
+xTaskHandle pxCreatedTask1;
+xTaskHandle pxCreatedTask2;
+xTaskHandle pxCreatedTask3;
 /*==================[internal data declaration]==============================*/
-xQueueHandle queueKeyPad, queueSigLed;
+xQueueHandle queueKeyPad;
+xQueueHandle queueSigLed;
+xSemaphoreHandle mutexConsola;
 
+// Arreglo con el stack disponible de las tareas creadas en main
+unsigned long stacktareas[NUM_TASK];
+unsigned long *ptrstack= &stacktareas[0];
 /*==================[internal functions declaration]=========================*/
 static void taskControlLed(void * a)
 {
@@ -72,7 +82,7 @@ static void taskControlLed(void * a)
 				Board_LED_Set( dataRecLed.led, true );
 
 				sprintf(sToSend, "[P%d, %lu mS]\r\n", dataRecLed.led-FIRSTLED+1, dataRecLed.deltaT);
-				dbgPrint(sToSend);
+				printConsola(sToSend, MP_DEB);
 			}
 		}
 		for (i = 0; i < 4; ++i) {
@@ -81,6 +91,7 @@ static void taskControlLed(void * a)
 			else
 				Board_LED_Set( i+FIRSTLED, false );
 		}
+		*(ptrstack+0)= uxTaskGetStackHighWaterMark( pxCreatedTask1 );
 	}
 }
 
@@ -124,8 +135,89 @@ static void taskDetectPulse(void * a)
 				xQueueSend(queueSigLed, &dataToSend, portMAX_DELAY);
 			}
 		}
+		*(ptrstack+1)= uxTaskGetStackHighWaterMark( pxCreatedTask2 );
 	}
 }
+
+/*==================[external functions definition]==========================*/
+static void initHardware(void)
+{
+    SystemCoreClockUpdate();
+
+    Board_Init();
+    //Board_Buttons_Init();
+
+    Chip_PININT_Init( LPC_GPIO_PIN_INT );
+    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT0, ID_PORT_TEC1, ID_PIN_TEC1 );
+    //Chip_PININT_SetPinModeLevel(LPC_GPIO_PIN_INT, PININTCH0);
+    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH0 );
+    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH0 );
+    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH0 );
+    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH0 );
+	/* Set lowest priority for RIT */
+	NVIC_SetPriority(PIN_INT0_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
+
+    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT1, ID_PORT_TEC2, ID_PIN_TEC2 );
+    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH1 );
+    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH1 );
+    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH1 );
+    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH1 );
+	/* Set lowest priority for RIT */
+	NVIC_SetPriority(PIN_INT1_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
+
+    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT2, ID_PORT_TEC3, ID_PIN_TEC3 );
+    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH2 );
+    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH2 );
+    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH2 );
+    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH2 );
+	/* Set lowest priority for RIT */
+	NVIC_SetPriority(PIN_INT2_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
+
+    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT3, ID_PORT_TEC4, ID_PIN_TEC4 );
+    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH3 );
+    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH3 );
+    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH3 );
+    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH3 );
+	/* Set lowest priority for RIT */
+	NVIC_SetPriority(PIN_INT3_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
+
+    PULSE_COUNT_TASK_Init();
+    //Board_LED_Set(3, false);
+    //Board_LED_Set(4, false);
+
+	/* Enable IRQ for RIT */
+	NVIC_EnableIRQ(PIN_INT0_IRQn);
+	NVIC_EnableIRQ(PIN_INT1_IRQn);
+	NVIC_EnableIRQ(PIN_INT2_IRQn);
+	NVIC_EnableIRQ(PIN_INT3_IRQn);
+
+}
+
+int main(void)
+{
+	if(xTaskCreate( taskControlLed,(const char *) "Tarea de control de leds por cola.",
+				   (configMINIMAL_STACK_SIZE), NULL, tskIDLE_PRIORITY+1, &pxCreatedTask1 ) !=pdPASS)
+		while(1);
+
+	if(xTaskCreate( taskDetectPulse,(const char *) "Tarea deteccion de flancos de teclas.",
+				   (configMINIMAL_STACK_SIZE), NULL, tskIDLE_PRIORITY+1, &pxCreatedTask2 )!=pdPASS)
+		while(1);
+
+	if(xTaskCreate( taskConsola, (const char *) "Tarea control de comunicacion con terminal.",
+				   (configMINIMAL_STACK_SIZE*4), NULL, tskIDLE_PRIORITY+2, &pxCreatedTask3 )!=pdPASS)
+		while(1);
+
+	queueKeyPad= xQueueCreate(2, sizeof(queue_t));
+	queueSigLed= xQueueCreate(2, sizeof(signal_t));
+	mutexConsola = xSemaphoreCreateMutex();
+
+	initHardware();
+	vTaskStartScheduler();
+
+	while (1) {
+	}
+}
+
 
 /*==================[irq handlers functions ]=========================*/
 
@@ -247,77 +339,6 @@ void GPIO3_IRQHandler(void)
 	}
 	NVIC_ClearPendingIRQ(PIN_INT3_IRQn);
 	portEND_SWITCHING_ISR( xSwitchRequired );
-}
-/*==================[external functions definition]==========================*/
-static void initHardware(void)
-{
-    SystemCoreClockUpdate();
-
-    Board_Init();
-    //Board_Buttons_Init();
-    ciaaUARTInit();
-    ciaaIOInit();
-
-
-    Chip_PININT_Init( LPC_GPIO_PIN_INT );
-    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT0, ID_PORT_TEC1, ID_PIN_TEC1 );
-    //Chip_PININT_SetPinModeLevel(LPC_GPIO_PIN_INT, PININTCH0);
-    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH0 );
-    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH0 );
-    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH0 );
-    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH0 );
-	/* Set lowest priority for RIT */
-	NVIC_SetPriority(PIN_INT0_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
-
-    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT1, ID_PORT_TEC2, ID_PIN_TEC2 );
-    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH1 );
-    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH1 );
-    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH1 );
-    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH1 );
-	/* Set lowest priority for RIT */
-	NVIC_SetPriority(PIN_INT1_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
-
-    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT2, ID_PORT_TEC3, ID_PIN_TEC3 );
-    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH2 );
-    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH2 );
-    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH2 );
-    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH2 );
-	/* Set lowest priority for RIT */
-	NVIC_SetPriority(PIN_INT2_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
-
-    Chip_SCU_GPIOIntPinSel( ID_IRQ_PIN_INT3, ID_PORT_TEC4, ID_PIN_TEC4 );
-    Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH3 );
-    Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH3 );
-    Chip_PININT_EnableIntLow  ( LPC_GPIO_PIN_INT, PININTCH3 );
-    Chip_PININT_EnableIntHigh ( LPC_GPIO_PIN_INT, PININTCH3 );
-	/* Set lowest priority for RIT */
-	NVIC_SetPriority(PIN_INT3_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
-
-    PULSE_COUNT_TASK_Init();
-    //Board_LED_Set(3, false);
-    //Board_LED_Set(4, false);
-
-	/* Enable IRQ for RIT */
-	NVIC_EnableIRQ(PIN_INT0_IRQn);
-	NVIC_EnableIRQ(PIN_INT1_IRQn);
-	NVIC_EnableIRQ(PIN_INT2_IRQn);
-	NVIC_EnableIRQ(PIN_INT3_IRQn);
-
-}
-
-
-int main(void)
-{
-	xTaskCreate(taskControlLed, (const char *)"taskControlLed", configMINIMAL_STACK_SIZE*2, 0, tskIDLE_PRIORITY+1, 0);
-	xTaskCreate(taskDetectPulse, (const char *)"taskDetectPulse", configMINIMAL_STACK_SIZE*2, 0, tskIDLE_PRIORITY+1, 0);
-	queueKeyPad= xQueueCreate(2, sizeof(queue_t));
-	queueSigLed= xQueueCreate(2, sizeof(signal_t));
-
-	initHardware();
-	vTaskStartScheduler();
-
-	while (1) {
-	}
 }
 
 /** @} doxygen end group definition */

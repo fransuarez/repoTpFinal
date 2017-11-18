@@ -31,8 +31,8 @@
 
 freertos_PATH := modules/lpc4337_m4/freertos
 
-freertos_SRC_FILES += $(wildcard $(freertos_PATH)/src/*.c)
+freertos_SRC_FILES := $(wildcard $(freertos_PATH)/src/*.c) \
+                 		$(wildcard $(freertos_PATH)/src/*.S)
+freertos_SRC_FOLDERS := $(freertos_PATH)/src
 
-freertos_SRC_FOLDERS += modules/lpc4337_m4/freertos/src
-
-freertos_INC_FOLDERS += modules/lpc4337_m4/freertos/inc
+freertos_INC_FOLDERS := $(freertos_PATH)/inc

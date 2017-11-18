@@ -45,9 +45,8 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
-#include "ciaaIO.h"
-#include "ciaaUART.h"
-#include "sAPI.h"
+//#include "sAPI.h"
+#include "services_Shell.h"
 
 /*==================[cplusplus]==============================================*/
 
@@ -76,8 +75,8 @@ extern "C" {
 /*==================[typedef]================================================*/
 
 typedef enum{
-	FALL,
-	RISE
+	HIGH,
+	LOW
 } statPin_t;
 
 typedef enum{
