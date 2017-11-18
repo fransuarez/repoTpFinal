@@ -47,6 +47,7 @@
 
 /*==================[inclusions]=============================================*/
 #include <main.h>
+#include <stdio.h>
 
 /*==================[macros and definitions]=================================*/
 #define MAX_UINT32  (2^32)-1
@@ -71,17 +72,19 @@ static void taskControlLed(void * a)
 {
 	signal_t dataRecLed;
 	int32_t  tOnLeds [4];
-	char sToSend[30];
+	char sToSend[30]="Aun esta vacio";
 	uint8_t  i;
 
 	while (1)
 	{
+		*(ptrstack+0)= uxTaskGetStackHighWaterMark( pxCreatedTask1 );
+
 		if( pdTRUE == xQueueReceive( queueSigLed, &dataRecLed, TWAIT )){
 			if(dataRecLed.deltaT >0){
 				tOnLeds[dataRecLed.led-FIRSTLED]= (int32_t)dataRecLed.deltaT;
 				Board_LED_Set( dataRecLed.led, true );
 
-				sprintf(sToSend, "[P%d, %lu mS]\r\n", dataRecLed.led-FIRSTLED+1, dataRecLed.deltaT);
+				//sprintf(sToSend, "[P%d, %lu mS]\r\n", dataRecLed.led-FIRSTLED+1, dataRecLed.deltaT);
 				printConsola(sToSend, MP_DEB);
 			}
 		}
@@ -91,7 +94,6 @@ static void taskControlLed(void * a)
 			else
 				Board_LED_Set( i+FIRSTLED, false );
 		}
-		*(ptrstack+0)= uxTaskGetStackHighWaterMark( pxCreatedTask1 );
 	}
 }
 
@@ -104,6 +106,8 @@ static void taskDetectPulse(void * a)
 
 	while (1)
 	{
+		*(ptrstack+1)= uxTaskGetStackHighWaterMark( pxCreatedTask2 );
+
 		if( pdTRUE == xQueueReceive( queueKeyPad, &dataRecKey, portMAX_DELAY )){
 			if( HIGH == dataRecKey.state ){
 				tOnKeys[dataRecKey.key]= dataRecKey.ticktimes;
@@ -135,7 +139,6 @@ static void taskDetectPulse(void * a)
 				xQueueSend(queueSigLed, &dataToSend, portMAX_DELAY);
 			}
 		}
-		*(ptrstack+1)= uxTaskGetStackHighWaterMark( pxCreatedTask2 );
 	}
 }
 
@@ -204,7 +207,7 @@ int main(void)
 		while(1);
 
 	if(xTaskCreate( taskConsola, (const char *) "Tarea control de comunicacion con terminal.",
-				   (configMINIMAL_STACK_SIZE*4), NULL, tskIDLE_PRIORITY+2, &pxCreatedTask3 )!=pdPASS)
+				   (configMINIMAL_STACK_SIZE*6), NULL, tskIDLE_PRIORITY+2, &pxCreatedTask3 )!=pdPASS)
 		while(1);
 
 	queueKeyPad= xQueueCreate(2, sizeof(queue_t));

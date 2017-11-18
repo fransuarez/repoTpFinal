@@ -40,6 +40,7 @@ void taskConsola (void * parametrosTarea)
     ntshell_set_prompt(&nts, "LPC824>");
 
 	while(1) {
+		*(ptrstack+2)= uxTaskGetStackHighWaterMark( pxCreatedTask3 );
 
 		ntshell_execute(&nts);
 
@@ -49,8 +50,6 @@ void taskConsola (void * parametrosTarea)
 			inputDatos= CONSOLA;
 			xSemaphoreGive( mutexConsola );
 		}
-		*(ptrstack+2)= uxTaskGetStackHighWaterMark( pxCreatedTask3 );
-
 		//vTaskDelay(10);
 		taskYIELD();
 	}
