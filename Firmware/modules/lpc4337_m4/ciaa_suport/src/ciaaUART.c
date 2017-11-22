@@ -143,7 +143,7 @@ int uartRecv(ciaaUART_e nUART, void * data, int datalen)
 int uartSendChar( uint8_t c )
 {
     while (1) {
-        int bytes = Chip_UART_SendRB(LPC_USART2, &(rrb[1]), &c, 1);
+        int bytes = Chip_UART_SendRB(LPC_USART2, &(trb[1]), &c, 1);
         if (bytes > 0) {
             return bytes;
         }
@@ -154,7 +154,7 @@ uint8_t uartRecvChar( void )
 {
     uint8_t c = 0;
     while (1) {
-        int bytes = Chip_UART_ReadRB(LPC_USART0, &(trb[1]), &c, 1);
+        int bytes = Chip_UART_ReadRB(LPC_USART0, &(rrb[1]), &c, 1);
         if (bytes > 0) {
             return c;
         }

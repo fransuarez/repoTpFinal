@@ -38,18 +38,21 @@ void taskConsola (void * parametrosTarea)
     uartSendStr("User command example for NT-Shell.\r\n");
     ntshell_init(&nts, serial_read, serial_write, user_callback, extobj);
     ntshell_set_prompt(&nts, "LPC824>");
+    printConsola(nts.prompt, MP_DEF);
 
 	while(1) {
 		*(ptrstack+2)= uxTaskGetStackHighWaterMark( pxCreatedTask3 );
-
+		xSemaphoreTake( mutexConsola, ( portTickType ) 10  );
 		ntshell_execute(&nts);
 
 		if (inputDatos== INTERNO) {
-			xSemaphoreTake( mutexConsola, ( portTickType ) 10  );
+			//xSemaphoreTake( mutexConsola, ( portTickType ) 10  );
 			user_callback ((const char *) auxargv[0], (void *) &auxargc);
 			inputDatos= CONSOLA;
-			xSemaphoreGive( mutexConsola );
+			//xSemaphoreGive( mutexConsola );
 		}
+		xSemaphoreGive( mutexConsola );
+
 		//vTaskDelay(10);
 		taskYIELD();
 	}
@@ -121,10 +124,12 @@ int sendConsola (char * string)
 /**** Serial read function *****/
 static int serial_read(char *buf, int cnt, void *extobj)
 {
+    /*
     for (int i = 0; i < cnt; i++) {
         buf[i] = uartRecvChar();
     }
-    return cnt;
+    */
+    return dbgRead( buf,cnt );
 }
 
 /**** Serial write function ****/

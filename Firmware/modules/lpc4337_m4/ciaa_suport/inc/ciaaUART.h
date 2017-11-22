@@ -48,6 +48,7 @@ typedef enum _ciaaUarts_e
 #define dbgPrint(x)   uartSend(1, (uint8_t *)(x), strlen(x))
 #define rs232Print(x) uartSend(2, (uint8_t *)(x), strlen(x))
 #define dbgPrintc(x)  uartSend(1, (uint8_t *)(x), 1)
+#define dbgRead(x,y)  uartRecv(1, (uint8_t *)(x), y)
 
 #define UART_BUF_SIZE	512
 #define UART_RX_FIFO_SIZE 16
@@ -65,6 +66,5 @@ int uartRecv(ciaaUART_e nUART, void * data, int datalen);
 int uartSendChar( uint8_t c );
 int uartSendStr( const char *str);
 uint8_t uartRecvChar( void );
-
 
 #endif /* CIAAUART_H_ */

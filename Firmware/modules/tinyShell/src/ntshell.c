@@ -627,11 +627,12 @@ void ntshell_execute(ntshell_t *p)
     /*
      * User input loop.
      */
-    PROMPT_WRITE(p);
+    //PROMPT_WRITE(p);
     //while (1) {
-        unsigned char ch;
-        SERIAL_READ(p, (char *)&ch, sizeof(ch));
-        vtrecv_execute(&(p->vtrecv), &ch, sizeof(ch));
+    unsigned char ch;
+    if( SERIAL_READ(p, (char *)&ch, sizeof(ch))){
+    	vtrecv_execute(&(p->vtrecv), &ch, sizeof(ch));
+    }
     //}
 }
 
