@@ -29,26 +29,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-# application name
-PROJECT_NAME := $(notdir $(PROJECT))
+dspMath_PATH := modules/support/dspMath
 
-# Modules needed by the application
-PROJECT_MODULES := modules/external/freertos \
-                   modules/$(TARGET)/base \
-                   modules/$(TARGET)/board \
-                   modules/$(TARGET)/chip\
-                   modules/$(TARGET)/ciaa_suport\
-                   modules/$(TARGET)/sapi_bm_ciaa\
-                   modules/support/cmdTerminal \
-                   modules/external/tinyShell \
-                   modules/external/colasCirculares
+dspMath_SRC_FILES := $(wildcard $(dspMath_PATH)/src/*.c)
 
-# source files folder
-PROJECT_SRC_FOLDERS := $(PROJECT)/src
+dspMath_SRC_FOLDERS := $(dspMath_PATH)/src
 
-# header files folder
-PROJECT_INC_FOLDERS := $(PROJECT)/inc
-
-# source files
-PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c)
-PROJECT_ASM_FILES := $(wildcard $(PROJECT)/src/*.S)
+dspMath_INC_FOLDERS := $(dspMath_PATH)/inc

@@ -7,9 +7,9 @@
 
 #include "services_Shell.h"
 #include "ntshell.h"
-#include "usrcmd.h"
 #include "ciaaUART.h"
 #include "ciaaIO.h"
+#include "usrcmd.h"
 
 ntshell_t 		ntshell;
 command_table_t *ptr_commandList;

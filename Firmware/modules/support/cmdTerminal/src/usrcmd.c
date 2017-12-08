@@ -30,9 +30,9 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include "usrcmd.h"
-#include "ntopt.h"
+//#include "usrcmd.h"
 #include "ntlibc.h"
+#include "ntopt.h"
 #include "ciaaUART.h"
 #include <stdlib.h>
 

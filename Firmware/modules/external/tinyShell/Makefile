@@ -29,9 +29,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-dsp_PATH := modules/lpc4337_m4/dsp
+tinyShell_PATH := modules/external/tinyShell
 
-dsp_INC_FOLDERS := $(dsp_PATH)/inc
+tinyShell_SRC_FILES := $(wildcard $(tinyShell_PATH)/src/*.c)
 
-EXTERN_LIB_FOLDERS += $(dsp_PATH)/lib
-EXTERN_LIBS += CMSIS_DSPLIB_CM4
+tinyShell_SRC_FOLDERS := $(tinyShell_PATH)/src
+
+tinyShell_INC_FOLDERS := $(tinyShell_PATH)/inc

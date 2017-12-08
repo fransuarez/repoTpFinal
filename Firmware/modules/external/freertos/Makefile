@@ -29,11 +29,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-fatfs_ssp_PATH := modules/lpc4337_m4/fatfs_ssp
+freertos_PATH := modules/external/freertos
 
-fatfs_ssp_SRC_FILES := $(wildcard $(fatfs_ssp_PATH)/src/*.c) \
-                 		$(wildcard $(fatfs_ssp_PATH)/src/*.S)
+freertos_SRC_FILES := $(wildcard $(freertos_PATH)/src/*.c)
 
-fatfs_ssp_SRC_FOLDERS := $(fatfs_ssp_PATH)/src
+freertos_SRC_FOLDERS := $(freertos_PATH)/src
 
-fatfs_ssp_INC_FOLDERS := $(fatfs_ssp_PATH)/inc
+freertos_INC_FOLDERS := $(freertos_PATH)/inc

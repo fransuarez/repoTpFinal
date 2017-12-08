@@ -1,4 +1,4 @@
-# Copyright 2015, Pablo Ridolfi
+# Copyright 2016, Pablo Ridolfi
 # All rights reserved.
 #
 # This file is part of Workspace.
@@ -29,19 +29,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-lwip_PATH := modules/lpc4337_m4/lwip
+fatfs_ssp_PATH := modules/external/fatfs_ssp
 
-lwip_SRC_FILES += $(wildcard $(lwip_PATH)/src/api/*.c)
-lwip_SRC_FILES += $(wildcard $(lwip_PATH)/src/arch/*.c)
-lwip_SRC_FILES += $(wildcard $(lwip_PATH)/src/core/*.c)
-lwip_SRC_FILES += $(wildcard $(lwip_PATH)/src/core/ipv4/*.c)
-lwip_SRC_FILES += $(wildcard $(lwip_PATH)/src/netif/*.c)
+fatfs_ssp_SRC_FILES := $(wildcard $(fatfs_ssp_PATH)/src/*.c)
 
-lwip_INC_FOLDERS += $(lwip_PATH)/inc \
-					$(lwip_PATH)/inc/ipv4
+fatfs_ssp_SRC_FOLDERS := $(fatfs_ssp_PATH)/src
 
-lwip_SRC_FOLDERS += $(lwip_PATH)/src/api       \
-               $(lwip_PATH)/src/arch      \
-               $(lwip_PATH)/src/core      \
-               $(lwip_PATH)/src/core/ipv4 \
-               $(lwip_PATH)/src/netif
+fatfs_ssp_INC_FOLDERS := $(fatfs_ssp_PATH)/inc

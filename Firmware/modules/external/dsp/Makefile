@@ -29,10 +29,9 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-fatfs_PATH := modules/lpc4337_m4/fatfs
+dsp_PATH := modules/external/dsp
 
-fatfs_SRC_FILES += $(wildcard $(fatfs_PATH)/src/*.c)
+dsp_INC_FOLDERS := $(dsp_PATH)/inc
 
-fatfs_SRC_FOLDERS += modules/lpc4337_m4/fatfs/src
-
-fatfs_INC_FOLDERS += modules/lpc4337_m4/fatfs/inc
+EXTERN_LIB_FOLDERS += $(dsp_PATH)/lib
+EXTERN_LIBS += CMSIS_DSPLIB_CM4

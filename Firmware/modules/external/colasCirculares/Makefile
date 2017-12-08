@@ -29,11 +29,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-tinyShell_PATH := modules/tinyShell
+colasCirculares_PATH := modules/external/colasCirculares
 
-tinyShell_SRC_FILES := $(wildcard $(tinyShell_PATH)/src/*.c)\
-						$(wildcard $(tinyShell_PATH)/src/*.S)
+colasCirculares_SRC_FILES := $(wildcard $(colasCirculares_PATH)/src/*.c)
 
-tinyShell_SRC_FOLDERS := $(tinyShell_PATH)/src
+colasCirculares_SRC_FOLDERS := $(colasCirculares_PATH)/src
 
-tinyShell_INC_FOLDERS := $(tinyShell_PATH)/inc
+colasCirculares_INC_FOLDERS := $(colasCirculares_PATH)/inc

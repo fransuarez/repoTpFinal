@@ -29,11 +29,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-colasCirculares_PATH := modules/colasCirculares
+cmdTerminal_PATH := modules/support/cmdTerminal
 
-colasCirculares_SRC_FILES := $(wildcard $(colasCirculares_PATH)/src/*.c)\
-						$(wildcard $(colasCirculares_PATH)/src/*.S)
+cmdTerminal_SRC_FILES := $(wildcard $(cmdTerminal_PATH)/src/*.c)
 
-colasCirculares_SRC_FOLDERS := $(colasCirculares_PATH)/src
+cmdTerminal_SRC_FOLDERS := $(cmdTerminal_PATH)/src
 
-colasCirculares_INC_FOLDERS := $(colasCirculares_PATH)/inc
+cmdTerminal_INC_FOLDERS := $(cmdTerminal_PATH)/inc

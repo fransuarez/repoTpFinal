@@ -185,7 +185,7 @@ static void initHardware(void)
 	/* Set lowest priority for RIT */
 	NVIC_SetPriority(PIN_INT3_IRQn, (1<<__NVIC_PRIO_BITS) - 1);
 
-    PULSE_COUNT_TASK_Init();
+    //PULSE_COUNT_TASK_Init();
     //Board_LED_Set(3, false);
     //Board_LED_Set(4, false);
 
@@ -348,6 +348,7 @@ void GPIO3_IRQHandler(void)
 	portEND_SWITCHING_ISR( xSwitchRequired );
 }
 
+//void* _sbrk() { return 0; }
 /** @} doxygen end group definition */
 
 /*==================[end of file]============================================*/
