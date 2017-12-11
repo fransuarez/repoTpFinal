@@ -44,7 +44,7 @@ static coefConvTer voltConvTipoK [SIZE_TABLA_CONV]= {
 		{110, { 4.509, 4.550, 4.591, 4.633, 4.674, 4.715, 4.756, 4.797, 4.838, 4.879 }},
 		{120, { 4.920, 4.961, 5.002, 5.043, 5.084, 5.124, 5.165, 5.206, 5.247, 5.288 }},
 };
-
+// 	difTemp= dTempRef- voltConvTipoK[0].decenaCelsius+10;
 /*==================[macros and definitions]=================================*/
 #define VOLTAJE_VALIDO_TK(X) (( voltConvTipoK[0].coefPorUnidadCelsius[0] <= X )\
 							 && ( voltConvTipoK[SIZE_TABLA_CONV-1].coefPorUnidadCelsius[9] >= X ))
@@ -55,13 +55,13 @@ static coefConvTer voltConvTipoK [SIZE_TABLA_CONV]= {
 static double poly(double x, int degree, double p[]);
 static temp_t busquedaBinariaK (volt_t volt_ref);
 static temp_t tempFromVoltK (volt_t voltRef);
-
+static volt_t voltFromTempK (temp_t dTempRef);
 
 /* internal public functions ================================================ */
 /*
  * @brief Calcula la resistividad del termistor NTC a partir de los coeficientes de la
- * ecuacion de Steinhart {A,B,C} y la temperatura medida.
- * @param dT temperatura en grados Celsius medida.
+ * 		ecuacion de Steinhart {A,B,C} y la temperatura medida en °C.
+ * @param dT temperatura medida en °C.
  * @param dCoeff coeficientes de la ecuacion de Steinhart.
  * @return valor de la resistencia equivalente en ohms.
  */
@@ -85,10 +85,10 @@ double tstorTempToRes (double dT, double dCoeff[])
 // -----------------------------------------------------------------------------
 /*
  * @brief Calcula la temperatura del termistor NTC a partir de los coficientes de la
- * ecuacion de Steinhart {A,B,C} y la resistencia en ohms.
+ * 		ecuacion de Steinhart {A,B,C} y la resistencia en ohms.
  * @param dR resitencia medida en ohms.
  * @param dCoeff coeficientes de la ecuacion de Steinhart.
- * @return valor de temperatura en grados Celsius.
+ * @return valor de temperatura en °C.
  */
 
 double tstorResToTemp (double dR, double dCoeff[])
@@ -102,13 +102,13 @@ double tstorResToTemp (double dR, double dCoeff[])
 
 // -----------------------------------------------------------------------------
 /*
- * @brief Calcula la temperatura de la termocupla tipo K a partir de los coficientes de la
- * 		tabla de conversion y la temperatura ambiente o externa al recinto de medicion.
- * @param dVolt tension medida en la termocupla en milivolts.
+ * @brief Calcula la temperatura de la termocupla tipo K a partir de la tension medida
+ * 		en sus terminales en mV y la temperatura ambiente o del recinto de medicion en °C.
+ * @param dVolt tension medida en la termocupla en mV.
  * 				Debe estar en el rango de la tabla.
- * @param dTempRef temperatura ambiente de referencia medida en Celsius.
+ * @param dTempRef temperatura ambiente de referencia medida en °C.
  * 		  		Debe estar dentro del rango de la tabla de conversion.
- * @return valor de temperatura en grados Celsius.
+ * @return valor de temperatura en °C.
  */
 temp_t tcuplaKVoltToTemp (volt_t dVolt, temp_t dTempRef)
 {
@@ -129,10 +129,10 @@ temp_t tcuplaKVoltToTemp (volt_t dVolt, temp_t dTempRef)
 
 // -----------------------------------------------------------------------------
 /*
- * @brief Calcula la tension que debe obtenerse en la medicion de la termocupla
- * 		para un par de temperaturas referencia mas la medida.
- * @param dTemp temperatura en el punto de medicion en grados Celsius.
- * @param dTempRef temperatura de referencia en el ambiente en grados Celsius.
+ * @brief Calcula la tension que equivalente en los terminales en mV de la termocupla a partir 
+ *		de la temperatura medida en la termocupla y la ambiente en °C.
+ * @param dTemp temperatura en el punto de medicion en °C.
+ * @param dTempRef temperatura de referencia en el ambiente en °C.
  * @return valor de tension en mV.
  */
 volt_t tcuplaKTempToVolt (temp_t dTemp, temp_t dTempRef)
@@ -178,7 +178,7 @@ static volt_t voltFromTempK (temp_t dTempRef)
 	temp_t difTemp;
 	uint32_t decenaT, unidadT;
 
- 	difTemp= dTempRef- voltConvTipoK[0].decenaCelsius+10;
+ 	difTemp= dTempRef-(voltConvTipoK[0].decenaCelsius) + 10;
  	decenaT= difTemp/10;
  	unidadT= difTemp%10;
 
@@ -213,7 +213,7 @@ static temp_t busquedaBinariaK (volt_t volt_ref)
 	 */
 	while( inf_i <= sup_i)
 	{
-		// Comienza por la fila central la busqueda.
+		// 1- Comienza la busqueda por la fila central de la tabla de valores.
 		pos_i =((sup_i-inf_i)/2)+inf_i;
 		inf_j= 0;
 		sup_j= 9;
@@ -224,20 +224,26 @@ static temp_t busquedaBinariaK (volt_t volt_ref)
 			// Comienza desde el centro de las columnas.
 			pos_j =((sup_j-inf_j)/2)+inf_j;
 
-			if( voltConvTipoK[pos_i].coefPorUnidadCelsius[pos_j] == volt_ref )
+			if( voltConvTipoK[pos_i].coefPorUnidadCelsius[pos_j] >= volt_ref )
 			{
-				pos_ret_j= pos_j;
-				break;
+				if( 0 < pos_j )
+				{
+					if( voltConvTipoK[pos_i].coefPorUnidadCelsius[pos_j-1] <= volt_ref)
+					{
+						pos_ret_j= pos_j;
+						break;
+					}
+				}
 			}
-			else if( volt_ref < voltConvTipoK[pos_i].coefPorUnidadCelsius[pos_j] )
+			if( volt_ref < voltConvTipoK[pos_i].coefPorUnidadCelsius[pos_j] )
 			{
 				// Esto se debe a como estan ordenados los datos en la tabla.
-				(volt_ref<= 0)? inf_j =pos_j+1: sup_j =pos_j-1;
+				(volt_ref<= 0)? inf_j =pos_j+1: (sup_j =(pos_j-1));
 			}
 			else
 			{
 				// Esto se debe a como estan ordenados los datos en la tabla.
-				(volt_ref<= 0)? sup_j =pos_j-1: inf_j =pos_j+1;
+				(volt_ref<= 0)? sup_j =pos_j-1: (inf_j =(pos_j+1));
 			}
 		}
 

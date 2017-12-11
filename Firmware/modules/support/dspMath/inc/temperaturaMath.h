@@ -9,12 +9,13 @@
 
 #ifndef TEMPERATURAMATH_H_
 #define TEMPERATURAMATH_H_
+#include "lpc_types.h"
 
 #define ERROR_TEMP			-200
 #define ERROR_VOLT			-100
 
-typedef int32_t  temp_t;
-typedef float  volt_t;
+typedef int32_t temp_t;
+typedef float  	volt_t;
 
 typedef struct  coeficientes_conversion_Termocupla
 {
