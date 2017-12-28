@@ -46,7 +46,7 @@ static coefConvTer voltConvTipoK [SIZE_TABLA_CONV]= {
 };
 // 	difTemp= dTempRef- voltConvTipoK[0].decenaCelsius+10;
 /*==================[macros and definitions]=================================*/
-#define VOLTAJE_VALIDO_TK(X) (( voltConvTipoK[0].coefPorUnidadCelsius[0] <= X )\
+#define VOLTAJE_VALIDO_TK(X) (( voltConvTipoK[0].coefPorUnidadCelsius[9] <= X )\
 							 && ( voltConvTipoK[SIZE_TABLA_CONV-1].coefPorUnidadCelsius[9] >= X ))
 #define TEMP_VALIDA_TK(A) 	 (( voltConvTipoK[0].decenaCelsius-9 <= A )\
 		 	 	 	 	 	 && ( voltConvTipoK[SIZE_TABLA_CONV-1].decenaCelsius+9 >= A ))
@@ -201,7 +201,7 @@ static temp_t tempFromVoltK (volt_t voltRef)
 static temp_t busquedaBinariaK (volt_t volt_ref)
 {
 	int32_t pos_i, pos_j ,inf_i, sup_i, inf_j, sup_j, pos_ret_i, pos_ret_j;
-	temp_t ret_val= 0;
+	temp_t ret_val= ERROR_TEMP;
 
 	inf_i= 0;
 	sup_i= SIZE_TABLA_CONV-1;
