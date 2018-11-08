@@ -1,14 +1,48 @@
-\chapter{Introducción Específica} % Main chapter title
+\chapter{ Introducción Específica } % Main chapter title
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-A fin de comprender las decisiones que se adoptaron al momento de definir la arquitectura del software, es necesario comprender el entorno del problema, los casos de uso y requerimientos del sistema. 
+\section{ Que es el Galvanizado de un PCB? }
 
-\section{Problemática}
-\subsection{Entorno del sistema}
+El proceso de galvanizado consiste en adherir a un objeto metálico una delgada capa de otro metal, de unos pocos micrones de espesor. Este material le otorga mejores propiedades al objeto como ser conductividad eléctrica, mayor resistencia mecánica o resistencia a la corrosión. 
+Los métodos para lograrlos pueden ser diversos entre los mas comunes son con un baño químico y por electrolisis.
+La forma utilizada en los PCBs (Printed Circuit Board o placa de circuito integrado) es a través de la electrolisis del objeto dentro de una solución con sales metálicas, mas una fuente continua de bajo voltaje y muy alta corriente, mas bloques del metal necesario para el galvanizado. 
+La figura \ref{fig:galvanizado_electrolitico} es un diagrama simplificado de este proceso, aquí el ánodo es de cobre y el cátodo es el PCB a galvanizar.
 
-En la linea de galvanizado original los técnicos operaban en un ambiente altamente corrosivo por los vapores emanados de las soluciones, y con en el soporte de instrumental de medición muy básico para utilizar en algunos de las etapas en la linea.
-En las diferentes bateas de la linea de galvanizado se necesitaban controlar distintos combinación de los siguientes parámetros:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.9\textwidth]{Figures/Cap_2/diagrama_galvanizado_basico}
+	\caption{Proceso electrolítico con fuente continua.}
+	\label{fig:galvanizado_electrolitico}
+\end{figure}
+
+
+\subsection{ Proceso de Galvanizado por Electrolisis }
+
+En la fabricación de PCBs se parte de un material base de sustrato de laminas epoxi Fr4 revestido con laminas de cobre. Este debe ser sometido previo a realizar la electrolisis en si, a una sucesión de baños químicos para limpiar y homogeneizar toda las partes metálicas de superficie. El proceso es repetido con variantes del metal galvánico para lograr el circuito final. 
+En la Figura \ref{fig:diagrama_proceso} se resumen los pasos de forma simplificada, en el proceso de PCB se utilizan mas de 10 etapas. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Figures/Cap_2/diagrama_galvanizado_completo}
+	\caption{Diagrama simplificado de las etapas.}
+	\label{fig:diagrama_proceso}
+\end{figure}
+
+En este caso de estudio nos focalizamos en el primero que se usa tanto para metalizar las vías entre capas (previamente perforadas) como para engrosar el cobre base que originara las pistas del circuito. La figura \ref{fig:galvanizado_pcb} muestra el resultado final de un PTH (Plated Through Hole o agujero pasante metalizado) o simplemente vía, en un PCB.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{Figures/Cap_2/galvanizado_pcb}
+	\caption{Vía entre capas galvanizada en un PCB}
+	\label{fig:galvanizado_pcb}
+\end{figure}
+
+\section{ Parámetros críticos del galvanizado }
+
+En el proceso de galvanización de PCBs el control de ciertos parámetros físicos-químicos en cada una de las etapas es fundamental para garantizar la uniformidad y calidad del baño de cobre. 
+
+En las diferentes bateas de la linea de galvanizado es necesario controlar, según cada etapa uno o algunos de los siguientes parámetros físicos-químicos del proceso:
 \begin{itemize}
 	\item Temperatura.
 	\item Nivel de líquidos.
@@ -17,118 +51,90 @@ En las diferentes bateas de la linea de galvanizado se necesitaban controlar dis
 	\item Inyección de aire.
 \end{itemize}
 
-Debido a que la linea cuenta con varias bateas distintas colocadas en forma consecutiva se planteo la necesidad de en primer lugar de que el sistema debía ser capaz de manejar, en función de parámetros específicos a cada etapa, el conjunto de estos parámetros como un solo núcleo de procesamiento con los sensores y actuadores colocados en una sola cuba de prueba. A su vez era necesario contar con la capacidad de manejar diversas señales de interruptores y actuadores de interacción con el operario.
-En función del éxito de este banco la expansión a futuro con módulos de entrada y salida a lo largo de la planta, se implementaría en otra etapa.
+Actualmente en la linea de galvanizado los operadores solo cuentan con su experiencia y con el soporte de instrumental de medición básico, para usar en algunas las etapas de la linea. Para saber cuando una etapa esta realizada correctamente es necesario tener información precisa y detallada para garantizar el resultado. Esto es causante de que el producto final muchas veces no tenga una calidad estándar y que no se puedan prevenir fallas en proceso a tiempo.
 
-\subsection{Casos de Uso}
+\subsection{ Fallas en la galvanización de PCBs }
 
-Como primera instancia fue necesario conocer los casos de uso a los cuales vincularan al usuario y al sistema en función de la operación a ejecutar. Para ello se definieron tres casos globales:
-\begin{enumerate}
-	\item Puesta en alta del dispositivo.
-	\item Operación en modo de funcionamiento 1.
-	\item Operación en modo de funcionamiento 2.
-\end{enumerate}
+En la producción de PCBs el resultado final correcto es aquel donde el espesor del baño metálico es uniforme en toda la cavidad. Cuando este proceso no ocurre correctamente se originan distintas fallas, donde las más comunes son:
+\begin{itemize}
+	\item Vías sin galvanizar.
+	\item vías obstruidas por exceso de cobre.
+	\item Laminado no uniforme de metal cobre.
+	\item Micro cortes del cobre y puntos de no conductividad.
+\end{itemize}
 
-En la Figuras \ref{fig:casoUsoAlta} y \ref{fig:casodeUso1y2} se notan las interacciones entre los distintos submódulos del sistema en función de los casos de usos determinados por los operadores.
+En la Figura \ref{thr_incorrecto_perfil} se observan las distintos grosores de cobre con vías mal galvanizadas en función de su ubicación en el sustrato del PCB y la cercanía al ánodo de cobre.
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=.8\textwidth]{Figures/caso_uso_1y2_UML}
-	\caption{Diagrama UML de casos de uso Modo 1 y 2.}
-	\label{fig:casodeUso1y2}
+	\includegraphics[width=.9\textwidth]{Figures/Cap_2/through_hole_perfil_fallado}
+	\caption{Perfil de vías según la ubicación relativa en los sustratos y el los cátodos.}
+	\label{fig:thr_incorrecto_perfil}
 \end{figure}
 
+En la figura \ref{thr_incorrecto_perfil} se observa los problemas originados por la mala preparación previa de las superficies metálicas del sustrato, originado puntos sin continuidad o circuitos abiertos que lo volverán no aptos para la producción de circuitos.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{Figures/Cap_2/etchback_thr_incorrecto_perfil}
+	\caption{ Las capas de cobre se alejan del borde del orificio.}
+	\label{fig:thr_incorrecto_perfil}
+\end{figure}
+
+\section{ Determinación de la solución } 
+
+A fin de lograr determinar detalles de la arquitectura del sistema desarrollado es necesario definir y determinar casos de uso, requerimientos técnicos y definiciones generales originados por la nueva planta, su operación y las necesidades del cliente. 
+
+\subsection{ Definiciones Generales }
+
+Debido a que la linea cuenta con varias etapas en forma consecutiva independientes entre si pero con características similares, se determino implementar un prototipo capaz de procesar el conjunto de parámetros del proceso y capaz de interactuar con los distintos usuarios del entorno.
+
+El sistema debería de funcionaria en modo predeterminado según los distintos escenarios posibles dentro de las etapas del proceso. De esta manera con un mismo hardware mas los sensores y actuadores necesarios, se puede hacer supervisión y control en las partes del proceso que se crean necesarias.
+
+En una etapa posterior luego de la validación del prototipo el cliente desarrollaría un hardware a medida para usar en su planta. El mismo seria producido en las cantidades necesarias según el numero de etapas que se determinaran. Por ultimo estos distintos módulos deberían funcionar de manera independiente entre si.
+
+
+\subsection{ Casos de Uso }
+
+Se definieron los casos de uso del sistema para determinar como se vincularía el sistema con los distintos usuario, en función del modo de funcionamiento posible. Estos quedan entonces predeterminados por los escenarios posibles que se puede originar en la operación de la linea.
+Los casos mas relevantes son:
+\begin{enumerate}
+	\item Puesta en alta y configuración del dispositivo, usado por personal técnico.
+	\item Operación en modo de funcionamiento 1, usado por el operario y el técnico.
+	\item Operación en modo de funcionamiento 2, usado por el operario y el técnico.
+\end{enumerate}
+
+En la Figuras \ref{fig:casoUsoAlta} y \ref{fig:casodeUso1y2} se notan las interacciones entre los distintos submódulos del sistema en función de los casos de usos y los usuarios vinculados.
+
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.8\textwidth]{Figures/caso_uso_Alta_UML}
+	\includegraphics[width=.7\textwidth]{Figures/Cap_2/caso_uso_Alta_UML}
 	\caption{Diagrama UML caso de uso de puesta en alta.}
 	\label{fig:casoUsoAlta}
 \end{figure}
 
-
-\section{Requerimientos}
-\label{sec:Requerimientos}
-
-% Ver si conviene listar todos los requerimientos otra vez o solo los mas determinates.
-
-Se recomienda no utilizar \textbf{texto en negritas} en ningún párrafo, ni tampoco texto \underline{subrayado}. En cambio sí se sugiere utilizar \textit{texto en cursiva} donde se considere apropiado.
-
-Se sugiere que la escritura sea impersonal. Por ejemplo, no utilizar ``el diseño del firmware lo hice de acuerdo con tal principio'', sino ``el firmware fue diseñado utilizando tal principio''. En lo posible hablar en tiempo pasado, ya que la memoria describe un trabajo que ya fue realizado.
-
-Se recomienda no utilizar una sección de glosario sino colocar la descripción de las abreviaturas como parte del mismo cuerpo del texto. Por ejemplo, RTOS (\textit{Real Time Operating System}, Sistema Operativo de Tiempo Real) o en caso de considerarlo apropiado mediante notas a pie de página.
-
-Si se desea indicar alguna página web utilizar el siguiente formato de referencias bibliográficas, dónde las referencias se detallan en la sección de bibliografía de la memoria,utilizado el formato establecido por IEEE en \citep{IEEE:citation}. Por ejemplo, ``el presente trabajo se basa en la plataforma EDU-CIAA-NXP, la cual se describe en detalle en \citep{CIAA}''.
-
-\section{Planificación} 
-
-Con propósito de cumplir con las metas de tiempo planteadas, se realizo una planificación de tareas según los hitos mas importantes y la interrelación según la dependencia de ejecución. En la Figura \ref{fig:WBStareas} se resumen el diagrama de tareas del proyecto.
-Además del diagrama se desarrollo una planificacion temporal la cual se observa en el diagrama de Gantt (Colocar referencia) que se nota en la Figura \ref{fig:Ganttareas}.
+La puesta en alta es el momento en que se determinan a través de la interface terminal HMI (Humman Machine Interface o interfase hombre maquina) las parámetros a medir y configuraciones de los puertos del hardware.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=.8]{Figures/WBS_tareas}
-	\caption{Diagrama de tareas del proyecto completo.\protect\footnotemark.}
-	\label{fig:WBStareas}
+	\includegraphics[width=.7\textwidth]{Figures/Cap_2/caso_uso_1y2_UML}
+	\caption{Diagrama UML de casos de uso Modo 1 y 2.}
+	\label{fig:casodeUso1y2}
 \end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=.5]{Figures/Gantt_tareas}
-	\caption{Diagrama de Gantt del proyecto completo.\protect\footnotemark.}
-	\label{fig:Ganttareas}
-\end{figure}
+Los modos 1 y 2 se refieren a dos configuraciones estandars y predefinidas que se crearon a partir de los escenarios mas comunes en las que se utilizaría el prototipo a fin de simplificar la puesta en marcha en campo.
+En el apéndice \ref{AppendixA} se detallan la secuencias involucradas en cada una de los casos de uso.
 
-El texto de las figuras debe estar siempre en español, excepto que se decida reproducir una figura original tomada de alguna referencia. En ese caso la referencia de la cual se tomó la figura debe ser indicada en el epígrafe de la figura e incluida como una nota al pie, como se ilustra en la figura \ref{fig:palabraIngles}.
-\footnotetext{\url{https://goo.gl/images/i7C70w}}
+\subsection{ Requerimientos Funcionales y no Funcionales }
+\label{subsec:Requerimientos}
 
-
-\subsection{Tablas}
-
-Para las tablas utilizar el mismo formato que para las figuras, sólo que el epígrafe se debe colocar arriba de la tabla, como se ilustra en la tabla \ref{tab:peces}. Observar que sólo algunas filas van con líneas visibles y notar el uso de las negritas para los encabezados.  La referencia se logra utilizando el comando \verb|\ref{<label>}| donde label debe estar definida dentro del entorno de la tabla.
-
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie} 	 & \textbf{Tamaño}  & \textbf{Valor aprox.}  \\
-		\midrule
-		Amphiprion Ocellaris	 & 10 cm 			& \$ 6.000 \\		
-		Hepatus Blue Tang	 & 15 cm				& \$ 7.000 \\
-		Zebrasoma Xanthurus	 & 12 cm				& \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
+A fin de no ahondar con detalles técnicos el documento a lista completa con los requerimientos se pueden ver en el anexo \ref{AppendixC}. Cabe mencionar que el mismo se originó previamente en la materia Taller de Trabajo Final en el posgrado.
+\\
+En función de estos se propuso implementar el proyecto sobre una plataforma EDU-CIAA en conjunto con una placa de interfaz hecha a medida. 
 
 
-\subsection{Ecuaciones}
-\label{sec:Ecuaciones}
 
-Al insertar ecuaciones en la memoria estas se deben numerar de la siguiente forma:
 
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2\left[ d\theta^2 + \sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-                                                        
-Es importante tener presente que en el caso de las ecuaciones estas pueden ser referidas por su número, como por ejemplo ``tal como describe la ecuación \ref{eq:metric}'', pero también es correcto utilizar los dos puntos, como por ejemplo ``la expresión matemática que describe este comportamiento es la siguiente:''
 
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = -i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
 
-Para las ecuaciones se debe utilizar un tamaño de letra equivalente al utilizado para el texto del trabajo, en tipografía cursiva y preferentemente del tipo Times New Roman o similar. El espaciado antes y después de cada ecuación es de aproximadamente el doble que entre párrafos consecutivos del cuerpo principal del texto. Por suerte la plantilla se encarga de esto por nosotros.
 
-Y para la ecuación \ref{eq:schrodinger}:
-
-\begin{verbatim}
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = 
-	-i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
-
-\end{verbatim}

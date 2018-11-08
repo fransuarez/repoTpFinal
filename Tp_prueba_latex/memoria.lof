@@ -2,25 +2,26 @@
 \defcounter {refsection}{0}\relax 
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Via con galvanizaci\IeC {\'o}n correcto en un PCB\relax }}{1}{figure.caption.14}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Perfil de una via correctamente galvanizada\relax }}{1}{figure.caption.15}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Perfil un conjunto de sustratos con v\IeC {\'\i }as mal galvanizadas\relax }}{2}{figure.caption.16}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Diagrama simplificado de una linea de galvanizado\relax }}{2}{figure.caption.17}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Linea de galvanizada actual operada manualmente\relax }}{3}{figure.caption.19}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Linea de galvanizada actual operada manualmente.\relax }}{2}{figure.caption.12}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Ejemplo de una linea de galvanizada automatizada.\relax }}{2}{figure.caption.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama UML de casos de uso Modo 1 y 2.\relax }}{8}{figure.caption.38}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama UML caso de uso de puesta en alta.\relax }}{9}{figure.caption.39}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama de tareas del proyecto completo.\footnotemark .\relax }}{10}{figure.caption.42}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagrama de Gantt del proyecto completo.\footnotemark .\relax }}{11}{figure.caption.45}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Proceso electrol\IeC {\'\i }tico con fuente continua.\relax }}{5}{figure.caption.25}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama simplificado de las etapas.\relax }}{6}{figure.caption.27}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces V\IeC {\'\i }a entre capas galvanizada en un PCB\relax }}{7}{figure.caption.28}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Perfil de v\IeC {\'\i }as seg\IeC {\'u}n la ubicaci\IeC {\'o}n relativa en los sustratos y el los c\IeC {\'a}todos.\relax }}{7}{figure.caption.31}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Las capas de cobre se alejan del borde del orificio.\relax }}{8}{figure.caption.32}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Diagrama UML caso de uso de puesta en alta.\relax }}{9}{figure.caption.39}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Diagrama UML de casos de uso Modo 1 y 2.\relax }}{9}{figure.caption.40}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Circuito simplificado de amplificaci\IeC {\'o}n y compensaci\IeC {\'o}n de termocuplas.\footnotemark .\relax }}{13}{figure.caption.59}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Render vista de arriba placa de interfaz.\relax }}{14}{figure.caption.63}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Render vista de abajo de placa de interfaz.\relax }}{14}{figure.caption.64}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Circuito simplificado de amplificaci\IeC {\'o}n y compensaci\IeC {\'o}n de termocuplas.\relax }}{11}{figure.caption.48}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Render vista de arriba placa de interfaz.\relax }}{12}{figure.caption.51}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Render vista de abajo de placa de interfaz.\relax }}{12}{figure.caption.52}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\IeC {\'a}tico jer\IeC {\'a}rquico del poncho EduCiaa.\relax }}{25}{figure.caption.115}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Esquem\IeC {\'a}tico entradas de termocupla y termistor.\relax }}{26}{figure.caption.116}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquem\IeC {\'a}tico de salidas digitales con relays.\relax }}{26}{figure.caption.117}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Esquem\IeC {\'a}tico de conectores de expansi\IeC {\'o}n con la eduCIAA.\relax }}{27}{figure.caption.118}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\IeC {\'a}tico jer\IeC {\'a}rquico del poncho EduCiaa.\relax }}{23}{figure.caption.73}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Esquem\IeC {\'a}tico entradas de termocupla y termistor.\relax }}{23}{figure.caption.74}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquem\IeC {\'a}tico de salidas digitales con relays.\relax }}{23}{figure.caption.75}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Esquem\IeC {\'a}tico de conectores de expansi\IeC {\'o}n con la eduCIAA.\relax }}{23}{figure.caption.76}
+\addvspace {10\p@ }

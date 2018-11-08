@@ -21,7 +21,7 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-
+% The class file specifying the document structure:
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
@@ -36,27 +36,29 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 parskip, % Uncomment to add space between paragraphs
 %nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
-]{MastersDoctoralThesis} % The class file specifying the document structure
+]{MastersDoctoralThesis} 
 
-
-
-\usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage[T1]{fontenc} % Output font encoding for international characters
-
-\usepackage{palatino} % Use the Palatino font by default
+% Required for inputting international characters:
+\usepackage[utf8]{inputenc}
+% Output font encoding for international characters:
+\usepackage[T1]{fontenc} 
+% Use the Palatino font by default:
+\usepackage{palatino} 
 %,style=authoryear
-\usepackage[backend=bibtex,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+% Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[backend=bibtex,natbib=true]{biblatex} 
 
-\addbibresource{references.bib} % The filename of the bibliography
+% The filename of the bibliography:
+\addbibresource{references.bib} 
 
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+% Required to generate language-dependent quotes in the bibliography:
+\usepackage[autostyle=true]{csquotes} 
 
 \usepackage{caption}
 \usepackage{subcaption}
 
 %------------------------
 \usepackage{listings}
-
 %\usepackage[hyphens]{url}
 %\usepackage[hidelinks]{hyperref}
 %\hypersetup{breaklinks=true}
@@ -64,7 +66,6 @@ headsepline, % Uncomment to get a line under the header
 %\usepackage{cite}
 
 %--------------------------
-
 \usepackage{color}
 
 %
@@ -85,48 +86,67 @@ headsepline, % Uncomment to get a line under the header
 %----------------------------------------------------------------------------------------
 %	INFORMACIÓN DE LA MEMORIA
 %----------------------------------------------------------------------------------------
+% Comando: Referencia
+\thesistitle{ Sistema de Control para Galvanoplastia de PCBs } 
+% \ttitle: El títulos de la memoria. 
+\supervisor{ Ing. Juan Manuel Cruz } 
+% \supname: El nombre del director. 
+\degree{ Especialista en Sistemas Embebidos } 
+% \degreename: Nombre del grado. 
+\author{ Francisco Suárez } 
+% \authorname: Tu nombre.
+\juradoUNO{ Esp. Ing. Jorge Fonseca (pertenencia) } 
+% \jur1name: Nombre y pertenencia del un jurado 1. 
+\juradoDOS{ Esp. Ing. Diego Brengi (pertenencia) } 
+% \jur2name: Nombre y pertenencia del un jurado 2.
+\juradoTRES{ Esp. Ing. Ramiro Alonso (pertenencia) } 
+% \jur3name: Nombre y pertenencia del un jurado 3. 
+\fechaINICIO{ enero de 2017 }
+% \fechaINICIOname:Fecha inicio proyecto.  
+\fechaFINAL{ diciembre de 2017 }
+% \fechaFINALname: Fecha finalacicion.
 
-\thesistitle{Sistema de Control para Galvanoplastia de PCBs} % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\supervisor{Ing. Juan Manuel Cruz} % El nombre del director, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \supname
-\degree{Especialista en Sistemas Embebidos } % Nombre del grado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\author{Francisco Suárez} % Tu nombre, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \authorname
-\juradoUNO{Esp. Ing. Jorge Fonseca (pertenencia)} % Nombre y pertenencia del un jurado se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \jur1name
-\juradoDOS{Esp. Ing. Diego Brengi (pertenencia)} % Nombre y pertenencia del un jurado se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \jur2name
-\juradoTRES{Esp. Ing. Ramiro Alonso (pertenencia)} % Nombre y pertenencia del un jurado se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \jur3name
-\fechaINICIO{enero de 2017}
-\fechaFINAL{diciembre de 2017}
+\subject{ Memoria del Trabajo Final de la Carrera de Especialización en Sistemas Embebidos de la UBA } 
+% \subjectname: Your subject area, this is not currently used anywhere in the template.
+\keywords{ CESE, Sistemas Embebidos, CIAA }
+% \keywordnames: Keywords for your thesis, this is not currently used anywhere in the template.
+\university{ Universidad de Buenos Aires } 
+% \univname: Your university's name and URL, this is used in the title page and abstract.
+\faculty{ {Facultad de Ingeniería} } 
+% \facname: Your faculty's name and URL, this is used in the title page and abstract.
+\department{ Departamento de Electrónica } 
+% \deptname: Your department's name and URL, this is used in the title page and abstract.
+\group{ {Laboratorio de Sistemas Embebidos} } 
+% \groupname: Your research group's name and URL, this is used in the title page.
+%  ^Estos comandos se usa en la carátula y se puede usar el cualquier lugar del documento.
 
-\subject{Memoria del Trabajo Final de la Carrera de Especialización en Sistemas Embebidos de la UBA} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
-\keywords{CESE, Sistemas Embebidos, CIAA} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
-\university{Universidad de Buenos Aires} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
-\faculty{{Facultad de Ingeniería}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
-\department{Departamento de Electrónica} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
-\group{{Laboratorio de Sistemas Embebidos}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-
-
-\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
-\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
-
+% Set the PDF's title to your title:
+\hypersetup{ pdftitle=\ttitle } 
+% Set the PDF's author to your name:
+\hypersetup{ pdfauthor=\authorname }
+% Set the PDF's keywords to your keywords:
+\hypersetup{ pdfkeywords=\keywordnames } 
 
 \newcaptionname{spanish}{\acknowledgementname}{Agradecimientos}
 \newcaptionname{spanish}{\authorshipname}{Declaración de Autoría}
 \newcaptionname{spanish}{\abbrevname}{Glosario}
 \newcaptionname{spanish}{\byname}{por}
 
-\renewcommand{\lstlistingname}{Algoritmo}% Listing -> Algorithm
-\renewcommand{\lstlistlistingname}{Índice de \lstlistingname s}% List of Listings -> List of Algorithms
+% Listing -> Algorithm:
+\renewcommand{\lstlistingname}{Algoritmo}
+% List of Listings -> List of Algorithms:
+\renewcommand{\lstlistlistingname}{Índice de \lstlistingname s}
 
 \renewcommand{\listtablename}{Índice de Tablas}
 \renewcommand{\tablename}{Tabla} 
-
-\addtolength{\footnotesep}{2mm} % Espacio adicional en los footnotes
+ % Espacio adicional en los footnotes:
+\addtolength{\footnotesep}{2mm}
 
 \begin{document}
-
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
-
-\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+% Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages:
+\frontmatter 
+% Default to the plain heading style until the thesis style is called for the body content:
+\pagestyle{plain} 
 
 %----------------------------------------------------------------------------------------
 %	CARÁTULA
@@ -151,7 +171,6 @@ headsepline, % Uncomment to get a line under the header
 \authorname}\\ % Author name
 
 \vspace{1cm}
-
 \large
 \vspace{10px}
 {Director:} \\
@@ -179,9 +198,11 @@ Jurados:\\
 %The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
 \centering
 
-El presente desarrollo consiste en un prototipo de sistema para el monitoreo de parámetros y control de temperatura en bateas de una linea de galvanizado de PCBs. El mismo fue propuesto para el fabricante de circuitos Daichi SA pensado para asistir a los técnicos en planta y como herramienta para ayudar a optimizar los procesos y calidad del producto. El desarrollo se realizo sobre la plataforma eduCIAA con un poncho con las interfaces necesarias y programado para funcionar sobre freeRTOS. 
+Esta memoria presenta el desarrollo de un sistema de control y monitoreo de parámetros físico-químicos asociados a un proceso de galvanizado industrial, realizado para el fabricante de circuitos integrados Daichi SA. 
 
-El proyecto hace hincapié tanto en la calidad del software como en la metodología de trabajo enseñada en la especialización. Para tal fin esta memoria documenta criterios adoptados, problemáticas encontradas y los resultados obtenidos en la ejecución del proyecto. Finalmente en las conclusiones se buscó dar luz sobre buenas practicas y formas de afrontar una problemática de necesidad tecnológica con ingeniería de software de calidad.
+El sistema desarrollado asiste al personal técnico de planta en la optimización y mejora de los procesos vinculados al desarrollo de placas bicapa. A través de la lectura de sensores y almacenamiento de datos otorga funcionalidad similares a un PLC pero con funcionalidades a medida adicionales.
+
+El prototipo se implementó sobre una EDU-CIAA y en el software se utilizaron técnicas de modelado orientado testing (TDD), y división por tareas para funcionar sobre un sistema multitareas. Además se aplicaron sistema control de versiones y trazabilidad de requerimientos.
 
 \end{abstract}
 
@@ -249,7 +270,7 @@ No vale poner anti-agradecimientos (este trabajo fue posible a pesar de...)
 
 \include{Appendices/AppendixA}
 \include{Appendices/AppendixB}
-%\include{Appendices/AppendixC}
+\include{Appendices/AppendixC}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY

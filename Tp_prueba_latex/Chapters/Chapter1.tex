@@ -17,80 +17,55 @@
 
 %----------------------------------------------------------------------------------------
 
-%\section{Introducción}
+\section{ Introducción General }
+
+El presente caso de estudio ocurre en un contexto muy común dado en la producción industria a baja escala: los operarios son los encargados de manipular y operar prácticamente todas las etapas. Cuando surge la necesidad de mejorar la calidad del producto en necesario modernizar parte o el total de esta linea de producción. Como consecuencia los costos de automatizarla de manera integra implican una gran inversión inicial muy grande. Mas aun cuando se trata de hacerlo a través de soluciones armadas llave en mano de empresas normalmente extranjeras.
 
 %----------------------------------------------------------------------------------------
-\section{Proceso de Galvanización en PCBs}
+\section{ Lineas de producción asistidas }
 
-En el proceso de galvanización de pistas y vías de un PCBs el control de los parámetros físicos en cada una de las etapas es fundamental para garantizar la uniformidad del cobre. Este proceso consiste en la inmersión de los placas en distintos baños químicos que se observan en la Figura \ref{fig:thr_correcto}, y en la Figura \ref{fig:thr_correcto_perfil} el resultado de un correcto proceso donde el espesor del cobre conductor es uniforme en toda la cavidad.
+La forma mas básica de asistir un proceso industrial es a través de brindarle al operador indicadores del estado del proceso, ya sea en forma de alarmas o señales luminosas. El mismo solo se limita a manipular llaves, pulsadores y atender la interrupción en caso de anomalía. 
+En un sistema totalmente automatizado en cambio el operador solo se limitaría a dar inicio al proceso y a atender las alarmas en caso de alguna falla o anomalía.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=.5\textwidth]{Figures/through_hole_correcto}
-	\caption{Via con galvanización correcto en un PCB}
-	\label{fig:thr_correcto}
-\end{figure}
+Las soluciones para este tipo de entornos se logra a partir de un sistema de control distribuido con un modulo principal y varios submódulos, que en la cual el modulo principal es el encargado de tomar la información de los submódulos y ejecuta las acciones correspondientes. 
+Otra forma es usar módulos independientes entre si en donde cada uno se encarga de monitorear y controlar parámetros de una determinada etapa.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=.5\textwidth]{Figures/through_hole_perfil}
-\caption{Perfil de una via correctamente galvanizada}
-	\label{fig:thr_correcto_perfil}
-\end{figure}
+\section{ Necesidad y motivación }
 
-Cuando este proceso no ocurre correctamente se originan distintas fallas, donde las más comunes son: vías sin galvanizar, vías obstruidas por exceso de cobre y capa no uniforme de metal cobre en la vía con riesgo de no conductividad. En la Figura \ref{thr_incorrecto_perfil} se observan las distintos grosores de cobre en vias mal galvanizadas en función de su ubicación en el sustrato del PCB.
+La necesidad de incrementar los niveles de calidad y el volumen de producción determinaron la decisión de construir una nueva planta mas moderno estandarizada y con sistemas de monitoreo de parámetros críticos del proceso, dejando si en una primera etapa el control en manos del operador.
+
+Adicionalmente era vital tener registro integro de parámetros del proceso y de las acciones ejecutadas por los operadores, a modo de poder verificar y auditar posteriormente el proceso en caso de detectar anomalías en el producto.
+
+Se planteo también implementar que la solución debía ser solo una primera etapa que sirviera de puente entre una etapa posterior de automatización del sistema y el sistema manual casi artesanal actual. En la Figura \ref{fig:planta_actual} se puede ver como es la linea de proceso actual.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.8\textwidth]{Figures/through_hole_perfil_fallado}
-	\caption{Perfil un conjunto de sustratos con vías mal galvanizadas}
-	\label{fig:thr_incorrecto_perfil}
-\end{figure}
-
-El proceso requiere una sucesión de baños por distintas soluciones químicas y enjuagues en agua, previas y después del proceso de electrolisis con cobre sobre el sustrato. En la Figura \ref{fig:diagrama_proceso} se resumen los pasos de forma simplificada, en el proceso de PCB se utilizan mas de 10 etapas.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=.8\textwidth]{Figures/diagrama_galvanizado_castellano}
-	\caption{Diagrama simplificado de una linea de galvanizado}
-	\label{fig:diagrama_proceso}
-\end{figure}
-
-
-\LaTeX{} no es \textsc{WYSIWYG} (What You See is What You Get), a diferencia de los procesadores de texto como Microsoft Word o Pages de Apple o incluso LibreOffice en el mundo open-source. En lugar de ello, un documento escrito para \LaTeX{} es en realidad un archivo de texto simple, llano que \emph{no contiene formato} . Nosotros le decimos a \LaTeX{} cómo deseamos que se aplique el formato en el documento final escribiendo comandos simples entre el texto, por ejemplo, si quiero usar \emph{texto en cursiva para dar énfasis}, escribo \verb|\emph{texto}| y pongo el texto en cursiva que quiero entre medio de las llaves. Esto significa que \LaTeX{} es un lenguaje del tipo \enquote{mark-up}, muy parecido a HTML.
-
-\section{Motivación y objetivo}
-
-A partir de la búsqueda de incrementar los niveles de calidad en producto final surgió la necesidad de agregar control y monitoreo a determinadas bateas criticas en el proceso de modo de asistir a los operarios de planta en tiempo real sobre alguna anomalía en los parámetros antes de continuar con el proceso. En la Figura \ref{fig:planta_actual} se puede ver como es la linea de proceso actual.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=.8\textwidth]{Figures/planta_actual}
-	\caption{Linea de galvanizada actual operada manualmente}
+	\includegraphics[width=.8\textwidth]{Figures/Cap_1/planta_actual}
+	\caption{Linea de galvanizada actual operada manualmente.}
 	\label{fig:planta_actual}
 \end{figure}
 
-Como segundo objetivo como el proceso actual es totalmente hecho a mano y se esta trabajando en modernizarla y cambiarla de lugar se busca que el mismo sistema pueda integrar a una linea de traslación de los PCBs automatizada, lo cual se logró con el conteo de tiempo de posicionamiento por etapa.  
+En la Figura \ref{fig:planta_moderna} se puede ver como es una linea de producción totalmente automatizada de otro fabricante.
 
-Finalmente a modo de control general y auditoría se necesitaba que el sistema registre los valores de las parámetros de medición en archivos . 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\textwidth]{Figures/Cap_1/planta_moderna}
+	\caption{ Ejemplo de una linea de galvanizada automatizada.}
+	\label{fig:planta_moderna}
+\end{figure}
 
-Si usted es nuevo a \LaTeX{}, hay un muy buen libro electrónico - disponible gratuitamente en Internet como un archivo PDF - llamado, \enquote{A (not so short) Introduction to \LaTeX{}}. El título del libro es generalmente acortado a simplemente \emph{lshort}. Puede descargar la versión más reciente en inglés (ya que se actualiza de vez en cuando) desde aquí:
-\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}
+\section{ Objetivo }
 
-Está disponible en varios idiomas además del inglés. Se puede encontrar la versión en español en la lista en esta página: \url{http://www.ctan.org/tex-archive/info/lshort/}
+Diseñar un sistema de control en un hardware prototipo sistema embebido confiable y robusto, adaptable a los distintos escenarios de las linea de producción.
+Utilizar un hardware con interfaces necesarias para los sistemas utilizados en la nueva planta, apto para funcionar en un ambiente industrial y adaptable a las etapas del proceso. 
 
+\section{ Alcance }
 
-\section{Objetivo}
-
-El presente sistema embebido se focalizó en la confiabilidad, robustez y adaptabilidad con las interfaces eléctricas necesarias para que funcione en un ambiente industrial con los actuadores y sensores determinados por el cliente. Para tal fin se propuso que el mismo funcione sobre la plataforma eduCIAA en conjunto con una placa de interfaz hecha a medida, como un prototipo de prueba previo al desarrollo de un hardware propio.
-
-\subsection{Alcance}
-
-El proyecto incluyó los siguientes puntos:
+Previo al desarrollo se limito el alcance del proyecto en los siguientes puntos:
 \begin{itemize}
 	\item Estudio preliminar de las arquitecturas adecuadas para la implementación del sistema principal y subsistemas.
 	\item Diseño de alto nivel (arquitectura) del sistema.
-	\item Diseño del sistema en lenguaje C para plataforma CIAA.
+	\item Diseño del sistema en lenguaje C.
 	\item Plan de pruebas unitarias y ensayos (testbenchs) para cada subsistema.
 	\item Plan de pruebas de integración y ensayos (testbenchs) para agrupaciones de subsistemas.
 	\item Plan de pruebas del sistema y ensayos (testbenchs) para el sistema completo.
@@ -107,7 +82,7 @@ El proyecto incluyó los siguientes puntos:
 	\item Análisis y construcción del banco de pruebas.
 \end{itemize}
 
-El proyecto no incluyó: 
+Por otro lado se determino que el proyecto no incluiría el desarrollo de los siguientes puntos: 
 \begin{itemize}
 	\item Estudio de los sensores y actuadores, se basará dicha información en los datos dados por el cliente. 
 	\item Análisis de mejor solución para implementación de sistema de reporte remoto de variables y registros históricos. 
@@ -117,35 +92,7 @@ El proyecto no incluyó:
 
 
 %----------------------------------------------------------------------------------------
-
-\section{Utilizando esta plantilla}
-
-Si usted está familiarizado con \LaTeX{}, entonces puede explorar la estructura de directorios de esta plantilla y proceder a personalizarla agregando su información en el bloque \emph{INFORMACIÓN DE LA PORTADA} en el archivo \file{memoria.tex}.  
-
-Se puede continuar luego modificando el resto de los archivos siguiendo los lineamientos que se describen en la sección \ref{sec:FillingFile} en la página \pageref{sec:FillingFile}.
-
-Asegúrese de leer el capítulo \ref{Chapter2} acerca de las convenciones utilizadas para las Memoria de los Trabajos Finales de la Carrera de Especialización en Sistemas Embebidos de FIUBA.
-
-Si es nuevo en \LaTeX{} se recomienda que continue leyendo el documento ya que contiene información básica para aprovechar el potencial de esta herramienta.
-
-Si usted está escribiendo un documento con mucho contenido matemático, entonces es posible que desee leer el documento de la AMS (American Mathematical Society) llamado, \enquote{A Short Math Guide for \LaTeX{}}. Se puede encontrar en línea en el siguiente link: \url{http://www.ams.org/tex/amslatex.html} en la sección \enquote{Additional Documentation} hacia la parte inferior de la página.
-
-
-
-\subsection{Acerca de esta plantilla}
-
-Esta plantilla \LaTeX{} está basada originalmente en torno a un archivo de estilo \LaTeX{} creado por Steve R.\ Gunn de la  University of Southampton (UK), department of Electronics and Computer Science. Se puede encontrar su trabajo original en el siguiente sitio de internet:
-\url{http://www.ecs.soton.ac.uk/~srg/softwaretools/document/templates/}
-
-El archivo de Gunn, \file{ecsthesis.cls} fue posteriormente modificado por Sunil Patel quien creó una plantilla esqueleto con la estructura de carpetas. El template resultante se puede encontrar en el sitio web de Sunil Patel:
-\url{http://www.sunilpatel.co.uk/thesis-template}
-
-El template de Patel se publicó a través de  \url{http://www.LaTeXTemplates.com} desde donde fue modificado muchas veces en base a solicitudes de usuarios. La versión 2.0 y subsiguientes representan cambios significativos respecto a la versión de la plantilla modificada por Patel, que es de hecho, dificilmente reconocible. El trabajo en la version 2.0 fue realizado por Vel Gayevskiy y Johannes Böttcher.
-
-Uno de los primeros graduados de la Carrera de Especialización en Sistemas Embebios de la UBA, el Ing. \href{mailto:pbos@fi.uba.ar}{Patricio Bos} modificó los contenidos de la versión 2.3 para crear una plantilla altamente adaptada a la Carrera de Especialización de la UBA.
-
 %----------------------------------------------------------------------------------------
-
 
 
 

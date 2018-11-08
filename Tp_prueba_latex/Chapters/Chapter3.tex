@@ -40,7 +40,7 @@
 %----------------------------------------------------------------------------------------
 \section{Análisis del Hardware}
 
-El prototipo se implemento sobre una eduCIAA en conjunto con un hardware de adaptación de las interfaces. Para ello se utilizaron los proyectos de código abierto kicad \footnote{\url{http://kicad-pcb.org/download/}} para los ponchos de la eduCIAA \footnote{\url{https://github.com/brengi/Ponchos}} para adaptar las entradas y salidas del conectores de expansión con los sensores y actuadores utilizados. 
+El prototipo se implemento sobre una EDU-CIAA en conjunto con un hardware de adaptación de las interfaces. Para ello se utilizaron los proyectos de código abierto kicad \footnote{\url{http://kicad-pcb.org/download/}} para los ponchos de la eduCIAA \footnote{\url{https://github.com/brengi/Ponchos}} para adaptar las entradas y salidas del conectores de expansión con los sensores y actuadores utilizados. 
 
 \subsection{Sensores y actuadores}
 
@@ -50,8 +50,8 @@ Para la adaptación de las interfaces con termocuplas y termistores se necesitar
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.7\textwidth]{Figures/circuito_ampl_termocupla}
-	\caption{Circuito simplificado de amplificación y compensación de termocuplas.\protect\footnotemark.}
+	\includegraphics[width=.7\textwidth]{Figures/Cap_3/circuito_ampl_termocupla}
+	\caption{Circuito simplificado de amplificación y compensación de termocuplas.} \protect\footnotemark
 	\label{fig:cirCompTermocupla}
 \end{figure}
 \footnotetext{\url{http://ww1.microchip.com/downloads/en/AppNotes/00844a.pdf}}
@@ -65,14 +65,14 @@ A continuación se muestran los renders de la placa de adaptación. En la Figura
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.9\textwidth]{Figures/tempRelayPoncho_TOP}
+	\includegraphics[width=.9\textwidth]{Figures/Cap_3/tempRelayPoncho_TOP}
 	\caption{Render vista de arriba placa de interfaz.}
 	\label{fig:renderPonchoTOP}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.9\textwidth]{Figures/tempRelayPoncho_BOTTOM}
+	\includegraphics[width=.9\textwidth]{Figures/Cap_3/tempRelayPoncho_BOTTOM}
 	\caption{Render vista de abajo de placa de interfaz.}
 	\label{fig:renderPonchoBOT}
 \end{figure}
@@ -95,46 +95,13 @@ Se puede agregar código o pseudocódigo dentro de un entorno lstlisting con el 
 \end{lstlisting}
 \end{verbatim}
 
-A modo de ejemplo:
-
-\begin{lstlisting}[caption=Pseudocódigo del lazo principal de control.]  % Start your code-block
-
-#define MAX_SENSOR_NUMBER 3
-#define MAX_ALARM_NUMBER  6
-#define MAX_ACTUATOR_NUMBER 6
-
-uint32_t sensorValue[MAX_SENSOR_NUMBER];		
-FunctionalState alarmControl[MAX_ALARM_NUMBER];	//ENABLE or DISABLE
-state_t alarmState[MAX_ALARM_NUMBER];						//ON or OFF
-state_t actuatorState[MAX_ACTUATOR_NUMBER];			//ON or OFF
-
-void vControl() {
-
-	initGlobalVariables();
-	
-	period = 500 ms;
-		
-	while(1) {
-
-		ticks = xTaskGetTickCount();
-		
-		updateSensors();
-		
-		updateAlarms();
-		
-		controlActuators();
-		
-		vTaskDelayUntil(&ticks, period);
-	}
-}
-\end{lstlisting}
 
 \subsection{Diseño del Firmware}
 \subsection{Capas de abstracción}
 % Agregar imagen diagrama con un el sistema prototipo.
 \subsection{Arquitectura del Software}
 
-Patron de Arquitectura
+Patrón de Arquitectura
 Capas: 
 \begin{enumerate}
 	\item Abstracción HAL.

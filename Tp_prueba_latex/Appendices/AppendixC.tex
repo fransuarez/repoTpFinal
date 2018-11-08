@@ -1,0 +1,115 @@
+% Appendix Template
+
+\chapter{ Requerimientos Funcionales y no Funcionales } % Main appendix title
+
+\label{AppendixC} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
+
+\begin{enumerate}
+
+\item Requerimientos Funcionales
+\begin{enumerate}
+
+\item Temperatura (RFTEM)
+\begin{enumerate}
+\item El sistema medirá la temperatura con un resolución de XX, cada YY segundos.
+\item El sistema mantendrá la temperatura controlada según los parámetros configurados por el usuario.
+\item El sistema elevará la temperatura a través de la activación de una salida digital conectada a una resistencia.
+\item La activación de la resistencia se implementará a través de una ventana Smith Trigger para evitar la intermitencia y generación de ruido en las líneas de alimentación principal. Cruce por 0.
+\item En caso de que la temperatura se exceda de rango de considerar interrumpir el proceso y emitir una alarma.
+\item El sistema almacenará al menos XX valores de temperatura en un archivo en memoria flash.
+\end{enumerate}
+
+\item Energía (RFENE)
+\begin{enumerate}
+\item El software medirá la corriente total (DC) entregada al proceso de electrólisis cada XX segundos, con YY de resolución.
+\item El software medirá la tensión aplicada (DC) entre los bornes del electrólisis cada XX segundos con YY de resolución.
+\item El sistema almacenará al menos XX valores de corriente y tensión en un archivo en memoria flash.
+\item Los rangos de valores óptimos de tensión y corriente serán tomados de los parámetros de lote ingresados por el usuario y mostrados por pantalla para su configuración manual en la fuente de alimentación principal.
+\end{enumerate}
+
+\item Conductividad (RFCOND)
+\begin{enumerate}
+\item El software calculará a través de la corriente y tensión medidas en el tanque de galvanización, la conductividad de la solución salina cada XX segundos con YY de resolución.
+\item El software deberá compensar las eventuales desviaciones de la conductividad óptima a través de la activación de XX válvulas de aditivos.
+\end{enumerate}
+
+\item Interfaces Hombre-Máquina (RFHMI)
+\begin{enumerate}
+\item El sistema contará con una pantalla estado del sistema con variables a definir.
+\item El sistema contará con un método de ingreso de parámetros de lote a procesar.
+\item Deberá permitir ingresar parámetros en modo manual y otros en modo codificado.
+\item Deberá brindar a través de una interfaz Ethernet los históricos almacenados en memoria flash de variables del proceso que necesiten ser auditadas tras una etapa o tras el proceso completo. El máximo de registros será de XX número de puntos en formato YY.
+\end{enumerate}
+
+\begin{enumerate}
+\item Tiempos (RFTI)
+\item El software llevará un conteo del tiempo entre cada baño en las bateas, desde el momento que se inicia hasta el final del proceso.
+\item En cada etapa deberá avisar y esperar a que un operario habilite la iniciación de la siguiente etapa.
+\end{enumerate}
+
+\item Niveles de bateas (RFNB)	
+\begin{enumerate}
+\item Evaluará que los niveles dentro del galvanizador estén dentro de los rangos permitidos de operación.
+\item En caso de algún nivel crítico se emitirán alarmas y se considera la interrupción del proceso.
+\end{enumerate}
+\end{enumerate}
+
+\item Requerimientos de Interfaz
+\begin{enumerate}
+
+\item Temperatura (RITEM)
+\begin{enumerate}
+\item La temperatura será medida a través de un sensor analógico de tolerancia XX.
+\item La temperatura se medirá en los tanques XX, lo que arroja un total de YY numero de entradas analógicas independientes.(+xxAI)
+\end{enumerate}
+
+\item Energía (RIENE)
+\begin{enumerate}
+\item Tendrá un sensor de alta corriente del tipo XX conectado en una entrada analógica, para la corriente de galvanizador. (+1AI)
+\item Tendrá un sensor de tensión de tipo XX conectados a los bornes de galvanizador. (+1AI)
+\end{enumerate}
+
+\item Conductividad (RICOND)
+\begin{enumerate}
+\item Tendrá XX dispositivos dosificador/es conectados a salidas digitales. (+xxDO)
+\end{enumerate}
+
+\item Interfaces Hombre-Máquina (RIHMI)
+\begin{enumerate}
+\item Debe mostrar información a través de un puerto VGA/HDMI con una taza de refresco menor a XX segundos. (+1USB)
+\item Tomará de una entrada serie USB los valores de lote. (+1USB)
+\item Accionara a través de una salida digital una alarma sonora/lumínica en caso de algún tipo de falla. (+1DO, +1AO) 
+\item Contará con uno o dos pulsadores a fin de poder detener y accionar el procesos de galvanización, conectados a una/dos entradas binarias.(+1/2DO)
+\item Dispondrá de una conexión remota a través de Ethernet. (+1ETH)
+\end{enumerate}
+
+\item Niveles de bateas (RINB)
+\begin{enumerate}
+\item Tendrá XX sensores de nivel conectados a entradas digitales. (+xxDI)
+\end{enumerate}
+
+\end{enumerate}
+
+\item Requerimientos no Funcionales (RNF)
+\begin{enumerate}
+\item Deberá ser probada la funcionalidad a través de un banco de pruebas que se ajuste al comportamiento del sistema. 
+\end{enumerate}
+
+\item Restricciones de Diseño (RD)
+\begin{enumerate}
+\item De los requerimientos de interfaz se resume que como mínimo el hardware deberá contar con las siguientes interfaces:
+Entradas analógicas:(AI) >= 3	\\
+Entradas digitales: (DI) >= 3	\\
+Salidas analógicas: (AO) >= 1	\\
+Salidas digitales:  (DO) >= xx	\\
+Puerto USB:	  		(USB)  = 2	\\
+Puerto RED:	  		(ETH)  = 1	\\
+\end{enumerate}
+
+\item Requerimientos a Futuro (RAF)
+\begin{enumerate}
+\item Brindar información acerca de si es necesario realizar una limpieza de sistema. Se puede utilizar como parámetro el número de procesos que se ejecutaron 	 	 	
+\item Deberá permitir loguearse antes de iniciar el proceso, así tener un responsable de operación.
+\item Deberá interactuar con una cinta de transportación automática que llevará las placas de una batea a otra. Accionara los motores (paso a paso?) de transporte y de elevación.
+\item Si no se respetan los tiempos el sistema deberá dejar asentado el técnico y las acciones manuales ejecutadas a fin de tener un histórico antes posibles fallas en el lote.
+\end{enumerate}
