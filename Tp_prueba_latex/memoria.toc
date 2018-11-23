@@ -2,35 +2,31 @@
 \defcounter {refsection}{0}\relax 
 \select@language {spanish}
 \contentsline {chapter}{Resumen}{\es@scroman {iii}}{section*.1}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n General}{1}{chapter.8}
-\contentsline {section}{\numberline {1.1} Introducci\IeC {\'o}n General }{1}{section.9}
-\contentsline {section}{\numberline {1.2} Lineas de producci\IeC {\'o}n asistidas }{1}{section.10}
-\contentsline {section}{\numberline {1.3} Necesidad y motivaci\IeC {\'o}n }{1}{section.11}
-\contentsline {section}{\numberline {1.4} Objetivo }{2}{section.14}
-\contentsline {section}{\numberline {1.5} Alcance }{3}{section.15}
-\contentsline {chapter}{\numberline {2} Introducci\IeC {\'o}n Espec\IeC {\'\i }fica }{5}{chapter.23}
-\contentsline {section}{\numberline {2.1} Que es el Galvanizado de un PCB? }{5}{section.24}
-\contentsline {subsection}{\numberline {2.1.1} Proceso de Galvanizado por Electrolisis }{5}{subsection.26}
-\contentsline {section}{\numberline {2.2} Par\IeC {\'a}metros cr\IeC {\'\i }ticos del galvanizado }{6}{section.29}
-\contentsline {subsection}{\numberline {2.2.1} Fallas en la galvanizaci\IeC {\'o}n de PCBs }{7}{subsection.30}
-\contentsline {section}{\numberline {2.3} Determinaci\IeC {\'o}n de la soluci\IeC {\'o}n }{8}{section.33}
-\contentsline {subsection}{\numberline {2.3.1} Definiciones Generales }{8}{subsection.34}
-\contentsline {subsection}{\numberline {2.3.2} Casos de Uso }{8}{subsection.35}
-\contentsline {subsection}{\numberline {2.3.3} Requerimientos Funcionales y no Funcionales }{10}{subsection.41}
-\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{11}{chapter.42}
-\contentsline {section}{\numberline {3.1}An\IeC {\'a}lisis del Hardware}{11}{section.43}
-\contentsline {subsection}{\numberline {3.1.1}Sensores y actuadores}{11}{subsection.46}
-\contentsline {subsubsection}{Esquem\IeC {\'a}ticos del prototipo final}{11}{section*.47}
-\contentsline {subsubsection}{Renders del prototipo}{12}{section*.50}
-\contentsline {section}{\numberline {3.2}An\IeC {\'a}lisis del software}{13}{section.53}
-\contentsline {subsection}{\numberline {3.2.1}Dise\IeC {\~n}o del Firmware}{13}{subsection.54}
-\contentsline {subsection}{\numberline {3.2.2}Capas de abstracci\IeC {\'o}n}{13}{subsection.55}
-\contentsline {subsection}{\numberline {3.2.3}Arquitectura del Software}{13}{subsection.56}
-\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{15}{chapter.63}
-\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{15}{section.64}
-\contentsline {chapter}{\numberline {5}Conclusiones}{17}{chapter.65}
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{17}{section.66}
-\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{17}{section.67}
-\contentsline {chapter}{\numberline {A}Casos de Uso}{19}{appendix.68}
-\contentsline {chapter}{\numberline {B}Esquem\IeC {\'a}ticos}{23}{appendix.72}
-\contentsline {chapter}{\numberline {C} Requerimientos Funcionales y no Funcionales }{25}{appendix.77}
+\contentsline {chapter}{\numberline {1} Introducci\IeC {\'o}n General }{1}{chapter.7}
+\contentsline {section}{\numberline {1.1} Caso de Estudio }{1}{section.8}
+\contentsline {section}{\numberline {1.2} Necesidad y motivaci\IeC {\'o}n }{2}{section.9}
+\contentsline {section}{\numberline {1.3} Objetivo }{2}{section.13}
+\contentsline {section}{\numberline {1.4} Alcance }{3}{section.14}
+\contentsline {chapter}{\numberline {2} Introducci\IeC {\'o}n Espec\IeC {\'\i }fica }{5}{chapter.22}
+\contentsline {section}{\numberline {2.1} Galvanizado de circuitos impresos }{5}{section.23}
+\contentsline {subsection}{\numberline {2.1.1} Proceso de galvanizado por electr\IeC {\'o}lisis }{5}{subsection.27}
+\contentsline {section}{\numberline {2.2} Par\IeC {\'a}metros cr\IeC {\'\i }ticos del galvanizado }{7}{section.34}
+\contentsline {subsection}{\numberline {2.2.1} Fallas en el galvanizado de PCBs }{8}{subsection.35}
+\contentsline {section}{\numberline {2.3} Determinaci\IeC {\'o}n de la soluci\IeC {\'o}n a utilizar }{9}{section.38}
+\contentsline {subsection}{\numberline {2.3.1} Definiciones Generales }{10}{subsection.39}
+\contentsline {subsection}{\numberline {2.3.2} Casos de Uso }{10}{subsection.41}
+\contentsline {subsection}{\numberline {2.3.3} Requerimientos funcionales y no funcionales }{12}{subsection.48}
+\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{17}{chapter.102}
+\contentsline {section}{\numberline {3.1}An\IeC {\'a}lisis del Hardware}{17}{section.103}
+\contentsline {subsection}{\numberline {3.1.1} Sensores y actuadores }{17}{subsection.104}
+\contentsline {subsection}{\numberline {3.1.2} Conexi\IeC {\'o}n al "poncho" dise\IeC {\~n}ado }{18}{subsection.108}
+\contentsline {section}{\numberline {3.2} Arquitectura del Software }{20}{section.113}
+\contentsline {subsection}{\numberline {3.2.1} Capas de abstracci\IeC {\'o}n }{20}{subsection.114}
+\contentsline {subsection}{\numberline {3.2.2} Dise\IeC {\~n}o }{21}{subsection.116}
+\contentsline {section}{\numberline {3.3} Sistemas control de entradas }{21}{section.118}
+\contentsline {section}{\numberline {3.4} Sistemas control de salidas }{22}{section.120}
+\contentsline {section}{\numberline {3.5} Sistemas control de terminal-Shell }{23}{section.122}
+\contentsline {section}{\numberline {3.6} Sistemas gesti\IeC {\'o}n de datos }{23}{section.125}
+\contentsline {chapter}{\numberline {A}Casos de Uso}{25}{appendix.128}
+\contentsline {chapter}{\numberline {B}Esquem\IeC {\'a}ticos}{29}{appendix.132}
+\contentsline {chapter}{Bibliograf\'{\i }a}{35}{appendix*.137}

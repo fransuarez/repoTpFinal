@@ -1,0 +1,151 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{kicad}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{ KiCad Developers Team}}{K.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{K1}
+  \strng{fullhash}{K1}
+  \field{note}{Disponible: 2018-11-25}
+  \field{title}{KiCad open source software suite for Electronic Design
+  Automation}
+  \verb{url}
+  \verb http://kicad-pcb.org/download/
+  \endverb
+\endentry
+
+\entry{free_rtos}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Barry}{B.}%
+     {Richard}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BR1}
+  \strng{fullhash}{BR1}
+  \field{sortinit}{B}
+  \field{note}{Disponible: 2016-06-25}
+  \field{title}{The FreeRTOS™ Kernel}
+  \verb{url}
+  \verb https://www.freertos.org/
+  \endverb
+\endentry
+
+\entry{brengiponchos}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Brengi}{B.}%
+     {Ing.~Diego}{I.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BID1}
+  \strng{fullhash}{BID1}
+  \field{sortinit}{B}
+  \field{note}{Disponible: 2018-11-25}
+  \field{title}{Repositorio de Ponchos para la EDU-CIAA.}
+  \verb{url}
+  \verb https://github.com/brengi/Ponchos
+  \endverb
+\endentry
+
+\entry{nt_shell}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {cubeatsystems.com}{c.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{c1}
+  \strng{fullhash}{c1}
+  \field{sortinit}{C}
+  \field{note}{Disponible: 2016-06-25}
+  \field{title}{Natural Tiny Shell}
+  \verb{url}
+  \verb https://www.cubeatsystems.com/ntshell/
+  \endverb
+\endentry
+
+\entry{interOpamp}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Inc}{I.}%
+     {Microchip~Technology}{M.~T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{IMT1}
+  \strng{fullhash}{IMT1}
+  \field{sortinit}{I}
+  \field{note}{Disponible: 2016-06-25}
+  \field{title}{Simplified Thermocouple Interfaces and PICmicro{AN844}}
+  \verb{url}
+  \verb http://ww1.microchip.com/downloads/en/AppNotes/00844a.pdf
+  \endverb
+\endentry
+
+\entry{lpcopen}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{NXP Semiconductors}}{N.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{N1}
+  \strng{fullhash}{N1}
+  \field{sortinit}{N}
+  \field{note}{Disponible: 2016-06-25}
+  \field{title}{LPCOPEN v2.16 Drivers, Middleware and Examples}
+  \verb{url}
+  \verb https://www.nxp.com/products/processors-and-microcontrollers/arm-based-
+  \verb processors-and-mcus/lpc-cortex-m-mcus/lpc4300-cortex-m4-m0/lpcopen-soft
+  \verb ware-development-platform-lpc43xx:LPCOPEN-SOFTWARE-FOR-LPC43XX
+  \endverb
+\endentry
+
+\entry{CIAA}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Proyecto CIAA}}{P.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{P1}
+  \strng{fullhash}{P1}
+  \field{sortinit}{P}
+  \field{note}{Disponible: 2016-06-25}
+  \field{title}{Computadora Industrial Abierta Argentina}
+  \verb{url}
+  \verb http://proyecto-ciaa.com.ar/devwiki/doku.php?id=start
+  \endverb
+  \field{year}{2014}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
