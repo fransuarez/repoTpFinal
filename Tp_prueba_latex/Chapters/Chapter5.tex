@@ -1,23 +1,66 @@
-% Chapter Template
-
-\chapter{Conclusiones} % Main chapter title
-
-\label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-
-
+\chapter{ Conclusiones }
+\label{Chapter5} 
 %----------------------------------------------------------------------------------------
+En este ultimo capitulo se vuelcan las conclusiones acerca del prototipo y la funcionalidad lograda. También se analizan si las opciones en el proceso de desarrollo fueron las correctas. Finalmente se describen los cambios y mejoras que se le realizaran a futuro a fin de mejorar las funcionalidades y optimizar la mantenibilidad del mismo. 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
+\section{ Conclusiones generales }
 
-\section{Conclusiones generales }
+Se describen las conclusiones separando los entornos de hardware y de software. Esto es debido a que el mismo implico la toma de decisiones en los rasgos del prototipo. 
 
-La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
+\subsection{ Software del prototipo }
+El presente sistema desarrollado sobre una necesidad especifica permitió lograr un sistema base de control y monitoreo de parámetros físicos en un proceso de fabricación. El firmware a su vez cuenta con los siguientes características mas sobresalientes:
+\begin{itemize}
+\item Es un sistema simple y modularizado en tareas independientes, lo cual lo hace mantenible y testeable.
+\item Los procesos que funcionan sobre el sistema operativo están pensado para ser compilados de forma opcional.
+\item Se pueden incrementar los servicios o quitarlos en función de modificar su funcionalidad.
+\item Tiene gran disponibilidad de tiempo de procesador y de memoria para agregarle funcionalidad.
+\item Es portable hacia otras plataformas de LPC M4 con solo modificar las librerías lpc open.
+\end{itemize}
+
+\subsection{ Hardware del prototipo }
+A nivel particular de la implementación realizada se logro cumplir con gran parte de los requisitos originales y con la mayoría de los requisitos originados para el prototipo final. 
+El sistema originalmente se pensó para ser implementado sobre un microprocesador con menores prestaciones que el del micro de la EDU-CIAA. Como sobre éste demostró estar holgado de recursos, se concluye que la transición hacia una plataforma mas reducida es realizable.
+
+Los elementos seleccionado como interfaz de hardware demostraron ser suficientes para integrar en una placa dedicada, de esta manera se pueden reducir los costos al no usar módulos con soluciones de terceros que muchas veces elevan altamente los costos de los sensores de campo.
+
+\subsection{ Proceso de desarrollo }
+
+A nivel del proceso de desarrollo se pueden definir una serie de hitos positivos y otro negativos. Como positivos están:
+\begin{itemize}
+\item Ajustarse a la estructura del proceso de análisis de sistema, casos de uso y requerimientos permitió una trazabilidad entre las características del prototipo.
+\item Se logró un producto mínimo viable óptimo.
+\item Utilizar un sistema de control de versiones (GIT) del firmware permitió tener un seguimiento claro de las funcionalidades logradas durante el proceso.
+\item Diseñar el firmware en módulos independientes permitió lograr un análisis de calidad del mismo de manera mas simple y confiable.
+\end{itemize}
+
+Como rasgos negativos se pueden destacar:
+\begin{itemize}
+\item Dedicarle extenso tiempo hasta la definiciones especificas de los requerimientos resultó contraproducente por las demoras para iniciar con el proyecto.
+\item Implementar los módulos de interfaces con sensores de temperatura implicó mas tiempo del pensado. 
+\item No haber desarrollado una arquitectura completa del sistema antes de iniciarlo produjo mas demoras que si se hubiera modelizado integro desde un principio.
+\end{itemize}
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
-\section{Próximos pasos}
+\section{ Próximos pasos }
 
-Acá se indica cómo se podría continuar el trabajo más adelante.
+A nivel de software quedaron varios puntos abiertos para darle mas prestaciones. Entre ellos se implementaran:
+\begin{itemize}
+\item Agregar mas comandos sobre la comunicación vía terminal-UART para tener mas prestaciones. 
+\item Desarrollar servicios de comunicación vía I2C para interactuar con módulos externos, particularmente sensores.
+\item Desarrollar servicios de comunicación MODBUS-RS485 para interactuar con otros plataformas.
+\item Implementar un módulo de servicios UDP-Ethernet para pode comunicarse a futuro con un sistema central tipo SCADA.
+\item Mejorar los módulos desarrollados estandarizando mas las nombres de las rutinas y reestructurando archivos headers.
+\item Agregar mas protocolos de prueba y validación para poder agregarlos a futuro a un servidor de verificación tipo Jenkins.
+\end{itemize}
+
+A nivel de hardware se piensan a futuro los siguientes pasos:
+\begin{itemize}
+\item Probar la portabilidad de sistema hacia una plataforma con ARM M4 de prestaciones reducidas.
+\item Elaborar el "poncho" de la EDU-CIAA como se pensó originalmente pero agregándole integrado mas acordes a los que se pueden conseguir en el mercado local.
+\end{itemize}

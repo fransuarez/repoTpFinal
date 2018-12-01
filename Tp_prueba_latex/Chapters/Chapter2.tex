@@ -47,7 +47,7 @@ En la Figura \ref{fig:diagrama_proceso} se muestra los efectos producidos sobre 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Figures/Cap_2/diagrama_galvanizado_completo}
-	\caption{ Diagrama simplificado de las etapas \footnotemark. \footnotemark.}
+	\caption{ Diagrama simplificado de las etapas} \footnotemark \footnotemark
 	\label{fig:diagrama_proceso}
 \end{figure}
 
@@ -193,46 +193,49 @@ Cabe mencionar que la lista de requerimientos se originó previamente en la mate
 
 \item Temperatura (RFTEM)
 \begin{enumerate}
-\item El sistema medirá la temperatura con un resolución de XX, cada YY segundos.
-\item El sistema mantendrá la temperatura controlada según los parámetros configurados por el usuario.
+\item El sistema medirá la temperatura con un resolución de 1 grado , cada 15 segundos.
+\item El sistema mantendrá la temperatura controlada dentro de rangos prefijados según la cuba a cual corresponda, con un PID con auto aprendizaje a no más de 5 grados de dispersión.
 \item El sistema elevará la temperatura a través de la activación de una salida digital conectada a una resistencia.
-\item La activación de la resistencia se implementará a través de una ventana Smith Trigger para evitar la intermitencia y generación de ruido en las líneas de alimentación principal. Cruce por 0.
-\item En caso de que la temperatura se exceda de rango de considerar interrumpir el proceso y emitir una alarma.
-\item El sistema almacenará al menos XX valores de temperatura en un archivo en memoria flash.
+\item La señal de temperatura será pasada a través de una ventana Smith Trigger (para evitar la intermitencia y generación de ruido en activaciones bruscas de la resistencia).
+\item En caso de que la temperatura salga de rango por más de 5 minutos, se considerará interrumpir el proceso y emitir una alarma.
+\item El sistema almacenará valores de temperatura de al menos 6 horas de funcionamiento en un archivo en memoria flash.
 \end{enumerate}
 
 \item Energía (RFENE)
 \begin{enumerate}
-\item El software medirá la corriente total (DC) entregada al proceso de electrólisis cada XX segundos, con YY de resolución.
-\item El software medirá la tensión aplicada (DC) entre los bornes del electrólisis cada XX segundos con YY de resolución.
-\item El sistema almacenará al menos XX valores de corriente y tensión en un archivo en memoria flash.
-\item Los rangos de valores óptimos de tensión y corriente serán tomados de los parámetros de lote ingresados por el usuario y mostrados por pantalla para su configuración manual en la fuente de alimentación principal.
+\item El software medirá la corriente total (DC) entregada al proceso de electrólisis cada 15 segundos, con 1 Amp de resolución.
+\item El software medirá la tensión aplicada (DC) entre los bornes del electrólisis cada 15 segundos con 1V de resolución.
+\item El sistema almacenará valores de corriente y tensión de por lo menos 6 horas de funcionamiento en un archivo en memoria flash.
+\item Los rangos de valores óptimos de tensión y corriente serán tomados de los parámetros de lote ingresados por el usuario.
 \end{enumerate}
 
 \item Conductividad (RFCOND)
 \begin{enumerate}
-\item El software calculará a través de la corriente y tensión medidas en el tanque de galvanización, la conductividad de la solución salina cada XX segundos con YY de resolución.
-\item El software deberá compensar las eventuales desviaciones de la conductividad óptima a través de la activación de XX válvulas de aditivos.
-\end{enumerate}
-
-\item Interfaces Hombre-Máquina (RFHMI)
-\begin{enumerate}
-\item El sistema contará con una pantalla estado del sistema con variables a definir.
-\item El sistema contará con un método de ingreso de parámetros de lote a procesar.
-\item Deberá permitir ingresar parámetros en modo manual y otros en modo codificado.
-\item Deberá brindar a través de una interfaz Ethernet los históricos almacenados en memoria flash de variables del proceso que necesiten ser auditadas tras una etapa o tras el proceso completo. El máximo de registros será de XX número de puntos en formato YY.
+\item El software medirá la conductividad, sólo en los tanques de agua des-ionizada, a través de una entrada analógica cada 60 segundos con resolución a definir.
+\item El sistema debe activar una alarma si después de 10 minutos el nivel de conductividad no baja del valor máximo admisible, a definir luego.
 \end{enumerate}
 
 \item Tiempos (RFTI)
 \begin{enumerate}
 \item El software llevará un conteo del tiempo entre cada baño en las bateas, desde el momento que se inicia hasta el final del proceso.
+\item El sistema llevará un conteo regresivo de duración variable según la etapa, que inicia y detiene con un pulsador manual. Al completarse el tiempo debe emitir un señal lumínico/sonora para que el operador prosiga a la siguiente etapa.
 \item En cada etapa deberá avisar y esperar a que un operario habilite la iniciación de la siguiente etapa.
 \end{enumerate}
 
 \item Niveles de bateas (RFNB)	
 \begin{enumerate}
-\item Evaluará que los niveles dentro del galvanizador estén dentro de los rangos permitidos de operación.
-\item En caso de algún nivel crítico se emitirán alarmas y se considera la interrupción del proceso.
+\item Evaluará que los niveles de líquido dentro del galvanizador estén dentro de los rangos permitidos de operación.
+\item En caso de superar algún nivel crítico por más de 60 segundos se emitirán alarmas y se considera la interrupción del proceso.
+\end{enumerate}
+
+\item Interfaces Hombre-Máquina (RFHMI) \footnotemark
+\begin{enumerate}
+\item El sistema mostrará por pantalla gráfica el estado del sistema de modo con variables a definir.
+\item El sistema contará con un método de ingreso de parámetros de lote, a procesar en modo texto.
+\item Deberá permitir ingresar parámetros en modo manual y en modo automático, como letras y números.
+\item Deberá brindar a través de una interfaz ethernet los históricos almacenados en memoria flash de variables del proceso que necesiten ser auditadas tras una etapa o tras el proceso completo. El máximo de registros será de XX número de puntos en
+formato YY. \footnotemark
+\item El sistema mostrará por pantalla los rangos de valores óptimos de tensión y corriente según el lote ingresado, que deberán ser configurados manualmente en la interfaz de la fuente de alimentación principal del galvanizador. El sistema esperará una confirmación de que la fuente se configuró. El valor se podrá consultar una vez iniciado el proceso.
 \end{enumerate}
 
 \end{enumerate}
@@ -243,33 +246,35 @@ Cabe mencionar que la lista de requerimientos se originó previamente en la mate
 
 \item Temperatura (RITEM)
 \begin{enumerate}
-\item La temperatura será medida a través de un sensor analógico de tolerancia XX.
-\item La temperatura se medirá en los tanques XX, lo que arroja un total de YY numero de entradas analógicas independientes.(+xxAI)
+\item La temperatura se medirá en los tanques, con un sensor por tanque multiplexadas a una entrada analógica.
+\item La temperatura se controlará en los tanques por accionamiento de 1 resistencia térmica por tanque. En total se controlará en tres tanques.
 \end{enumerate}
 
 \item Energía (RIENE)
 \begin{enumerate}
-\item Tendrá un sensor de alta corriente del tipo XX conectado en una entrada analógica, para la corriente de galvanizador. (+1AI)
-\item Tendrá un sensor de tensión de tipo XX conectados a los bornes de galvanizador. (+1AI)
+\item Tendrá un sensor de alta corriente (500A) por cuba galvánica.
+\item Tendrá un sensor de tensión (5V) conectados a los bornes de las cubas de galvanización.
 \end{enumerate}
 
 \item Conductividad (RICOND)
 \begin{enumerate}
-\item Tendrá XX dispositivos dosificador/es conectados a salidas digitales. (+xxDO)
-\end{enumerate}
-
-\item Interfaces Hombre-Máquina (RIHMI)
-\begin{enumerate}
-\item Debe mostrar información a través de un puerto VGA/HDMI con una taza de refresco menor a XX segundos. (+1USB)
-\item Tomará de una entrada serie USB los valores de lote. (+1USB)
-\item Accionara a través de una salida digital una alarma sonora/lumínica en caso de algún tipo de falla. (+1DO, +1AO) 
-\item Contará con uno o dos pulsadores a fin de poder detener y accionar el procesos de galvanización, conectados a una/dos entradas binarias.(+1/2DO)
-\item Dispondrá de una conexión remota a través de Ethernet. (+1ETH)
+\item Tendrá una electroválvula conectada a una salida digital por cada batea donde se tenga agua des-ionizada. 
+\item Tendrá un sensor de conductividad conectado a cada batea con agua des ionizada. En total se tienen seis sensores en entrada analógica. 
 \end{enumerate}
 
 \item Niveles de bateas (RINB)
 \begin{enumerate}
-\item Tendrá XX sensores de nivel conectados a entradas digitales. (+xxDI)
+\item Tendrá sensores de nivel en los tanques donde haya control de temperatura. 
+\end{enumerate}
+
+\item Interfaces Hombre-Máquina (RIHMI)
+\begin{enumerate}
+\item Mostrará información a través de un puerto VGA/HDMI con una taza de refresco menor a 5 segundos.
+\item Tomará de una entrada serie USB los valores de lote. (+1 USB)
+\item Accionará a través de una salida digital una alarma sonora/lumínica en caso de algún tipo de falla. 
+\item Contará con pulsadores a fin de poder detener y accionar el procesos de galvanización, conectados a una entrada binaria.
+\item Contará con balizas de señalización de estado del sistema, verde funcionando, rojo detenido. 
+\item Dispondrá de una conexión remota a través de Ethernet. (+1 ETH)
 \end{enumerate}
 
 \end{enumerate}
@@ -277,33 +282,39 @@ Cabe mencionar que la lista de requerimientos se originó previamente en la mate
 %------------------------------------------------------------------------
 \item Requerimientos no Funcionales (RNF)
 \begin{enumerate}
-\item Deberá ser probada la funcionalidad a través de un banco de pruebas que se ajuste al comportamiento del sistema. 
-\end{enumerate}
+\item Deberá ser probada la funcionalidad a través de un banco de pruebas que se ajuste al comportamiento del sistema.
 %------------------------------------------------------------------------
+\end{enumerate}
 \item Restricciones de Diseño (RD)
 \begin{enumerate}
 \item De los requerimientos de interfaz se resume que como mínimo el hardware deberá contar con las siguientes interfaces:\\
 - Entradas analógicas (AI) >= 3	\\
 - Entradas digitales (DI) >= 3	\\
 - Salidas analógicas (AO) >= 1	\\
-- Salidas digitales (DO) >= xx	\\
+- Salidas digitales (DO) >= 4	\\
 - Puerto USB (USB) = 2	\\
 - Puerto RED (ETH) = 1	\\
-\end{enumerate}
 %------------------------------------------------------------------------
+\end{enumerate}
 \item Requerimientos a Futuro (RAF)
 \begin{enumerate}
-\item Brindar información acerca de si es necesario realizar una limpieza de sistema. Se puede utilizar como parámetro el número de procesos que se ejecutaron 	 	 	
-\item Deberá permitir loguearse antes de iniciar el proceso, así tener un responsable de operación.
-\item Deberá interactuar con una cinta de transportación automática que llevará las placas de una batea a otra. Accionara los motores (paso a paso?) de transporte y de elevación.
+\item Brindar información acerca de si es necesario realizar una limpieza de sistema. Se puede utilizar como parámetro el número de procesos que se ejecutaron. 	 	 	
+\item Deberá permitir loguearse al iniciar el proceso como un responsable de operación.
+\item Deberá interactuar con una cinta de transportación automática que llevará las placas de una batea a otra. Accionara los motores de transporte y de elevación.
 \item Si no se respetan los tiempos el sistema deberá dejar asentado el técnico y las acciones manuales ejecutadas a fin de tener un histórico antes posibles fallas en el lote.
+\item Deberá detectar si el sistema de extracción de gases está activo.
+\item Deberá controlar el ventilador del sistema extractor de gases con un regulador por frecuencia o ancho de pulso.
+\item Deberá detectar si la inyección de aire está activa en los tanques que lo requieren.
+\end{enumerate}
 \end{enumerate}
 
-\end{enumerate}
 
 En función de estos se propuso implementar el proyecto sobre una plataforma EDU-CIAA \citep{CIAA} en conjunto con una placa de interfaz hecha a medida. 
-Los parámetros definidos con XX son aquellos que no pudieron ser definidos en su momento con el cliente ¿?
-Los RFHMI relacionados con el ingreso de lotes no pudieron implementarse en esta primer etapa del proyecto al no tener un sistema centralizado que controle las etapas.
+
+\footnotetext{Los RFHMI relacionados con el ingreso de lotes no pudieron implementarse en esta primer etapa del proyecto al no tener un sistema centralizado que controle las etapas.}
+\footnotetext{Los parámetros definidos con XX son aquellos que no pudieron ser definidos en su momento con el cliente.}
+
+
 
 
 

@@ -42,7 +42,7 @@ Aquí se presenta el detalle del hardware planteado como un \enquote{poncho} sob
 
 
 \section{Análisis del Hardware}
-
+\label{analisis_hardware}
 El prototipo se implemento sobre una EDU-CIAA en conjunto con un hardware de adaptación de las interfaces. Para ello se utilizaron los proyectos de código abierto Kicad \citep{kicad} para la elaboración del poncho de la EDU-CIAA \citep{brengiponchos} que adapta las entradas y salidas de los conectores de expansión con los sensores y actuadores utilizados en la planta. 
 
 \subsection{ Sensores y actuadores }
@@ -95,7 +95,7 @@ Según las configuraciones de la sección \ref{subsec:casos_de_uso} y en funció
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.7\textwidth]{Figures/Cap_3/conexion_modo_2}
+	\includegraphics[width=.78\textwidth]{Figures/Cap_3/conexion_modo_2}
 	\caption{Conexión en modo funcionamiento 2.}
 	\label{fig:conectPerifericos2}
 \end{figure}
@@ -127,20 +127,57 @@ En el Apéndice \ref{AppendixB} se encuentran los esquemáticos completos de las
 %----------------------------------------------------------------------------------------
 \section{ Arquitectura del Software }
 
-En función de los requerimientos vistos en \ref{subsec:Requerimientos} y de implementar los conocimientos aprendidos durante el posgrado, se determinaron los criterios para esta etapa. 
-En primer lugar se eligió usar lenguaje C y el sistema operativo FreeRTOS para la implementación. 
-En segundo se diseñó el código de manera modularizado en tareas las cuales pueden funcionar de modo independiente según si la implementación lo requiere. 
-En tercer lugar se tiene como modelo patrón el denominado \enquote{control ambiental} el cual se emplea cuando es un sistema con sensores que proporcionan información sobre el entorno y los actuadores pueden cambiar.
+En función de los requerimientos vistos en \ref{subsec:Requerimientos} y de implementar los conocimientos aprendidos durante el posgrado, se determinaron los criterios para esta etapa.\\ 
+En primer lugar se eligió usar lenguaje C y el sistema operativo FreeRTOS para la implementación.\
+En segundo se diseñó el código de manera modularizado en tareas las cuales pueden funcionar de modo independiente según si la implementación lo requiere. \
+En tercer lugar se tiene como modelo patrón el denominado \enquote{control ambiental} el cual se emplea cuando es un sistema con sensores que proporcionan información sobre el entorno y los actuadores pueden cambiar.\\
 
-Por ultimo la aplicación cuenta los siguientes componentes:\\
-a- Interfaz de usuario (ingreso de parámetros, uart, lcd, alarmas). \\
-b- Control de temperatura.\\
-c- Monitoreo de nivel.\\
-d- Monitoreo de conductividad.\\
-e- Monitoreo de energía.\\
-f- Control de tiempos.\\
+La aplicación cuenta los siguientes componentes:
+\begin{itemize}
+\item a.Interfaz de usuario (ingreso de parámetros, uart, lcd, alarmas).
+\item b.Control de temperatura.
+\item c.Monitoreo de nivel.
+\item d.Monitoreo de conductividad.
+\item e.Monitoreo de energía.
+\item f.Control de tiempos.
+\end{itemize}
+
+Según el modo de funcionamiento seleccionado se tendrá una diferente configuración del software siempre dentro de la misma arquitectura y con pocas diferencias entre ellos. En la figura \ref{fig:diag_interfaces_m1} se muestran los diagramas de interfaces y procesos internos en el modo de funcionamiento 1. 
 % AGREGAR UN DIAGRAMA DE INTERACCION ENTRE COMPONENTES ¿? ******************************
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Figures/Cap_3/diagrama_interfaces_1}
+	\caption{ Vinculación de las periféricos del sistema con las interfaces internas en el modo 1. }
+	\label{fig:diag_interfaces_m1}
+\end{figure}
+ 
+En la figura \ref{fig:diag_comunicacion_m1} se muestra el diagrama de comunicación entre los procesos originados para el caso de funcionamiento 1. Se nota su relación con los componentes de la aplicación: a,b,e y f.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Figures/Cap_3/diagrama_comunicacion_1}
+	\caption{ Diagrama de comunicación entre procesos en el modo 1. }
+	\label{fig:diag_comunicacion_m1}
+\end{figure}
+ 
+En la figura \ref{fig:diag_interfaces_m2} se muestran los diagramas de interfaces y procesos internos en el modo de funcionamiento 2.  Se nota que hay poca diferencia con el caso anterior, solo tienen activos otros procesos de interfaz.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Figures/Cap_3/diagrama_interfaces_2}
+	\caption{ Vinculación de las periféricos del sistema con las interfaces internas en el modo 2.}
+	\label{fig:diag_interfaces_m2}
+\end{figure}
+
+En la figura \ref{fig:diag_comunicacion_m2} se muestra el diagrama de comunicación entre los procesos originados para el caso de funcionamiento 2. Se nota su relación con los componentes de la aplicación: a,b,c, y f.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Figures/Cap_3/diagrama_comunicacion_2}
+	\caption{ Diagrama de comunicación entre procesos en el modo 2. }
+	\label{fig:diag_comunicacion_m2}
+\end{figure}
+ 
 \subsection{ Capas de abstracción }
 
 el sistema se divide en capas que otorgan abstracción del hardware y además permiten obtener código mas reutilizable e independiente de la plataforma. Estos son cambios que el cliente puede solicitar a futuro.
@@ -190,7 +227,7 @@ La lectura de las entradas digitales las hace por interrupción mientras que las
 % Se puede pensar tambien en poder poner la tarea en suspension hasta no tener una habilitacion por algun semaforo o por alguna tarea que la suspenda, tendria que ser si o si la taskTerminal. O bien por algun estado de error que la deje esperando la normalizacion. 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_inp}
+	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_input}
 	\caption{ Diagrama de estados de la tarea control de entradas. }
 	\label{fig:diag_TareasInp}
 \end{figure}
@@ -205,7 +242,7 @@ La figura \ref{fig:diag_TareasOut} muestra el diagrama de estados de la tarea.
  
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.9\textwidth]{Figures/Cap_3/diagramaTareaOut}
+	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_output}
 	\caption{ Diagrama de estados de la tarea control de salidas. }
 	\label{fig:diag_TareasOut}
 \end{figure}
@@ -219,7 +256,7 @@ La figura \ref{fig:diag_TareasShell} muestra el diagrama de estados de la tarea.
 % Colocar diagrama de estados
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=.9\textwidth]{Figures/Cap_3/diagramaTareaShell}
+	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_terminal}
 	\caption{ Diagrama de estados de la tarea terminal de comunicación. }
 	\label{fig:diag_TareasShell}
 \end{figure}
@@ -249,22 +286,11 @@ Se encarga de manejar los registros que deben ser guardados y leídos de la memo
 La figura \ref{fig:diag_TareasLogs} muestra el diagrama de estados de la tarea.
 
 \begin{figure}[h!]
-	\centering
-	\includegraphics[width=.9\textwidth]{Figures/Cap_3/diagramaTareaLogs}
+	\raggedleft
+	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_datalog}
 	\caption{Diagrama de estados de la tarea manejo de datos en memoria.}
 	\label{fig:diag_TareasLogs}
 \end{figure}
-
-% Esta no deberia de hacer falta..........
-La figura \ref{fig:diag_InterTaskLogs} muestra como interactúa entre las demás tareas.
-% Colocar diagrama de estados
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=.9\textwidth]{Figures/Cap_3/diagramaIntertareasLog}
-	\caption{Diagrama que muestra la vinculación entre estas tarea y las demás.}
-	\label{fig:diag_InterTaskLogs}
-\end{figure}
-
 
 
 
