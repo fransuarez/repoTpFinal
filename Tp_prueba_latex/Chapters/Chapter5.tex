@@ -8,9 +8,15 @@ En este ultimo capitulo se vuelcan las conclusiones acerca del prototipo y la fu
 %----------------------------------------------------------------------------------------
 \section{ Conclusiones generales }
 
-Se describen las conclusiones separando los entornos de hardware y de software. Esto es debido a que el mismo implico la toma de decisiones en los rasgos del prototipo. 
+Se describen las conclusiones separando los entornos de hardware y de software. 
 
-\subsection{ Software del prototipo }
+\subsection{ Hardware del prototipo }
+A nivel particular de la implementación realizada se logro cumplir con gran parte de los requisitos originales y con la mayoría de los requisitos originados para el prototipo final. 
+El sistema originalmente se pensó para ser implementado sobre un microprocesador con menores prestaciones que el del micro de la EDU-CIAA. Como sobre éste demostró estar holgado de recursos, se concluye que la transición hacia una plataforma mas reducida es realizable.
+
+Los elementos seleccionado como interfaz de hardware demostraron ser suficientes para integrar en una placa dedicada, de esta manera se pueden reducir los costos al no usar módulos con soluciones de terceros que muchas veces elevan altamente los costos de los sensores de campo.
+
+\subsection{ Firmware del prototipo }
 El presente sistema desarrollado sobre una necesidad especifica permitió lograr un sistema base de control y monitoreo de parámetros físicos en un proceso de fabricación. El firmware a su vez cuenta con los siguientes características mas sobresalientes:
 \begin{itemize}
 \item Es un sistema simple y modularizado en tareas independientes, lo cual lo hace mantenible y testeable.
@@ -19,12 +25,6 @@ El presente sistema desarrollado sobre una necesidad especifica permitió lograr
 \item Tiene gran disponibilidad de tiempo de procesador y de memoria para agregarle funcionalidad.
 \item Es portable hacia otras plataformas de LPC M4 con solo modificar las librerías lpc open.
 \end{itemize}
-
-\subsection{ Hardware del prototipo }
-A nivel particular de la implementación realizada se logro cumplir con gran parte de los requisitos originales y con la mayoría de los requisitos originados para el prototipo final. 
-El sistema originalmente se pensó para ser implementado sobre un microprocesador con menores prestaciones que el del micro de la EDU-CIAA. Como sobre éste demostró estar holgado de recursos, se concluye que la transición hacia una plataforma mas reducida es realizable.
-
-Los elementos seleccionado como interfaz de hardware demostraron ser suficientes para integrar en una placa dedicada, de esta manera se pueden reducir los costos al no usar módulos con soluciones de terceros que muchas veces elevan altamente los costos de los sensores de campo.
 
 \subsection{ Proceso de desarrollo }
 

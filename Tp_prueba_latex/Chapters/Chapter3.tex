@@ -134,12 +134,12 @@ En tercer lugar se tiene como modelo patrón el denominado \enquote{control ambi
 
 La aplicación cuenta los siguientes componentes:
 \begin{itemize}
-\item a.Interfaz de usuario (ingreso de parámetros, uart, lcd, alarmas).
-\item b.Control de temperatura.
-\item c.Monitoreo de nivel.
-\item d.Monitoreo de conductividad.
-\item e.Monitoreo de energía.
-\item f.Control de tiempos.
+\item a. Interfaz de usuario (ingreso de parámetros, uart, lcd, alarmas).
+\item b. Control de temperatura.
+\item c. Monitoreo de nivel.
+\item d. Monitoreo de conductividad.
+\item e. Monitoreo de energía.
+\item f. Control de tiempos.
 \end{itemize}
 
 Según el modo de funcionamiento seleccionado se tendrá una diferente configuración del software siempre dentro de la misma arquitectura y con pocas diferencias entre ellos. En la figura \ref{fig:diag_interfaces_m1} se muestran los diagramas de interfaces y procesos internos en el modo de funcionamiento 1. 
@@ -214,8 +214,9 @@ Por la necesidad de dividir el problema en partes menores para hacerlo mas escal
 En la figura \ref{fig:diag_Tareas} muestra un diagrama de estado general de las tareas y la interacción entre ellas.
 % Diagrama de tareas y conexion entre ellas
 \begin{figure}[h!]
-	\centering
-	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tareas}
+	\hspace{-1.0cm}
+%	\centering
+	\includegraphics[width=1.1\textwidth]{Figures/Cap_3/diagrama_tareas}
 	\caption{ Interacción entre tareas. }
 	\label{fig:diag_Tareas}
 \end{figure}
@@ -226,8 +227,9 @@ La lectura de las entradas digitales las hace por interrupción mientras que las
  
 % Se puede pensar tambien en poder poner la tarea en suspension hasta no tener una habilitacion por algun semaforo o por alguna tarea que la suspenda, tendria que ser si o si la taskTerminal. O bien por algun estado de error que la deje esperando la normalizacion. 
 \begin{figure}[h!]
-	\centering
-	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_input}
+	\hspace{-0.5cm}
+%	\centering
+	\includegraphics[width=1.05\textwidth]{Figures/Cap_3/diagrama_tarea_input}
 	\caption{ Diagrama de estados de la tarea control de entradas. }
 	\label{fig:diag_TareasInp}
 \end{figure}
@@ -241,8 +243,8 @@ Las acciones que activan las salidas están parametrizadas en un registro intern
 La figura \ref{fig:diag_TareasOut} muestra el diagrama de estados de la tarea.
  
 \begin{figure}[h!]
-	\centering
-	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_output}
+	\hspace{-0.5cm}
+	\includegraphics[width=1.0\textwidth]{Figures/Cap_3/diagrama_tarea_output}
 	\caption{ Diagrama de estados de la tarea control de salidas. }
 	\label{fig:diag_TareasOut}
 \end{figure}
@@ -255,23 +257,24 @@ Originariamente se pensó también que la misma ajustaría los parámetros de al
 La figura \ref{fig:diag_TareasShell} muestra el diagrama de estados de la tarea.
 % Colocar diagrama de estados
 \begin{figure}[h!]
-	\centering
-	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_terminal}
+	\hspace{-0.1cm}
+	\includegraphics[width=1.0\textwidth]{Figures/Cap_3/diagrama_tarea_terminal}
 	\caption{ Diagrama de estados de la tarea terminal de comunicación. }
 	\label{fig:diag_TareasShell}
 \end{figure}
 
 Los estados están predeterminados por los comandos implementados de los cuales se puede agregar hasta 255. En la tabla \ref{tablas_comandos} se resumen los comandos implementados.
 
-\begin{table}[h!]
+\begin{table}[]
+\hspace{-1.5cm}
 \begin{flushleft}
-\begin{tabular}{|m{1.5cm}|m{3cm}|m{4.2cm}|m{4.2cm}|}\hline
+\begin{tabular}{|m{1.8cm}|m{3cm}|m{4.5cm}|m{4.5cm}|}\hline
 {\textbf{Comando}} & {\textbf{Función}} & {\textbf{Descripción}} & {\textbf{Parámetros}} \\ \hline
-{\textit{hist}} & {Registros históricos} & { devuelve una lista de parámetros en formato csv (coma separated value) con los últimos registros guardados en memoria.} & {Ninguno} \\ \hline
-{\textit{mon}} & {monitoreo de puertos} & {muestra en pantalla el valor y la variación de las entradas y salidas del dispositivo en función del modo de funcionamiento.} & {Ninguno.} \\ \hline
-{\textit{conf}} & {Configuración de parámetros} & {Configura pines asignados, valores de alarma, tiempos de muestreo.} & {nXmax, nXmin, tXmax, tXmin. X: Número de parámetro. n: Nivel. t: Tiempo.} \\ \hline
-{\textit{test}} & {testing de puertos} & {permite modificar el valor de los salidas o de una entrada para evaluar el comportamiento del sistema.} & {PX val, donde P=I/O, X=id puerto, val= valor del puerto..} \\ \hline
-{\textit{time}} & {monitoreo de puertos} & {permite modificar la hora y fecha del calendario interno usado en la grabación de históricos.} & {c DDMMAA, calendario día(DD), mes(MM), año(AA).t HHMMSS, tiempo hora(HH), minutos(MM), segundos(SS).} \\ \hline
+{\textit{hist}} & {Registros históricos} & { Devuelve una lista con los últimos registros guardados en memoria.} & {Ninguno} \\ \hline
+{\textit{mon}} & {Monitoreo de puertos} & {Muestra el valor y la variación de las entradas y salidas del dispositivo.} & {Ninguno.} \\ \hline
+{\textit{conf}} & {Configuración de parámetros} & {Configura valores máximo, mínimo y tiempos de muestreo de un pin.} & {nXmax, nXmin, tXmax, tXmin. X: Número de parámetro. n: Nivel. t: Tiempo.} \\ \hline
+{\textit{test}} & {Testing de puertos} & {Modifica el valor de una entrada para evaluar el comportamiento del sistema.} & {PX val, donde P=I/O, X=id puerto, val= valor del puerto..} \\ \hline
+{\textit{time}} & {Configura el calendario} & {Modificar la hora y fecha del calendario interno usado en la grabación de históricos.} & {c DDMMAA, calendario día(DD), mes(MM), año(AA).t HHMMSS, tiempo hora(HH), minutos(MM), segundos(SS).} \\ \hline
 \end{tabular}
 \end{flushleft}
 \caption{Descripción tablas de comandos.}
@@ -285,8 +288,8 @@ Se encarga de manejar los registros que deben ser guardados y leídos de la memo
 % Colocar diagrama de estados
 La figura \ref{fig:diag_TareasLogs} muestra el diagrama de estados de la tarea.
 
-\begin{figure}[h!]
-	\raggedleft
+\begin{figure}[]
+	\hspace{-1.5cm}
 	\includegraphics[width=1.2\textwidth]{Figures/Cap_3/diagrama_tarea_datalog}
 	\caption{Diagrama de estados de la tarea manejo de datos en memoria.}
 	\label{fig:diag_TareasLogs}

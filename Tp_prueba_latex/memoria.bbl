@@ -16,24 +16,6 @@
   {}
 \endgroup
 
-\entry{kicad}{misc}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{ KiCad Developers Team}}{K.}%
-     {}{}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{K1}
-  \strng{fullhash}{K1}
-  \field{note}{Disponible: 2018-11-25}
-  \field{title}{KiCad open source software suite for Electronic Design
-  Automation}
-  \verb{url}
-  \verb http://kicad-pcb.org/download/
-  \endverb
-\endentry
-
 \entry{free_rtos}{misc}{}
   \name{author}{1}{}{%
     {{}%
@@ -160,6 +142,43 @@
   \field{title}{Embedded software development workspace for microcontrollers.}
   \verb{url}
   \verb https://github.com/pridolfi/workspace
+  \endverb
+\endentry
+
+\entry{firmwareTP}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Suárez}{S.}%
+     {Francisco}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SF1}
+  \strng{fullhash}{SF1}
+  \field{sortinit}{S}
+  \field{note}{Disponible: 2016-06-25}
+  \field{title}{CIAA Firmware Project.}
+  \verb{url}
+  \verb https://github.com/fransuarez/repoTpFinal
+  \endverb
+\endentry
+
+\entry{kicad}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Team}{T.}%
+     {KiCad~Developers}{K.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{TKD1}
+  \strng{fullhash}{TKD1}
+  \field{sortinit}{T}
+  \field{note}{Disponible: 2018-11-25}
+  \field{title}{KiCad open source software suite for Electronic Design
+  Automation}
+  \verb{url}
+  \verb http://kicad-pcb.org/download/
   \endverb
 \endentry
 

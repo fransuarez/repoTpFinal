@@ -23,23 +23,24 @@
 \contentsline {section}{\numberline {3.2} Arquitectura del Software }{20}{section.120}
 \contentsline {subsection}{\numberline {3.2.1} Capas de abstracci\IeC {\'o}n }{21}{subsection.125}
 \contentsline {subsection}{\numberline {3.2.2} Dise\IeC {\~n}o }{23}{subsection.127}
-\contentsline {section}{\numberline {3.3} Sistemas control de entradas }{23}{section.129}
-\contentsline {section}{\numberline {3.4} Sistemas control de salidas }{23}{section.131}
+\contentsline {section}{\numberline {3.3} Sistemas control de entradas }{24}{section.129}
+\contentsline {section}{\numberline {3.4} Sistemas control de salidas }{24}{section.131}
 \contentsline {section}{\numberline {3.5} Sistemas control de terminal-Shell }{25}{section.133}
 \contentsline {section}{\numberline {3.6} Sistemas gesti\IeC {\'o}n de datos }{25}{section.136}
 \contentsline {chapter}{\numberline {4}Ensayos y Resultados}{29}{chapter.138}
-\contentsline {section}{\numberline {4.1} Pruebas funcionales del software }{29}{section.139}
-\contentsline {subsection}{\numberline {4.1.1} Pruebas unitarias }{30}{subsection.141}
-\contentsline {subsection}{\numberline {4.1.2} Pruebas de Integraci\IeC {\'o}n }{31}{subsection.147}
-\contentsline {section}{\numberline {4.2} Ensayos de validaci\IeC {\'o}n hardware }{32}{section.150}
-\contentsline {subsection}{\numberline {4.2.1} Pruebas de interfaz }{33}{subsection.152}
-\contentsline {subsection}{\numberline {4.2.2} Validaci\IeC {\'o}n de requerimientos }{33}{subsection.153}
-\contentsline {chapter}{\numberline {5} Conclusiones }{35}{chapter.155}
-\contentsline {section}{\numberline {5.1} Conclusiones generales }{35}{section.156}
-\contentsline {subsection}{\numberline {5.1.1} Software del prototipo }{35}{subsection.157}
-\contentsline {subsection}{\numberline {5.1.2} Hardware del prototipo }{35}{subsection.158}
-\contentsline {subsection}{\numberline {5.1.3} Proceso de desarrollo }{36}{subsection.159}
-\contentsline {section}{\numberline {5.2} Pr\IeC {\'o}ximos pasos }{36}{section.160}
-\contentsline {chapter}{\numberline {A}Casos de Uso}{39}{appendix.161}
-\contentsline {chapter}{\numberline {B}Esquem\IeC {\'a}ticos}{43}{appendix.165}
-\contentsline {chapter}{Bibliograf\'{\i }a}{49}{appendix*.170}
+\contentsline {section}{\numberline {4.1} Pruebas funcionales del firmware }{29}{section.139}
+\contentsline {subsection}{\numberline {4.1.1} Pruebas unitarias }{30}{subsection.143}
+\contentsline {section}{\numberline {4.2} Ensayos de validaci\IeC {\'o}n hardware }{31}{section.148}
+\contentsline {subsection}{\numberline {4.2.1} Pruebas de interfaz }{32}{subsection.150}
+\contentsline {section}{\numberline {4.3} Ensayos de integraci\IeC {\'o}n }{33}{section.152}
+\contentsline {subsection}{\numberline {4.3.1} Validaci\IeC {\'o}n de requerimientos }{33}{subsection.153}
+\contentsline {subsection}{\numberline {4.3.2} Pruebas de rendimiento }{34}{subsection.155}
+\contentsline {chapter}{\numberline {5} Conclusiones }{37}{chapter.157}
+\contentsline {section}{\numberline {5.1} Conclusiones generales }{37}{section.158}
+\contentsline {subsection}{\numberline {5.1.1} Hardware del prototipo }{37}{subsection.159}
+\contentsline {subsection}{\numberline {5.1.2} Firmware del prototipo }{37}{subsection.160}
+\contentsline {subsection}{\numberline {5.1.3} Proceso de desarrollo }{38}{subsection.161}
+\contentsline {section}{\numberline {5.2} Pr\IeC {\'o}ximos pasos }{38}{section.162}
+\contentsline {chapter}{\numberline {A}Casos de Uso}{41}{appendix.163}
+\contentsline {chapter}{\numberline {B}Esquem\IeC {\'a}ticos}{45}{appendix.167}
+\contentsline {chapter}{Bibliograf\'{\i }a}{51}{appendix*.172}

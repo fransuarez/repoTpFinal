@@ -27,23 +27,23 @@
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Vinculaci\IeC {\'o}n de las perif\IeC {\'e}ricos del sistema con las interfaces internas en el modo 2.\relax }}{22}{figure.caption.123}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama de comunicaci\IeC {\'o}n entre procesos en el modo 2. \relax }}{22}{figure.caption.124}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Estructuras de capas del sistema.\relax }}{22}{figure.caption.126}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Interacci\IeC {\'o}n entre tareas. \relax }}{24}{figure.caption.128}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Interacci\IeC {\'o}n entre tareas. \relax }}{23}{figure.caption.128}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Diagrama de estados de la tarea control de entradas. \relax }}{24}{figure.caption.130}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Diagrama de estados de la tarea control de salidas. \relax }}{25}{figure.caption.132}
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Diagrama de estados de la tarea terminal de comunicaci\IeC {\'o}n. \relax }}{26}{figure.caption.134}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Diagrama de estados de la tarea manejo de datos en memoria.\relax }}{26}{figure.caption.137}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Diagrama de estados de la tarea manejo de datos en memoria.\relax }}{27}{figure.caption.137}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura de directorios del proyecto.\relax }}{29}{figure.caption.140}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Test de funciones interfaz de temperatura.\relax }}{30}{figure.caption.143}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Test de funciones interfaz de memoria.\relax }}{30}{figure.caption.144}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Archivos procesados en el test de temperatura.\relax }}{31}{figure.caption.145}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Archivos procesados en el test de memoria.\relax }}{31}{figure.caption.146}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Respuesta a un comando de configuraci\IeC {\'o}n.\relax }}{32}{figure.caption.148}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Banco de pruebas.\relax }}{33}{figure.caption.151}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Test de funciones interfaz de temperatura.\relax }}{30}{figure.caption.144}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Test de funciones interfaz de memoria.\relax }}{31}{figure.caption.145}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Archivos procesados en el test de temperatura.\relax }}{31}{figure.caption.146}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Archivos procesados en el test de memoria.\relax }}{32}{figure.caption.147}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Banco de pruebas.\relax }}{32}{figure.caption.149}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Lista de comando implementados.\relax }}{33}{figure.caption.151}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\IeC {\'a}tico jer\IeC {\'a}rquico del poncho EduCiaa.\relax }}{44}{figure.caption.166}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Esquem\IeC {\'a}tico entradas de termocupla y termistor.\relax }}{45}{figure.caption.167}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquem\IeC {\'a}tico de salidas digitales con relays.\relax }}{46}{figure.caption.168}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Esquem\IeC {\'a}tico de conectores de expansi\IeC {\'o}n con la eduCIAA.\relax }}{47}{figure.caption.169}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\IeC {\'a}tico jer\IeC {\'a}rquico del poncho EduCiaa.\relax }}{46}{figure.caption.168}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Esquem\IeC {\'a}tico entradas de termocupla y termistor.\relax }}{47}{figure.caption.169}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquem\IeC {\'a}tico de salidas digitales con relays.\relax }}{48}{figure.caption.170}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Esquem\IeC {\'a}tico de conectores de expansi\IeC {\'o}n con la eduCIAA.\relax }}{49}{figure.caption.171}
