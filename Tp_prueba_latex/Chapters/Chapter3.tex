@@ -54,7 +54,7 @@ Para la adaptación de las interfaces con termocuplas y termistores se necesitar
 También existen soluciones implementadas con amplificadores multietapas que son mas económicos pero que obligan a implementar la transducción de la señal en el microprocesador \citep{interOpamp}.\\
 En la Figura \ref{fig:cirCompTermocupla} se observa una configuración típica de adaptación para termocupla.
 
-\footnotetext{\url{bucar la url con la hoja de datos}} 
+\footnotetext{\url{https://datasheets.maximintegrated.com/en/ds/MAX31855.pdf}} 
 
 \begin{figure}[h!]
 	\centering
@@ -273,7 +273,6 @@ Los estados están predeterminados por los comandos implementados de los cuales 
 {\textit{hist}} & {Registros históricos} & { Devuelve una lista con los últimos registros guardados en memoria.} & {Ninguno} \\ \hline
 {\textit{mon}} & {Monitoreo de puertos} & {Muestra el valor y la variación de las entradas y salidas del dispositivo.} & {Ninguno.} \\ \hline
 {\textit{conf}} & {Configuración de parámetros} & {Configura valores máximo, mínimo y tiempos de muestreo de un pin.} & {nXmax, nXmin, tXmax, tXmin. X: Número de parámetro. n: Nivel. t: Tiempo.} \\ \hline
-{\textit{test}} & {Testing de puertos} & {Modifica el valor de una entrada para evaluar el comportamiento del sistema.} & {PX val, donde P=I/O, X=id puerto, val= valor del puerto..} \\ \hline
 {\textit{time}} & {Configura el calendario} & {Modificar la hora y fecha del calendario interno usado en la grabación de históricos.} & {c DDMMAA, calendario día(DD), mes(MM), año(AA).t HHMMSS, tiempo hora(HH), minutos(MM), segundos(SS).} \\ \hline
 \end{tabular}
 \end{flushleft}

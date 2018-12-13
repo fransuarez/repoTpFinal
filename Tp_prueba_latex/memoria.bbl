@@ -52,6 +52,25 @@
   \endverb
 \endentry
 
+\entry{euro_pth}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Circuits}{C.}%
+     {Euro}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CE1}
+  \strng{fullhash}{CE1}
+  \field{sortinit}{C}
+  \field{note}{Disponible: 2018-06-25}
+  \field{title}{Micro Section of a PTH}
+  \verb{url}
+  \verb https://www.eurocircuits.com/micro-section-of-a-pth
+  \endverb
+  \field{year}{2013}
+\endentry
+
 \entry{nt_shell}{misc}{}
   \name{author}{1}{}{%
     {{}%
@@ -70,6 +89,25 @@
   \endverb
 \endentry
 
+\entry{make_pcb}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Inc}{I.}%
+     {Advanced~Circuits}{A.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{IAC1}
+  \strng{fullhash}{IAC1}
+  \field{sortinit}{I}
+  \field{note}{Disponible: 2018-06-25}
+  \field{title}{How to Build a Printed Circuit Board}
+  \verb{url}
+  \verb https://www.4pcb.com/media/presentation-how-to-build-pcb.pdf
+  \endverb
+  \field{year}{2013}
+\endentry
+
 \entry{interOpamp}{misc}{}
   \name{author}{1}{}{%
     {{}%
@@ -86,6 +124,26 @@
   \verb{url}
   \verb http://ww1.microchip.com/downloads/en/AppNotes/00844a.pdf
   \endverb
+\endentry
+
+\entry{sase_mayer}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Mayer}{M.}%
+     {Marcos}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MM1}
+  \strng{fullhash}{MM1}
+  \field{sortinit}{M}
+  \field{note}{Disponible: 2018-06-25}
+  \field{title}{Circuitos Impresos SASE 2013}
+  \verb{url}
+  \verb http://www.sase.com.ar/2013/files/2013/09/SASE2013-Circuitos-Impresos-M
+  \verb arcos-Mayer.pdf
+  \endverb
+  \field{year}{2013}
 \endentry
 
 \entry{lpcopen}{misc}{}
@@ -143,6 +201,26 @@
   \verb{url}
   \verb https://github.com/pridolfi/workspace
   \endverb
+\endentry
+
+\entry{fatiga_termica}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Sharon}{S.}%
+     {Gil}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SG1}
+  \strng{fullhash}{SG1}
+  \field{sortinit}{S}
+  \field{note}{Disponible: 2018-06-25}
+  \field{title}{Thermal Cycling and Fatigue}
+  \verb{url}
+  \verb https://www.dfrsolutions.com/hubfs/Resources/services/Thermal-Cycling-a
+  \verb nd-Fatigue.pdf
+  \endverb
+  \field{year}{2013}
 \endentry
 
 \entry{firmwareTP}{misc}{}

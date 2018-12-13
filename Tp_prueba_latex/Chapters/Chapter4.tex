@@ -15,7 +15,7 @@ El firmware esta basado en módulos propios mas módulos de terceros. En la figu
 	\label{fig:diag_Repositorio}
 \end{figure}
 
-En sub-rama \textit{support} se encuentran las rutinas de desarrollo propio, que consisten en:
+En el directorio \textit{support} se encuentran las rutinas de desarrollo propio, que consisten en:
 \begin{itemize}
 \item \textit{apiSupport}: rutinas API (Application Programming Interface) interfaz de programación de aplicaciones.
 \item \textit{ciaaSupport}: rutinas de soporte del hardware propio de la EDU-CIAA.
@@ -23,8 +23,13 @@ En sub-rama \textit{support} se encuentran las rutinas de desarrollo propio, que
 \item \textit{taskServices}: rutinas principales de los servicios o tareas del programa.
 \end{itemize}
 
-El directorio \textit{LPC4337} básicamente se componen de las librerías del fabricante denominada LPC-OPEN \citep{lpcopen}. Allí se encuentran los subdirectorios \textit{chip} y \textit{base} donde se alojan los módulos de capa HAL \footnotemark y capa CMSIS \footnotemark respectivamente.\\
-En la ubicación \textit{External} se encuentran los módulos con librerías de terceros. En principio se muestran solo los que se usaron, los que no se dejan para futuras implementaciones. Se utilizaron los siguientes módulos:
+El directorio \textit{LPC4337} se compone de las librerías del fabricante denominada LPC-OPEN \citep{lpcopen}. Allí se encuentran los subdirectorios \textit{chip} y \textit{base} donde se alojan los módulos de capa HAL \footnotemark y capa CMSIS \footnotemark respectivamente.\\
+
+En el directorio \textit{External} se encuentran los módulos con librerías de terceros. En principio se muestran solo los que se usaron, los que no se dejan para futuras implementaciones. 
+\footnotetext{HAL: Hardware Abstraction Level.}
+\footnotetext{CMSIS: Cortex Microcontroller Software Interface Standard.}
+
+Se utilizaron los siguientes módulos:
 \begin{itemize}
 \item \textit{freeRTOS}: sistema operativo de tiempo real \citep{free_rtos}.
 \item \textit{ntShell}: natural tiny Shell \citep{nt_shell}.
@@ -45,8 +50,6 @@ A fin de validar el comportamiento de los algoritmos de procesamiento de los sen
 	\label{fig:diag_test_temp}
 \end{figure}
 
-\footnotetext{HAL: Hardware Abstraction Level.}
-\footnotetext{CMSIS: Cortex Microcontroller Software Interface Standard.}
 
 La escritura en memoria interna se probó un procedimiento de emulación de datos con archivos de texto plano de entrada y salida,  validando la escritura de bloques binarios según los formatos establecidos en la lógica del programa. En la figura \ref{fig:diag_test_mem} se observa los archivos procesados en el test.
 %RESULTADOS DE LOS TEST DE ESCRITURA EN MEMORIA
@@ -110,7 +113,13 @@ A fin de validar que el sistema completo, se realizaron pruebas de cada una de l
 
 \subsection{ Validación de requerimientos }
 
-Para esto se tomaron los criterios desarrollados conjuntamente con los requerimientos previamente en la materia \emph{Gestión de Proyectos} del posgrado. Básicamente consiste en variar los valores de los entradas al prototipo y verificar que cumpla con la respuesta adecuada. En la tabla \ref{tablas_cumplimiento_req} se observa un resumen del cumplimiento de los requerimientos funcionales y de interfaz. Para los mismos se evaluó si cumple si o no, y en caso negativo porque no.
+Para esto se tomaron los criterios desarrollados conjuntamente con los requerimientos previamente en la materia \emph{Gestión de Proyectos} del posgrado. Básicamente consiste en variar los valores de los entradas al prototipo y verificar que cumpla con la respuesta adecuada.\\
+Muchos de los requerimientos originales están asociados a un sistema distribuido de control, con módulos de entradas y salidas interconectados a la EDU-CIAA. Ese proyecto inicial fue modificado pero los requerimiento se conservaron para notar como se transformó desde su idea inicial.\\
+
+Los requerimientos a Futuro (RAF) no se han agregado a la tabla pero fueron considerados durante el desarrollo del prototipo como un sistema distribuido. Esa arquitectura fue descartada y dejada para mas adelante en función de los resultados obtenidos con éste primer diseño.\\
+
+En la tabla \ref{tablas_cumplimiento_req} se observa el cumplimiento de los requerimientos funcionales y de interfaz, se evaluó en cada caso si cumple si o no, y en caso negativo se agrega una observación.
+
 % tabla con los resultados de cumplimiento.
 \begin{table}[h!]
 \begin{flushleft}
@@ -159,8 +168,7 @@ Para esto se tomaron los criterios desarrollados conjuntamente con los requerimi
 \label{tablas_cumplimiento_req}
 \end{table}
 
-Los requerimientos a Futuro (RAF) no se han agregado a la tabla pero fueron considerados durante el desarrollo del prototipo como un sistema distribuido. Esa arquitectura fue descartada y dejada para mas adelante en función de los resultados obtenidos con éste primer diseño.\\
-A su vez muchos de los requerimientos originales estaban asociados a realizar un sistema distribuido de control con módulos de entradas y salidas interconectados a la EDU-CIAA. Si bien ese proyecto fue modificado los requerimiento se conservaron a modo ilustrativo de como se transformó el proyecto desde su idea inicial.
+ 
 \subsection{ Pruebas de rendimiento }
 
 Se probó la estabilidad del mismo dejando en funcionamiento durante un día completo, de esta manera se tiene mejor información de la perfomance de tiempo de uso y memoria de los servicios en el sistema operativo. En la tabla \ref{tabla_rendimiento} se observa el resultado obtenido en uso de memoria y tiempo de CPU.

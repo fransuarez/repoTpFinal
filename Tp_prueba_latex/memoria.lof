@@ -8,42 +8,42 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Proceso de galvanizado qu\IeC {\'\i }mico a trav\IeC {\'e}s de la inmersi\IeC {\'o}n del objeto en distintos ba\IeC {\~n}os qu\IeC {\'\i }micos.\relax }}{6}{figure.caption.24}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Proceso de galvanizado electrol\IeC {\'\i }tico a trav\IeC {\'e}s de la inmersi\IeC {\'o}n del objeto en distintos ba\IeC {\~n}os qu\IeC {\'\i }micos.\relax }}{6}{figure.caption.25}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Proceso electrol\IeC {\'\i }tico a trav\IeC {\'e}s del cual se fija la capa de material sobre la superficie del objeto.\relax }}{7}{figure.caption.26}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagrama simplificado de las etapas\relax }}{8}{figure.caption.28}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces V\IeC {\'\i }a entre capas galvanizada en un PCB\relax }}{8}{figure.caption.31}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Perfil de v\IeC {\'\i }as seg\IeC {\'u}n la ubicaci\IeC {\'o}n relativa en los sustratos y el los c\IeC {\'a}todos.\relax }}{9}{figure.caption.34}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Las capas de cobre se alejan del borde del orificio.\relax }}{9}{figure.caption.35}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Banco de pruebas de validaci\IeC {\'o}n del prototipo. \relax }}{10}{figure.caption.38}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Diagrama UML caso de uso de puesta en alta.\relax }}{11}{figure.caption.44}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Diagrama UML de casos de uso Modo 1 y 2.\relax }}{12}{figure.caption.45}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagrama simplificado de las etapas.\relax }}{7}{figure.caption.29}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces V\IeC {\'\i }a entre capas galvanizada en un PCB\relax }}{8}{figure.caption.30}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Perfil de v\IeC {\'\i }as seg\IeC {\'u}n la ubicaci\IeC {\'o}n relativa en los sustratos y el los c\IeC {\'a}todos.\relax }}{9}{figure.caption.33}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Las capas de cobre se alejan del borde del orificio \citep {fatiga_termica}.\relax }}{9}{figure.caption.34}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Banco de pruebas de validaci\IeC {\'o}n del prototipo. \relax }}{10}{figure.caption.37}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Diagrama UML caso de uso de puesta en alta.\relax }}{12}{figure.caption.43}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Diagrama UML de casos de uso Modo 1 y 2.\relax }}{12}{figure.caption.44}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Circuito simplificado de amplificaci\IeC {\'o}n y compensaci\IeC {\'o}n de termocuplas.\relax }}{18}{figure.caption.113}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Circuito simplificado de amplificaci\IeC {\'o}n y compensaci\IeC {\'o}n de termistores.\relax }}{18}{figure.caption.114}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Conexi\IeC {\'o}n en modo funcionamiento 1\relax }}{19}{figure.caption.116}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Conexi\IeC {\'o}n en modo funcionamiento 2.\relax }}{19}{figure.caption.117}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Render vista de arriba placa de interfaz.\relax }}{19}{figure.caption.118}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Render vista de abajo de placa de interfaz.\relax }}{20}{figure.caption.119}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Vinculaci\IeC {\'o}n de las perif\IeC {\'e}ricos del sistema con las interfaces internas en el modo 1. \relax }}{21}{figure.caption.121}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama de comunicaci\IeC {\'o}n entre procesos en el modo 1. \relax }}{21}{figure.caption.122}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Vinculaci\IeC {\'o}n de las perif\IeC {\'e}ricos del sistema con las interfaces internas en el modo 2.\relax }}{22}{figure.caption.123}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama de comunicaci\IeC {\'o}n entre procesos en el modo 2. \relax }}{22}{figure.caption.124}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Estructuras de capas del sistema.\relax }}{22}{figure.caption.126}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Interacci\IeC {\'o}n entre tareas. \relax }}{23}{figure.caption.128}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Diagrama de estados de la tarea control de entradas. \relax }}{24}{figure.caption.130}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Diagrama de estados de la tarea control de salidas. \relax }}{25}{figure.caption.132}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Diagrama de estados de la tarea terminal de comunicaci\IeC {\'o}n. \relax }}{26}{figure.caption.134}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Diagrama de estados de la tarea manejo de datos en memoria.\relax }}{27}{figure.caption.137}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Circuito simplificado de amplificaci\IeC {\'o}n y compensaci\IeC {\'o}n de termocuplas.\relax }}{18}{figure.caption.112}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Circuito simplificado de amplificaci\IeC {\'o}n y compensaci\IeC {\'o}n de termistores.\relax }}{18}{figure.caption.113}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Conexi\IeC {\'o}n en modo funcionamiento 1\relax }}{19}{figure.caption.115}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Conexi\IeC {\'o}n en modo funcionamiento 2.\relax }}{19}{figure.caption.116}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Render vista de arriba placa de interfaz.\relax }}{19}{figure.caption.117}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Render vista de abajo de placa de interfaz.\relax }}{20}{figure.caption.118}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Vinculaci\IeC {\'o}n de las perif\IeC {\'e}ricos del sistema con las interfaces internas en el modo 1. \relax }}{21}{figure.caption.120}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama de comunicaci\IeC {\'o}n entre procesos en el modo 1. \relax }}{21}{figure.caption.121}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Vinculaci\IeC {\'o}n de las perif\IeC {\'e}ricos del sistema con las interfaces internas en el modo 2.\relax }}{22}{figure.caption.122}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama de comunicaci\IeC {\'o}n entre procesos en el modo 2. \relax }}{22}{figure.caption.123}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Estructuras de capas del sistema.\relax }}{22}{figure.caption.125}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Interacci\IeC {\'o}n entre tareas. \relax }}{23}{figure.caption.127}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Diagrama de estados de la tarea control de entradas. \relax }}{24}{figure.caption.129}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Diagrama de estados de la tarea control de salidas. \relax }}{25}{figure.caption.131}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Diagrama de estados de la tarea terminal de comunicaci\IeC {\'o}n. \relax }}{26}{figure.caption.133}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Diagrama de estados de la tarea manejo de datos en memoria.\relax }}{27}{figure.caption.136}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura de directorios del proyecto.\relax }}{29}{figure.caption.140}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Test de funciones interfaz de temperatura.\relax }}{30}{figure.caption.144}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Test de funciones interfaz de memoria.\relax }}{31}{figure.caption.145}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Archivos procesados en el test de temperatura.\relax }}{31}{figure.caption.146}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Archivos procesados en el test de memoria.\relax }}{32}{figure.caption.147}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Banco de pruebas.\relax }}{32}{figure.caption.149}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Lista de comando implementados.\relax }}{33}{figure.caption.151}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura de directorios del proyecto.\relax }}{29}{figure.caption.139}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Test de funciones interfaz de temperatura.\relax }}{30}{figure.caption.143}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Test de funciones interfaz de memoria.\relax }}{31}{figure.caption.144}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Archivos procesados en el test de temperatura.\relax }}{31}{figure.caption.145}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Archivos procesados en el test de memoria.\relax }}{32}{figure.caption.146}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Banco de pruebas.\relax }}{32}{figure.caption.148}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Lista de comando implementados.\relax }}{33}{figure.caption.150}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\IeC {\'a}tico jer\IeC {\'a}rquico del poncho EduCiaa.\relax }}{46}{figure.caption.168}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Esquem\IeC {\'a}tico entradas de termocupla y termistor.\relax }}{47}{figure.caption.169}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquem\IeC {\'a}tico de salidas digitales con relays.\relax }}{48}{figure.caption.170}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Esquem\IeC {\'a}tico de conectores de expansi\IeC {\'o}n con la eduCIAA.\relax }}{49}{figure.caption.171}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\IeC {\'a}tico jer\IeC {\'a}rquico del poncho EduCiaa.\relax }}{46}{figure.caption.167}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Esquem\IeC {\'a}tico entradas de termocupla y termistor.\relax }}{47}{figure.caption.168}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Esquem\IeC {\'a}tico de salidas digitales con relays.\relax }}{48}{figure.caption.169}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Esquem\IeC {\'a}tico de conectores de expansi\IeC {\'o}n con la eduCIAA.\relax }}{49}{figure.caption.170}

@@ -9,38 +9,38 @@
 \contentsline {section}{\numberline {1.4} Alcance }{3}{section.14}
 \contentsline {chapter}{\numberline {2} Introducci\IeC {\'o}n Espec\IeC {\'\i }fica }{5}{chapter.22}
 \contentsline {section}{\numberline {2.1} Galvanizado de circuitos impresos }{5}{section.23}
-\contentsline {subsection}{\numberline {2.1.1} Proceso de galvanizado por electr\IeC {\'o}lisis }{5}{subsection.27}
-\contentsline {section}{\numberline {2.2} Par\IeC {\'a}metros cr\IeC {\'\i }ticos del galvanizado }{7}{section.32}
-\contentsline {subsection}{\numberline {2.2.1} Fallas en el galvanizado de PCBs }{8}{subsection.33}
-\contentsline {section}{\numberline {2.3} Determinaci\IeC {\'o}n de la soluci\IeC {\'o}n a utilizar }{9}{section.36}
-\contentsline {subsection}{\numberline {2.3.1} Definiciones Generales }{10}{subsection.37}
-\contentsline {subsection}{\numberline {2.3.2} Casos de Uso }{10}{subsection.39}
-\contentsline {subsection}{\numberline {2.3.3} Requerimientos funcionales y no funcionales }{12}{subsection.46}
-\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{17}{chapter.109}
-\contentsline {section}{\numberline {3.1}An\IeC {\'a}lisis del Hardware}{17}{section.110}
-\contentsline {subsection}{\numberline {3.1.1} Sensores y actuadores }{17}{subsection.111}
-\contentsline {subsection}{\numberline {3.1.2} Conexi\IeC {\'o}n al \enquote {poncho} dise\IeC {\~n}ado }{18}{subsection.115}
-\contentsline {section}{\numberline {3.2} Arquitectura del Software }{20}{section.120}
-\contentsline {subsection}{\numberline {3.2.1} Capas de abstracci\IeC {\'o}n }{21}{subsection.125}
-\contentsline {subsection}{\numberline {3.2.2} Dise\IeC {\~n}o }{23}{subsection.127}
-\contentsline {section}{\numberline {3.3} Sistemas control de entradas }{24}{section.129}
-\contentsline {section}{\numberline {3.4} Sistemas control de salidas }{24}{section.131}
-\contentsline {section}{\numberline {3.5} Sistemas control de terminal-Shell }{25}{section.133}
-\contentsline {section}{\numberline {3.6} Sistemas gesti\IeC {\'o}n de datos }{25}{section.136}
-\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{29}{chapter.138}
-\contentsline {section}{\numberline {4.1} Pruebas funcionales del firmware }{29}{section.139}
-\contentsline {subsection}{\numberline {4.1.1} Pruebas unitarias }{30}{subsection.143}
-\contentsline {section}{\numberline {4.2} Ensayos de validaci\IeC {\'o}n hardware }{31}{section.148}
-\contentsline {subsection}{\numberline {4.2.1} Pruebas de interfaz }{32}{subsection.150}
-\contentsline {section}{\numberline {4.3} Ensayos de integraci\IeC {\'o}n }{33}{section.152}
-\contentsline {subsection}{\numberline {4.3.1} Validaci\IeC {\'o}n de requerimientos }{33}{subsection.153}
-\contentsline {subsection}{\numberline {4.3.2} Pruebas de rendimiento }{34}{subsection.155}
-\contentsline {chapter}{\numberline {5} Conclusiones }{37}{chapter.157}
-\contentsline {section}{\numberline {5.1} Conclusiones generales }{37}{section.158}
-\contentsline {subsection}{\numberline {5.1.1} Hardware del prototipo }{37}{subsection.159}
-\contentsline {subsection}{\numberline {5.1.2} Firmware del prototipo }{37}{subsection.160}
-\contentsline {subsection}{\numberline {5.1.3} Proceso de desarrollo }{38}{subsection.161}
-\contentsline {section}{\numberline {5.2} Pr\IeC {\'o}ximos pasos }{38}{section.162}
-\contentsline {chapter}{\numberline {A}Casos de Uso}{41}{appendix.163}
-\contentsline {chapter}{\numberline {B}Esquem\IeC {\'a}ticos}{45}{appendix.167}
-\contentsline {chapter}{Bibliograf\'{\i }a}{51}{appendix*.172}
+\contentsline {subsection}{\numberline {2.1.1} Proceso de galvanizado por electr\IeC {\'o}lisis }{6}{subsection.27}
+\contentsline {section}{\numberline {2.2} Par\IeC {\'a}metros cr\IeC {\'\i }ticos del galvanizado }{8}{section.31}
+\contentsline {subsection}{\numberline {2.2.1} Fallas en el galvanizado de PCBs }{8}{subsection.32}
+\contentsline {section}{\numberline {2.3} Determinaci\IeC {\'o}n de la soluci\IeC {\'o}n a utilizar }{10}{section.35}
+\contentsline {subsection}{\numberline {2.3.1} Definiciones Generales }{10}{subsection.36}
+\contentsline {subsection}{\numberline {2.3.2} Casos de Uso }{11}{subsection.38}
+\contentsline {subsection}{\numberline {2.3.3} Requerimientos funcionales y no funcionales }{11}{subsection.45}
+\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{17}{chapter.108}
+\contentsline {section}{\numberline {3.1}An\IeC {\'a}lisis del Hardware}{17}{section.109}
+\contentsline {subsection}{\numberline {3.1.1} Sensores y actuadores }{17}{subsection.110}
+\contentsline {subsection}{\numberline {3.1.2} Conexi\IeC {\'o}n al \enquote {poncho} dise\IeC {\~n}ado }{18}{subsection.114}
+\contentsline {section}{\numberline {3.2} Arquitectura del Software }{20}{section.119}
+\contentsline {subsection}{\numberline {3.2.1} Capas de abstracci\IeC {\'o}n }{21}{subsection.124}
+\contentsline {subsection}{\numberline {3.2.2} Dise\IeC {\~n}o }{23}{subsection.126}
+\contentsline {section}{\numberline {3.3} Sistemas control de entradas }{24}{section.128}
+\contentsline {section}{\numberline {3.4} Sistemas control de salidas }{24}{section.130}
+\contentsline {section}{\numberline {3.5} Sistemas control de terminal-Shell }{25}{section.132}
+\contentsline {section}{\numberline {3.6} Sistemas gesti\IeC {\'o}n de datos }{25}{section.135}
+\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{29}{chapter.137}
+\contentsline {section}{\numberline {4.1} Pruebas funcionales del firmware }{29}{section.138}
+\contentsline {subsection}{\numberline {4.1.1} Pruebas unitarias }{30}{subsection.142}
+\contentsline {section}{\numberline {4.2} Ensayos de validaci\IeC {\'o}n hardware }{32}{section.147}
+\contentsline {subsection}{\numberline {4.2.1} Pruebas de interfaz }{33}{subsection.149}
+\contentsline {section}{\numberline {4.3} Ensayos de integraci\IeC {\'o}n }{33}{section.151}
+\contentsline {subsection}{\numberline {4.3.1} Validaci\IeC {\'o}n de requerimientos }{33}{subsection.152}
+\contentsline {subsection}{\numberline {4.3.2} Pruebas de rendimiento }{35}{subsection.154}
+\contentsline {chapter}{\numberline {5} Conclusiones }{37}{chapter.156}
+\contentsline {section}{\numberline {5.1} Conclusiones generales }{37}{section.157}
+\contentsline {subsection}{\numberline {5.1.1} Hardware del prototipo }{37}{subsection.158}
+\contentsline {subsection}{\numberline {5.1.2} Firmware del prototipo }{37}{subsection.159}
+\contentsline {subsection}{\numberline {5.1.3} Proceso de desarrollo }{38}{subsection.160}
+\contentsline {section}{\numberline {5.2} Pr\IeC {\'o}ximos pasos }{38}{section.161}
+\contentsline {chapter}{\numberline {A}Casos de Uso}{41}{appendix.162}
+\contentsline {chapter}{\numberline {B}Esquem\IeC {\'a}ticos}{45}{appendix.166}
+\contentsline {chapter}{Bibliograf\'{\i }a}{51}{appendix*.171}

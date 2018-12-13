@@ -8,8 +8,9 @@ Aquí se abordan con mas detalle el proceso de fabricación, los parámetros cr�
 
 El proceso de galvanizado consiste en adherir a un objeto metálico una delgada capa de otro metal, de unos pocos micrones de espesor. Este material le otorga mejores propiedades al objeto como ser conductividad eléctrica, mayor resistencia mecánica o resistencia a la corrosión. 
 
-Los métodos para lograrlos pueden ser diversos. Entre los mas comunes están el baño químico y por electrólisis. El método químico es utilizado generalmente en estructuras con superficies homogéneas y consiste en sumergir el producto dentro de un baño con el metal galvanizante en forma de solución química o bien a alta temperatura, incluyendo algunas etapas de pre- acondicionado. La figura \ref{fig:galvanizado_quimico} es un diagrama simplificado de método químico.
-El método electrolítico insume un gran consumo de energía eléctrica y mas etapas de pre-tratamiento de la superficie, pero tiene la ventaja de ser mas controlable el grosor del galvanizado, se suele hacer a temperatura ambiente y es mas versátil para aplicar sobre superficies no metálicas con un pre acondicionado previo. En la figura \ref{fig:galvanizado_electrolitico} se  un proceso electrolítico donde básicamente el objeto recibe distintos pre-tratamientos para preparar la superficie antes y después del efecto electrolítico. 
+Los métodos para lograrlos pueden ser diversos. Entre los mas comunes están el baño químico y por electrólisis. El método químico es utilizado generalmente en estructuras con superficies homogéneas y consiste en sumergir el producto dentro de un baño con el metal galvanizante en forma de solución química o bien a alta temperatura, incluyendo algunas etapas de pre acondicionado. La figura \ref{fig:galvanizado_quimico} es un diagrama simplificado de método químico.
+
+El método electrolítico insume un gran consumo de energía eléctrica y mas etapas de pre-tratamiento de la superficie, pero tiene la ventaja de ser mas controlable el grosor del galvanizado, se suele hacer a temperatura ambiente y es mas versátil para aplicar sobre superficies no metálicas con un pre acondicionado previo. En la figura \ref{fig:galvanizado_electrolitico} se muestra un proceso electrolítico donde básicamente el objeto recibe distintos tratamientos para preparar la superficie antes y después del efecto electrolítico. 
 
 \hspace{1px}
 \begin{figure}[h]
@@ -40,19 +41,19 @@ La forma utilizada en las placa de circuito impreso (PCB) es a través de la ele
 
 En la fabricación de PCBs se parte de un material base de sustrato de laminas epoxi FR4 revestido con laminas de cobre. Este debe ser sometido previo a realizar la electrólisis en sí, a una sucesión de baños químicos para limpiar y homogeneizar toda las partes metálicas de superficie. El proceso es repetido con variantes del metal galvánico para lograr el circuito final. 
 
-En el proceso de fabricación de un PCB se utilizan aproximadamente 10 etapas distintas entre dos procesos. El primer proceso incluye el galvanizado con cobre de las vías entre capas, sobre el material laminado previamente perforado. El segundo proceso incluye el grabado del circuito impreso en si, previamente fijada la imagen negativa sobre las superficies del mismo.
-Existe una similitud en muchos de los pasos de inmersión de las placas en los productos químicos, que resulta en controlar mismos parámetros en las distintas cubas a lo largo del proceso. 
-En la Figura \ref{fig:diagrama_proceso} se muestra los efectos producidos sobre un perfil de una vía en un sustrato FR4, para las etapas mas relevantes.
+En el proceso de fabricación de un PCB se utilizan aproximadamente 10 etapas distintas entre dos procesos. El primer proceso incluye el galvanizado con cobre de las vías entre capas, sobre el material laminado previamente perforado. El segundo proceso incluye el grabado del circuito impreso en si, previamente fijada la imagen negativa sobre las superficies del mismo.\\
+
+Existe una similitud en muchos de los pasos de inmersión de las placas en los productos químicos, que resulta en controlar mismos parámetros en las distintas cubas a lo largo del proceso \citep{sase_mayer} \citep{make_pcb}. 
+
+En la Figura \ref{fig:diagrama_proceso} se muestra los efectos producidos sobre un perfil de una vía en un sustrato FR4, para las etapas mas relevantes \footnotemark.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Figures/Cap_2/diagrama_galvanizado_completo}
-	\caption{ Diagrama simplificado de las etapas} \footnotemark \footnotemark
+	\caption{ Diagrama simplificado de las etapas.}  
 	\label{fig:diagrama_proceso}
 \end{figure}
-
 \footnotetext{\url{https://www.4pcb.com/media/presentation-how-to-build-pcb.pdf}} 
-\footnotetext{SASE2013-Circuitos Impresos de Marcos Mayer} 
 
 En el proceso desarrollado en Daichi S.A. la serie completa, desde que se cortan los paneles FR4 hasta que se coloca la mascara antisoldante, incluye entre 20 a 25 de pasos los cuales se resumen a continuación lo mas importantes.
 % Agregar una TABLA con los pasos segun etapa a grandes rasgos.
@@ -79,21 +80,21 @@ En las diferentes bateas de la linea de galvanizado es necesario controlar, seg�
 	\item Inyección de aire.
 \end{itemize}
 
-Actualmente en la linea de galvanizado los operadores cuentan solo con su experiencia y con el soporte de instrumental de medición básico que poseen en algunas las etapas de la linea. Para saber cuando una etapa esta finalizada se basan en el tiempo que saben funciona y por observación del estado del proceso. Esto puede acarrear muchos problemas si no se han estandarizado procesos. Además es causante de que el producto final muchas veces no tenga una calidad estándar y de que no se puedan prevenir fallas del proceso a tiempo.
+Actualmente en la linea de galvanizado los operadores cuentan solo con su experiencia y con el soporte de instrumental de medición básico que poseen en algunas las etapas de la linea. Para saber cuando una etapa esta finalizada se basan en tiempos que saben funciona y en la observación del estado del proceso. Esto puede acarrear muchos problemas si no se han estandarizado los procesos. Además puede ser causante de una calidad no estándar en el producto final y de no poder prevenir fallas del proceso a tiempo.
  
-Por todo esto para saber cuando un proceso fue realizado correctamente, es necesario tener información precisa, detallada y respetar los tiempos e indicadores preestablecidos para lograr el tipo de galvanizado buscado. 
+Por esto para saber cuando un proceso fue realizado correctamente es necesario tener información precisa, detallada y respetar los tiempos e indicadores preestablecidos para lograr el tipo de galvanizado buscado. 
 
 \subsection{ Fallas en el galvanizado de PCBs }
 
 En la producción de PCBs el resultado final correcto es aquel en donde el espesor del baño metálico es uniforme en toda la superficies y paredes de las vías. Cuando este proceso no ocurre correctamente se originan distintas fallas, de las cuales las más comunes son:
 \begin{itemize}
 	\item Vías sin galvanizar.
-	\item vías obstruidas por exceso de cobre.
+	\item Vías obstruidas por exceso de cobre.
 	\item Laminado no uniforme de metal cobre.
-	\item Micro cortes del cobre y puntos de no conductividad.
+	\item Micro-cortes del cobre y puntos de no conductividad.
 \end{itemize}
 
-En la figura \ref{fig:thr_incorrecto_perfil} se observan las distintos grosores de cobre con vías mal galvanizadas en función de su ubicación en el sustrato del PCB y la cercanía al ánodo de cobre.
+En la figura  \ref{fig:thr_incorrecto_perfil} se observan las distintos grosores de cobre con vías mal galvanizadas en función de su ubicación en el sustrato del PCB y la cercanía al ánodo de cobre.
 
 \begin{figure}[h]
 	\centering
@@ -102,12 +103,12 @@ En la figura \ref{fig:thr_incorrecto_perfil} se observan las distintos grosores 
 	\label{fig:thr_incorrecto_perfil}
 \end{figure}
 
-En la figura \ref{fig:fallas_en_PTH} se observa los problemas originados por la mala preparación previa de las superficies metálicas del sustrato, originado puntos sin continuidad o circuitos abiertos que lo volverán no aptos para la producción de circuitos.
+En la figura \ref{fig:fallas_en_PTH} se observa los problemas originados por la mala preparación previa de las superficies metálicas del sustrato, originado puntos sin continuidad o circuitos abiertos que lo volverán no aptos para la producción de circuitos \citep{euro_pth}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{Figures/Cap_2/fallas_en_PTH}
-	\caption{ Las capas de cobre se alejan del borde del orificio.}
+	\caption{ Las capas de cobre se alejan del borde del orificio \citep{fatiga_termica}.}
 	\label{fig:fallas_en_PTH}
 \end{figure}
 
@@ -122,7 +123,7 @@ La linea cuenta con varias etapas en forma consecutiva independientes entre si p
 El sistema debe funcionar entonces en modo predeterminado según los distintos escenarios posibles dentro de las etapas del proceso. De esta manera con un mismo hardware mas los sensores y actuadores necesarios, se puede supervisar y controlar las partes del proceso que se crean necesarias. En la figura \ref{fig:banco_pruebas} se muestra la implementación del banco de prueba que se diseño para la validación del prototipo.
 
 \begin{figure}[h!]
-	\centering
+	\hspace{-0.5cm}
 	\includegraphics[width=1.2\textwidth]{Figures/Cap_2/diagrama_prototipo}
 	\caption{Banco de pruebas de validación del prototipo. }
 	\label{fig:banco_pruebas}
@@ -144,10 +145,12 @@ Los casos de uso del sistema se definen para determinar como se vincula éste co
 \end{enumerate}
 
 Los modos 1 y 2 se refieren a dos configuraciones a partir de los escenarios mas comunes de conexión del prototipo. A fin de simplificar la puesta en marcha en campo y por la limitación de numero de entradas analógicas de la EDU-CIAA.
+
 En la tabla \ref{modos_funcionamiento} se observa un resumen de los periféricos involucrados en cada caso.
 
 %TABLA ****************
 \begin{table}[h!]
+\hspace{-0.5cm}
 \begin{flushleft}
 \begin{tabular}{|m{1,2cm}|m{4cm}|m{4cm}|m{4cm}|} \hline
 {\textbf{Modo}} & {\textbf{Función}} & {\textbf{Entradas}} & {\textbf{Salidas}}\\ \hline
@@ -156,6 +159,7 @@ En la tabla \ref{modos_funcionamiento} se observa un resumen de los periféricos
 {\textit{Config.}} & {Modifica pines asignados, valores de alarma, tiempos de muestreo.} & {Comandos por terminal de pc.} & {Confirmación por terminal de pc y leds.} \\ \hline
 \end{tabular}
 \end{flushleft}
+
 \caption{Descripción modos de funcionamiento.}
 \label{modos_funcionamiento}
 \end{table}
@@ -229,6 +233,7 @@ Cabe mencionar que la lista de requerimientos se originó previamente en la mate
 \end{enumerate}
 
 \item Interfaces Hombre-Máquina (RFHMI) \footnotemark
+\footnotetext{Los RFHMI relacionados con el ingreso de lotes no pudieron implementarse en esta primer etapa del proyecto al no tener un sistema centralizado que controle las etapas.}
 \begin{enumerate}
 \item El sistema mostrará por pantalla gráfica el estado del sistema de modo con variables a definir.
 \item El sistema contará con un método de ingreso de parámetros de lote, a procesar en modo texto.
@@ -237,6 +242,7 @@ Cabe mencionar que la lista de requerimientos se originó previamente en la mate
 formato YY. \footnotemark
 \item El sistema mostrará por pantalla los rangos de valores óptimos de tensión y corriente según el lote ingresado, que deberán ser configurados manualmente en la interfaz de la fuente de alimentación principal del galvanizador. El sistema esperará una confirmación de que la fuente se configuró. El valor se podrá consultar una vez iniciado el proceso.
 \end{enumerate}
+\footnotetext{Los parámetros definidos con XX son aquellos que no pudieron ser definidos en su momento con el cliente.}
 
 \end{enumerate}
 
@@ -311,8 +317,8 @@ formato YY. \footnotemark
 
 En función de estos se propuso implementar el proyecto sobre una plataforma EDU-CIAA \citep{CIAA} en conjunto con una placa de interfaz hecha a medida. 
 
-\footnotetext{Los RFHMI relacionados con el ingreso de lotes no pudieron implementarse en esta primer etapa del proyecto al no tener un sistema centralizado que controle las etapas.}
-\footnotetext{Los parámetros definidos con XX son aquellos que no pudieron ser definidos en su momento con el cliente.}
+
+
 
 
 
